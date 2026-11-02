@@ -1,0 +1,3040 @@
+[
+  {
+    "caso": "lectura_no_disponible",
+    "ejecucion_id": 87,
+    "version_id": "5c310cdb-abed-41d2-9492-985ea180e799",
+    "terminal": "Error controlado",
+    "estado_n8n": "success",
+    "nodos_recorridos": [
+      "Recibir WhatsApp simulado",
+      "Normalizar entrada",
+      "Entrada valida",
+      "Destino fijo",
+      "Leer Sheets - segunda fuente",
+      "Fallo fuente",
+      "Error controlado"
+    ],
+    "coincide_http_nodo": true,
+    "resultado_sintetico": {
+      "tipo": "PRUEBA_SINTETICA_NO_NEGOCIO",
+      "caso": "lectura_no_disponible",
+      "fecha_utc": "2026-11-02T15:02:32.966802+00:00",
+      "entrada_ficticia": {
+        "evento_id": "falla-lectura-ccdfd6e836384a6aa8894745ea3d3579",
+        "from": "5491186565960",
+        "text": {
+          "body": "Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde."
+        }
+      },
+      "esperado": {
+        "http": 503,
+        "error": "FUENTE_NO_DISPONIBLE",
+        "registro_persistido": null,
+        "filas_en_destino": 0,
+        "append_acumulados": 0,
+        "lecturas_acumuladas": 1,
+        "duplicado": false
+      },
+      "http": 503,
+      "respuesta": {
+        "ok": false,
+        "error": "FUENTE_NO_DISPONIBLE",
+        "http": 503,
+        "etapa": "lectura_configuracion",
+        "registro_persistido": null,
+        "respuesta_enviada_whatsapp": false,
+        "reintento_automatico": false,
+        "recuperacion": "Conservar entrada y ejecución. Consultar evento_id en destino antes de repetir. Si resultado incierto, resolver manualmente.",
+        "evento_id": "falla-lectura-ccdfd6e836384a6aa8894745ea3d3579",
+        "ejecucion_id": "87"
+      },
+      "respuesta_http_texto": "{\"ok\":false,\"error\":\"FUENTE_NO_DISPONIBLE\",\"http\":503,\"etapa\":\"lectura_configuracion\",\"registro_persistido\":null,\"respuesta_enviada_whatsapp\":false,\"reintento_automatico\":false,\"recuperacion\":\"Conservar entrada y ejecución. Consultar evento_id en destino antes de repetir. Si resultado incierto, resolver manualmente.\",\"evento_id\":\"falla-lectura-ccdfd6e836384a6aa8894745ea3d3579\",\"ejecucion_id\":\"87\"}",
+      "lectura_independiente": {
+        "http": 200,
+        "respuesta": {
+          "tipo": "SERVIDOR_SINTETICO_NO_GOOGLE",
+          "inicio_utc": "2026-11-02T15:01:51.078556+00:00",
+          "filas": [],
+          "read_por_evento": {
+            "falla-lectura-ccdfd6e836384a6aa8894745ea3d3579": 1
+          },
+          "append_por_evento": {},
+          "snapshots": 2,
+          "operaciones": [
+            {
+              "orden": 1,
+              "fecha_utc": "2026-11-02T15:02:32.959806+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 2,
+              "fecha_utc": "2026-11-02T15:02:35.186577+00:00",
+              "operacion": "read",
+              "evento_id": "falla-lectura-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 503,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 3,
+              "fecha_utc": "2026-11-02T15:02:35.221103+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            }
+          ],
+          "actualizado_utc": "2026-11-02T15:02:35.221103+00:00",
+          "filas_por_evento": {},
+          "total_filas": 0
+        },
+        "texto": "{\"tipo\": \"SERVIDOR_SINTETICO_NO_GOOGLE\", \"inicio_utc\": \"2026-11-02T15:01:51.078556+00:00\", \"filas\": [], \"read_por_evento\": {\"falla-lectura-ccdfd6e836384a6aa8894745ea3d3579\": 1}, \"append_por_evento\": {}, \"snapshots\": 2, \"operaciones\": [{\"orden\": 1, \"fecha_utc\": \"2026-11-02T15:02:32.959806+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 2, \"fecha_utc\": \"2026-11-02T15:02:35.186577+00:00\", \"operacion\": \"read\", \"evento_id\": \"falla-lectura-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 503, \"fila_guardada_en_operacion\": false}, {\"orden\": 3, \"fecha_utc\": \"2026-11-02T15:02:35.221103+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}], \"actualizado_utc\": \"2026-11-02T15:02:35.221103+00:00\", \"filas_por_evento\": {}, \"total_filas\": 0}"
+      },
+      "duracion_http_y_snapshot_ms": 2250,
+      "comprobaciones": {
+        "http": true,
+        "respuesta_objeto": true,
+        "registro_persistido": true,
+        "sin_envio": true,
+        "ok_coherente": true,
+        "error_controlado": true,
+        "sin_retry_automatico": true,
+        "snapshot_200": true,
+        "filas_exactas": true,
+        "append_sin_reintentos_ciegos": true,
+        "lecturas_esperadas": true
+      },
+      "diferencias": [],
+      "correcto": true
+    }
+  },
+  {
+    "caso": "ia_no_disponible",
+    "ejecucion_id": 88,
+    "version_id": "5c310cdb-abed-41d2-9492-985ea180e799",
+    "terminal": "Error controlado",
+    "estado_n8n": "success",
+    "nodos_recorridos": [
+      "Recibir WhatsApp simulado",
+      "Normalizar entrada",
+      "Entrada valida",
+      "Destino fijo",
+      "Leer Sheets - segunda fuente",
+      "Preparar contexto",
+      "Evento nuevo",
+      "Asistente de recepcion",
+      "Fallo IA",
+      "Error controlado"
+    ],
+    "coincide_http_nodo": true,
+    "resultado_sintetico": {
+      "tipo": "PRUEBA_SINTETICA_NO_NEGOCIO",
+      "caso": "ia_no_disponible",
+      "fecha_utc": "2026-11-02T15:02:35.230102+00:00",
+      "entrada_ficticia": {
+        "evento_id": "fallo-ia-ccdfd6e836384a6aa8894745ea3d3579",
+        "from": "5491186565960",
+        "text": {
+          "body": "Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde."
+        }
+      },
+      "esperado": {
+        "http": 502,
+        "error": "IA_NO_VALIDADA",
+        "registro_persistido": false,
+        "filas_en_destino": 0,
+        "append_acumulados": 0,
+        "lecturas_acumuladas": 1,
+        "duplicado": false
+      },
+      "http": 502,
+      "respuesta": {
+        "ok": false,
+        "error": "IA_NO_VALIDADA",
+        "http": 502,
+        "etapa": "ia_validacion",
+        "registro_persistido": false,
+        "respuesta_enviada_whatsapp": false,
+        "reintento_automatico": false,
+        "recuperacion": "Conservar entrada y ejecución. Consultar evento_id en destino antes de repetir. Si resultado incierto, resolver manualmente.",
+        "evento_id": "fallo-ia-ccdfd6e836384a6aa8894745ea3d3579",
+        "ejecucion_id": "88"
+      },
+      "respuesta_http_texto": "{\"ok\":false,\"error\":\"IA_NO_VALIDADA\",\"http\":502,\"etapa\":\"ia_validacion\",\"registro_persistido\":false,\"respuesta_enviada_whatsapp\":false,\"reintento_automatico\":false,\"recuperacion\":\"Conservar entrada y ejecución. Consultar evento_id en destino antes de repetir. Si resultado incierto, resolver manualmente.\",\"evento_id\":\"fallo-ia-ccdfd6e836384a6aa8894745ea3d3579\",\"ejecucion_id\":\"88\"}",
+      "lectura_independiente": {
+        "http": 200,
+        "respuesta": {
+          "tipo": "SERVIDOR_SINTETICO_NO_GOOGLE",
+          "inicio_utc": "2026-11-02T15:01:51.078556+00:00",
+          "filas": [],
+          "read_por_evento": {
+            "falla-lectura-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "fallo-ia-ccdfd6e836384a6aa8894745ea3d3579": 1
+          },
+          "append_por_evento": {},
+          "snapshots": 3,
+          "operaciones": [
+            {
+              "orden": 1,
+              "fecha_utc": "2026-11-02T15:02:32.959806+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 2,
+              "fecha_utc": "2026-11-02T15:02:35.186577+00:00",
+              "operacion": "read",
+              "evento_id": "falla-lectura-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 503,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 3,
+              "fecha_utc": "2026-11-02T15:02:35.221103+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 4,
+              "fecha_utc": "2026-11-02T15:02:37.319371+00:00",
+              "operacion": "read",
+              "evento_id": "fallo-ia-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 5,
+              "fecha_utc": "2026-11-02T15:02:37.373370+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            }
+          ],
+          "actualizado_utc": "2026-11-02T15:02:37.374369+00:00",
+          "filas_por_evento": {},
+          "total_filas": 0
+        },
+        "texto": "{\"tipo\": \"SERVIDOR_SINTETICO_NO_GOOGLE\", \"inicio_utc\": \"2026-11-02T15:01:51.078556+00:00\", \"filas\": [], \"read_por_evento\": {\"falla-lectura-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"fallo-ia-ccdfd6e836384a6aa8894745ea3d3579\": 1}, \"append_por_evento\": {}, \"snapshots\": 3, \"operaciones\": [{\"orden\": 1, \"fecha_utc\": \"2026-11-02T15:02:32.959806+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 2, \"fecha_utc\": \"2026-11-02T15:02:35.186577+00:00\", \"operacion\": \"read\", \"evento_id\": \"falla-lectura-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 503, \"fila_guardada_en_operacion\": false}, {\"orden\": 3, \"fecha_utc\": \"2026-11-02T15:02:35.221103+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 4, \"fecha_utc\": \"2026-11-02T15:02:37.319371+00:00\", \"operacion\": \"read\", \"evento_id\": \"fallo-ia-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 5, \"fecha_utc\": \"2026-11-02T15:02:37.373370+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}], \"actualizado_utc\": \"2026-11-02T15:02:37.374369+00:00\", \"filas_por_evento\": {}, \"total_filas\": 0}"
+      },
+      "duracion_http_y_snapshot_ms": 2140,
+      "comprobaciones": {
+        "http": true,
+        "respuesta_objeto": true,
+        "registro_persistido": true,
+        "sin_envio": true,
+        "ok_coherente": true,
+        "error_controlado": true,
+        "sin_retry_automatico": true,
+        "snapshot_200": true,
+        "filas_exactas": true,
+        "append_sin_reintentos_ciegos": true,
+        "lecturas_esperadas": true
+      },
+      "diferencias": [],
+      "correcto": true
+    }
+  },
+  {
+    "caso": "ia_json_invalido",
+    "ejecucion_id": 89,
+    "version_id": "5c310cdb-abed-41d2-9492-985ea180e799",
+    "terminal": "Error controlado",
+    "estado_n8n": "success",
+    "nodos_recorridos": [
+      "Recibir WhatsApp simulado",
+      "Normalizar entrada",
+      "Entrada valida",
+      "Destino fijo",
+      "Leer Sheets - segunda fuente",
+      "Preparar contexto",
+      "Evento nuevo",
+      "Asistente de recepcion",
+      "Validar y preparar registro",
+      "Fallo IA",
+      "Error controlado"
+    ],
+    "coincide_http_nodo": true,
+    "resultado_sintetico": {
+      "tipo": "PRUEBA_SINTETICA_NO_NEGOCIO",
+      "caso": "ia_json_invalido",
+      "fecha_utc": "2026-11-02T15:02:37.382370+00:00",
+      "entrada_ficticia": {
+        "evento_id": "fallo-json-ccdfd6e836384a6aa8894745ea3d3579",
+        "from": "5491186565960",
+        "text": {
+          "body": "Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde."
+        }
+      },
+      "esperado": {
+        "http": 502,
+        "error": "IA_NO_VALIDADA",
+        "registro_persistido": false,
+        "filas_en_destino": 0,
+        "append_acumulados": 0,
+        "lecturas_acumuladas": 1,
+        "duplicado": false
+      },
+      "http": 502,
+      "respuesta": {
+        "ok": false,
+        "error": "IA_NO_VALIDADA",
+        "http": 502,
+        "etapa": "ia_validacion",
+        "registro_persistido": false,
+        "respuesta_enviada_whatsapp": false,
+        "reintento_automatico": false,
+        "recuperacion": "Conservar entrada y ejecución. Consultar evento_id en destino antes de repetir. Si resultado incierto, resolver manualmente.",
+        "evento_id": "fallo-json-ccdfd6e836384a6aa8894745ea3d3579",
+        "ejecucion_id": "89"
+      },
+      "respuesta_http_texto": "{\"ok\":false,\"error\":\"IA_NO_VALIDADA\",\"http\":502,\"etapa\":\"ia_validacion\",\"registro_persistido\":false,\"respuesta_enviada_whatsapp\":false,\"reintento_automatico\":false,\"recuperacion\":\"Conservar entrada y ejecución. Consultar evento_id en destino antes de repetir. Si resultado incierto, resolver manualmente.\",\"evento_id\":\"fallo-json-ccdfd6e836384a6aa8894745ea3d3579\",\"ejecucion_id\":\"89\"}",
+      "lectura_independiente": {
+        "http": 200,
+        "respuesta": {
+          "tipo": "SERVIDOR_SINTETICO_NO_GOOGLE",
+          "inicio_utc": "2026-11-02T15:01:51.078556+00:00",
+          "filas": [],
+          "read_por_evento": {
+            "falla-lectura-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "fallo-ia-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "fallo-json-ccdfd6e836384a6aa8894745ea3d3579": 1
+          },
+          "append_por_evento": {},
+          "snapshots": 4,
+          "operaciones": [
+            {
+              "orden": 1,
+              "fecha_utc": "2026-11-02T15:02:32.959806+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 2,
+              "fecha_utc": "2026-11-02T15:02:35.186577+00:00",
+              "operacion": "read",
+              "evento_id": "falla-lectura-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 503,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 3,
+              "fecha_utc": "2026-11-02T15:02:35.221103+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 4,
+              "fecha_utc": "2026-11-02T15:02:37.319371+00:00",
+              "operacion": "read",
+              "evento_id": "fallo-ia-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 5,
+              "fecha_utc": "2026-11-02T15:02:37.373370+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 6,
+              "fecha_utc": "2026-11-02T15:02:39.485967+00:00",
+              "operacion": "read",
+              "evento_id": "fallo-json-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 7,
+              "fecha_utc": "2026-11-02T15:02:39.549498+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            }
+          ],
+          "actualizado_utc": "2026-11-02T15:02:39.549498+00:00",
+          "filas_por_evento": {},
+          "total_filas": 0
+        },
+        "texto": "{\"tipo\": \"SERVIDOR_SINTETICO_NO_GOOGLE\", \"inicio_utc\": \"2026-11-02T15:01:51.078556+00:00\", \"filas\": [], \"read_por_evento\": {\"falla-lectura-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"fallo-ia-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"fallo-json-ccdfd6e836384a6aa8894745ea3d3579\": 1}, \"append_por_evento\": {}, \"snapshots\": 4, \"operaciones\": [{\"orden\": 1, \"fecha_utc\": \"2026-11-02T15:02:32.959806+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 2, \"fecha_utc\": \"2026-11-02T15:02:35.186577+00:00\", \"operacion\": \"read\", \"evento_id\": \"falla-lectura-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 503, \"fila_guardada_en_operacion\": false}, {\"orden\": 3, \"fecha_utc\": \"2026-11-02T15:02:35.221103+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 4, \"fecha_utc\": \"2026-11-02T15:02:37.319371+00:00\", \"operacion\": \"read\", \"evento_id\": \"fallo-ia-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 5, \"fecha_utc\": \"2026-11-02T15:02:37.373370+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 6, \"fecha_utc\": \"2026-11-02T15:02:39.485967+00:00\", \"operacion\": \"read\", \"evento_id\": \"fallo-json-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 7, \"fecha_utc\": \"2026-11-02T15:02:39.549498+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}], \"actualizado_utc\": \"2026-11-02T15:02:39.549498+00:00\", \"filas_por_evento\": {}, \"total_filas\": 0}"
+      },
+      "duracion_http_y_snapshot_ms": 2172,
+      "comprobaciones": {
+        "http": true,
+        "respuesta_objeto": true,
+        "registro_persistido": true,
+        "sin_envio": true,
+        "ok_coherente": true,
+        "error_controlado": true,
+        "sin_retry_automatico": true,
+        "snapshot_200": true,
+        "filas_exactas": true,
+        "append_sin_reintentos_ciegos": true,
+        "lecturas_esperadas": true
+      },
+      "diferencias": [],
+      "correcto": true
+    }
+  },
+  {
+    "caso": "control_sintetico_completo",
+    "ejecucion_id": 90,
+    "version_id": "5c310cdb-abed-41d2-9492-985ea180e799",
+    "terminal": "Resultado 200",
+    "estado_n8n": "success",
+    "nodos_recorridos": [
+      "Recibir WhatsApp simulado",
+      "Normalizar entrada",
+      "Entrada valida",
+      "Destino fijo",
+      "Leer Sheets - segunda fuente",
+      "Preparar contexto",
+      "Evento nuevo",
+      "Asistente de recepcion",
+      "Validar y preparar registro",
+      "Registrar solicitud RAW",
+      "Confirmar registro",
+      "Resultado 200"
+    ],
+    "coincide_http_nodo": true,
+    "resultado_sintetico": {
+      "tipo": "PRUEBA_SINTETICA_NO_NEGOCIO",
+      "caso": "control_sintetico_completo",
+      "fecha_utc": "2026-11-02T15:02:39.558498+00:00",
+      "entrada_ficticia": {
+        "evento_id": "normal-ccdfd6e836384a6aa8894745ea3d3579",
+        "from": "5491186565960",
+        "text": {
+          "body": "Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde."
+        }
+      },
+      "esperado": {
+        "http": 200,
+        "error": null,
+        "registro_persistido": true,
+        "filas_en_destino": 1,
+        "append_acumulados": 1,
+        "lecturas_acumuladas": 1,
+        "duplicado": false
+      },
+      "http": 200,
+      "respuesta": {
+        "ok": true,
+        "solicitud": {
+          "evento_id": "normal-ccdfd6e836384a6aa8894745ea3d3579",
+          "fecha_recepcion": "2026-11-02T12:02:41.633-03:00",
+          "canal": "whatsapp_simulado",
+          "telefono": "5491186565960",
+          "mensaje": "Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.",
+          "tipo": "solicitud_primera_consulta",
+          "accion": "gestion_administrativa",
+          "nombre": "Persona Demo Harness",
+          "preferencia_turno": "24/11/2026 por la tarde",
+          "faltantes": [],
+          "alertas": [],
+          "derivar_profesional": false,
+          "temas_administrativos": [
+            "requisitos"
+          ],
+          "estado": "pendiente_revision",
+          "borrador": "El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.",
+          "prioridad": "revision_administrativa",
+          "config_version": "ADMIN_DEMO_R01",
+          "temas_consultados": [
+            "requisitos"
+          ],
+          "ejecucion_id": "90",
+          "version_flujo": "FINAL_R01"
+        },
+        "registro_persistido": true,
+        "rango_registrado": "Solicitudes!A2:T2",
+        "respuesta_enviada_whatsapp": false,
+        "borrador_pendiente_revision": true,
+        "duplicado": false
+      },
+      "respuesta_http_texto": "{\"ok\":true,\"solicitud\":{\"evento_id\":\"normal-ccdfd6e836384a6aa8894745ea3d3579\",\"fecha_recepcion\":\"2026-11-02T12:02:41.633-03:00\",\"canal\":\"whatsapp_simulado\",\"telefono\":\"5491186565960\",\"mensaje\":\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\",\"tipo\":\"solicitud_primera_consulta\",\"accion\":\"gestion_administrativa\",\"nombre\":\"Persona Demo Harness\",\"preferencia_turno\":\"24/11/2026 por la tarde\",\"faltantes\":[],\"alertas\":[],\"derivar_profesional\":false,\"temas_administrativos\":[\"requisitos\"],\"estado\":\"pendiente_revision\",\"borrador\":\"El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.\",\"prioridad\":\"revision_administrativa\",\"config_version\":\"ADMIN_DEMO_R01\",\"temas_consultados\":[\"requisitos\"],\"ejecucion_id\":\"90\",\"version_flujo\":\"FINAL_R01\"},\"registro_persistido\":true,\"rango_registrado\":\"Solicitudes!A2:T2\",\"respuesta_enviada_whatsapp\":false,\"borrador_pendiente_revision\":true,\"duplicado\":false}",
+      "lectura_independiente": {
+        "http": 200,
+        "respuesta": {
+          "tipo": "SERVIDOR_SINTETICO_NO_GOOGLE",
+          "inicio_utc": "2026-11-02T15:01:51.078556+00:00",
+          "filas": [
+            [
+              "normal-ccdfd6e836384a6aa8894745ea3d3579",
+              "[\"5491186565960\",\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\"]",
+              "2026-11-02T12:02:41.633-03:00",
+              "5491186565960",
+              "Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.",
+              "solicitud_primera_consulta",
+              "gestion_administrativa",
+              "Persona Demo Harness",
+              "24/11/2026 por la tarde",
+              "[]",
+              "[]",
+              "false",
+              "El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.",
+              "pendiente_revision",
+              "ADMIN_DEMO_R01",
+              "90",
+              "FINAL_R01",
+              "[\"requisitos\"]",
+              "whatsapp_simulado",
+              "revision_administrativa"
+            ]
+          ],
+          "read_por_evento": {
+            "falla-lectura-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "fallo-ia-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "fallo-json-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "normal-ccdfd6e836384a6aa8894745ea3d3579": 1
+          },
+          "append_por_evento": {
+            "normal-ccdfd6e836384a6aa8894745ea3d3579": 1
+          },
+          "snapshots": 5,
+          "operaciones": [
+            {
+              "orden": 1,
+              "fecha_utc": "2026-11-02T15:02:32.959806+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 2,
+              "fecha_utc": "2026-11-02T15:02:35.186577+00:00",
+              "operacion": "read",
+              "evento_id": "falla-lectura-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 503,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 3,
+              "fecha_utc": "2026-11-02T15:02:35.221103+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 4,
+              "fecha_utc": "2026-11-02T15:02:37.319371+00:00",
+              "operacion": "read",
+              "evento_id": "fallo-ia-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 5,
+              "fecha_utc": "2026-11-02T15:02:37.373370+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 6,
+              "fecha_utc": "2026-11-02T15:02:39.485967+00:00",
+              "operacion": "read",
+              "evento_id": "fallo-json-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 7,
+              "fecha_utc": "2026-11-02T15:02:39.549498+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 8,
+              "fecha_utc": "2026-11-02T15:02:41.655616+00:00",
+              "operacion": "read",
+              "evento_id": "normal-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 9,
+              "fecha_utc": "2026-11-02T15:02:41.711613+00:00",
+              "operacion": "append",
+              "evento_id": "normal-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": true
+            },
+            {
+              "orden": 10,
+              "fecha_utc": "2026-11-02T15:02:41.739146+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            }
+          ],
+          "actualizado_utc": "2026-11-02T15:02:41.739146+00:00",
+          "filas_por_evento": {
+            "normal-ccdfd6e836384a6aa8894745ea3d3579": 1
+          },
+          "total_filas": 1
+        },
+        "texto": "{\"tipo\": \"SERVIDOR_SINTETICO_NO_GOOGLE\", \"inicio_utc\": \"2026-11-02T15:01:51.078556+00:00\", \"filas\": [[\"normal-ccdfd6e836384a6aa8894745ea3d3579\", \"[\\\"5491186565960\\\",\\\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\\\"]\", \"2026-11-02T12:02:41.633-03:00\", \"5491186565960\", \"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\", \"solicitud_primera_consulta\", \"gestion_administrativa\", \"Persona Demo Harness\", \"24/11/2026 por la tarde\", \"[]\", \"[]\", \"false\", \"El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.\", \"pendiente_revision\", \"ADMIN_DEMO_R01\", \"90\", \"FINAL_R01\", \"[\\\"requisitos\\\"]\", \"whatsapp_simulado\", \"revision_administrativa\"]], \"read_por_evento\": {\"falla-lectura-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"fallo-ia-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"fallo-json-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"normal-ccdfd6e836384a6aa8894745ea3d3579\": 1}, \"append_por_evento\": {\"normal-ccdfd6e836384a6aa8894745ea3d3579\": 1}, \"snapshots\": 5, \"operaciones\": [{\"orden\": 1, \"fecha_utc\": \"2026-11-02T15:02:32.959806+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 2, \"fecha_utc\": \"2026-11-02T15:02:35.186577+00:00\", \"operacion\": \"read\", \"evento_id\": \"falla-lectura-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 503, \"fila_guardada_en_operacion\": false}, {\"orden\": 3, \"fecha_utc\": \"2026-11-02T15:02:35.221103+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 4, \"fecha_utc\": \"2026-11-02T15:02:37.319371+00:00\", \"operacion\": \"read\", \"evento_id\": \"fallo-ia-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 5, \"fecha_utc\": \"2026-11-02T15:02:37.373370+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 6, \"fecha_utc\": \"2026-11-02T15:02:39.485967+00:00\", \"operacion\": \"read\", \"evento_id\": \"fallo-json-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 7, \"fecha_utc\": \"2026-11-02T15:02:39.549498+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 8, \"fecha_utc\": \"2026-11-02T15:02:41.655616+00:00\", \"operacion\": \"read\", \"evento_id\": \"normal-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 9, \"fecha_utc\": \"2026-11-02T15:02:41.711613+00:00\", \"operacion\": \"append\", \"evento_id\": \"normal-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": true}, {\"orden\": 10, \"fecha_utc\": \"2026-11-02T15:02:41.739146+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}], \"actualizado_utc\": \"2026-11-02T15:02:41.739146+00:00\", \"filas_por_evento\": {\"normal-ccdfd6e836384a6aa8894745ea3d3579\": 1}, \"total_filas\": 1}"
+      },
+      "duracion_http_y_snapshot_ms": 2187,
+      "comprobaciones": {
+        "http": true,
+        "respuesta_objeto": true,
+        "registro_persistido": true,
+        "sin_envio": true,
+        "ok_coherente": true,
+        "duplicado": true,
+        "borrador_pendiente": true,
+        "snapshot_200": true,
+        "filas_exactas": true,
+        "append_sin_reintentos_ciegos": true,
+        "lecturas_esperadas": true,
+        "cotejo_20_campos": true
+      },
+      "diferencias": [],
+      "correcto": true
+    }
+  },
+  {
+    "caso": "escritura_falla_sin_guardar",
+    "ejecucion_id": 91,
+    "version_id": "5c310cdb-abed-41d2-9492-985ea180e799",
+    "terminal": "Error controlado",
+    "estado_n8n": "success",
+    "nodos_recorridos": [
+      "Recibir WhatsApp simulado",
+      "Normalizar entrada",
+      "Entrada valida",
+      "Destino fijo",
+      "Leer Sheets - segunda fuente",
+      "Preparar contexto",
+      "Evento nuevo",
+      "Asistente de recepcion",
+      "Validar y preparar registro",
+      "Registrar solicitud RAW",
+      "Escritura incierta",
+      "Error controlado"
+    ],
+    "coincide_http_nodo": true,
+    "resultado_sintetico": {
+      "tipo": "PRUEBA_SINTETICA_NO_NEGOCIO",
+      "caso": "escritura_falla_sin_guardar",
+      "fecha_utc": "2026-11-02T15:02:41.748150+00:00",
+      "entrada_ficticia": {
+        "evento_id": "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579",
+        "from": "5491186565960",
+        "text": {
+          "body": "Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde."
+        }
+      },
+      "esperado": {
+        "http": 503,
+        "error": "REGISTRO_INCIERTO",
+        "registro_persistido": null,
+        "filas_en_destino": 0,
+        "append_acumulados": 1,
+        "lecturas_acumuladas": 1,
+        "duplicado": false
+      },
+      "http": 503,
+      "respuesta": {
+        "ok": false,
+        "error": "REGISTRO_INCIERTO",
+        "http": 503,
+        "etapa": "escritura",
+        "registro_persistido": null,
+        "respuesta_enviada_whatsapp": false,
+        "reintento_automatico": false,
+        "recuperacion": "Conservar entrada y ejecución. Consultar evento_id en destino antes de repetir. Si resultado incierto, resolver manualmente.",
+        "evento_id": "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579",
+        "ejecucion_id": "91"
+      },
+      "respuesta_http_texto": "{\"ok\":false,\"error\":\"REGISTRO_INCIERTO\",\"http\":503,\"etapa\":\"escritura\",\"registro_persistido\":null,\"respuesta_enviada_whatsapp\":false,\"reintento_automatico\":false,\"recuperacion\":\"Conservar entrada y ejecución. Consultar evento_id en destino antes de repetir. Si resultado incierto, resolver manualmente.\",\"evento_id\":\"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\",\"ejecucion_id\":\"91\"}",
+      "lectura_independiente": {
+        "http": 200,
+        "respuesta": {
+          "tipo": "SERVIDOR_SINTETICO_NO_GOOGLE",
+          "inicio_utc": "2026-11-02T15:01:51.078556+00:00",
+          "filas": [
+            [
+              "normal-ccdfd6e836384a6aa8894745ea3d3579",
+              "[\"5491186565960\",\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\"]",
+              "2026-11-02T12:02:41.633-03:00",
+              "5491186565960",
+              "Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.",
+              "solicitud_primera_consulta",
+              "gestion_administrativa",
+              "Persona Demo Harness",
+              "24/11/2026 por la tarde",
+              "[]",
+              "[]",
+              "false",
+              "El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.",
+              "pendiente_revision",
+              "ADMIN_DEMO_R01",
+              "90",
+              "FINAL_R01",
+              "[\"requisitos\"]",
+              "whatsapp_simulado",
+              "revision_administrativa"
+            ]
+          ],
+          "read_por_evento": {
+            "falla-lectura-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "fallo-ia-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "fallo-json-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "normal-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579": 1
+          },
+          "append_por_evento": {
+            "normal-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579": 1
+          },
+          "snapshots": 6,
+          "operaciones": [
+            {
+              "orden": 1,
+              "fecha_utc": "2026-11-02T15:02:32.959806+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 2,
+              "fecha_utc": "2026-11-02T15:02:35.186577+00:00",
+              "operacion": "read",
+              "evento_id": "falla-lectura-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 503,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 3,
+              "fecha_utc": "2026-11-02T15:02:35.221103+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 4,
+              "fecha_utc": "2026-11-02T15:02:37.319371+00:00",
+              "operacion": "read",
+              "evento_id": "fallo-ia-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 5,
+              "fecha_utc": "2026-11-02T15:02:37.373370+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 6,
+              "fecha_utc": "2026-11-02T15:02:39.485967+00:00",
+              "operacion": "read",
+              "evento_id": "fallo-json-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 7,
+              "fecha_utc": "2026-11-02T15:02:39.549498+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 8,
+              "fecha_utc": "2026-11-02T15:02:41.655616+00:00",
+              "operacion": "read",
+              "evento_id": "normal-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 9,
+              "fecha_utc": "2026-11-02T15:02:41.711613+00:00",
+              "operacion": "append",
+              "evento_id": "normal-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": true
+            },
+            {
+              "orden": 10,
+              "fecha_utc": "2026-11-02T15:02:41.739146+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 11,
+              "fecha_utc": "2026-11-02T15:02:43.828571+00:00",
+              "operacion": "read",
+              "evento_id": "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 12,
+              "fecha_utc": "2026-11-02T15:02:43.874524+00:00",
+              "operacion": "append",
+              "evento_id": "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 503,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 13,
+              "fecha_utc": "2026-11-02T15:02:43.901695+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            }
+          ],
+          "actualizado_utc": "2026-11-02T15:02:43.901695+00:00",
+          "filas_por_evento": {
+            "normal-ccdfd6e836384a6aa8894745ea3d3579": 1
+          },
+          "total_filas": 1
+        },
+        "texto": "{\"tipo\": \"SERVIDOR_SINTETICO_NO_GOOGLE\", \"inicio_utc\": \"2026-11-02T15:01:51.078556+00:00\", \"filas\": [[\"normal-ccdfd6e836384a6aa8894745ea3d3579\", \"[\\\"5491186565960\\\",\\\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\\\"]\", \"2026-11-02T12:02:41.633-03:00\", \"5491186565960\", \"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\", \"solicitud_primera_consulta\", \"gestion_administrativa\", \"Persona Demo Harness\", \"24/11/2026 por la tarde\", \"[]\", \"[]\", \"false\", \"El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.\", \"pendiente_revision\", \"ADMIN_DEMO_R01\", \"90\", \"FINAL_R01\", \"[\\\"requisitos\\\"]\", \"whatsapp_simulado\", \"revision_administrativa\"]], \"read_por_evento\": {\"falla-lectura-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"fallo-ia-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"fallo-json-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"normal-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\": 1}, \"append_por_evento\": {\"normal-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\": 1}, \"snapshots\": 6, \"operaciones\": [{\"orden\": 1, \"fecha_utc\": \"2026-11-02T15:02:32.959806+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 2, \"fecha_utc\": \"2026-11-02T15:02:35.186577+00:00\", \"operacion\": \"read\", \"evento_id\": \"falla-lectura-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 503, \"fila_guardada_en_operacion\": false}, {\"orden\": 3, \"fecha_utc\": \"2026-11-02T15:02:35.221103+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 4, \"fecha_utc\": \"2026-11-02T15:02:37.319371+00:00\", \"operacion\": \"read\", \"evento_id\": \"fallo-ia-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 5, \"fecha_utc\": \"2026-11-02T15:02:37.373370+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 6, \"fecha_utc\": \"2026-11-02T15:02:39.485967+00:00\", \"operacion\": \"read\", \"evento_id\": \"fallo-json-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 7, \"fecha_utc\": \"2026-11-02T15:02:39.549498+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 8, \"fecha_utc\": \"2026-11-02T15:02:41.655616+00:00\", \"operacion\": \"read\", \"evento_id\": \"normal-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 9, \"fecha_utc\": \"2026-11-02T15:02:41.711613+00:00\", \"operacion\": \"append\", \"evento_id\": \"normal-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": true}, {\"orden\": 10, \"fecha_utc\": \"2026-11-02T15:02:41.739146+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 11, \"fecha_utc\": \"2026-11-02T15:02:43.828571+00:00\", \"operacion\": \"read\", \"evento_id\": \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 12, \"fecha_utc\": \"2026-11-02T15:02:43.874524+00:00\", \"operacion\": \"append\", \"evento_id\": \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 503, \"fila_guardada_en_operacion\": false}, {\"orden\": 13, \"fecha_utc\": \"2026-11-02T15:02:43.901695+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}], \"actualizado_utc\": \"2026-11-02T15:02:43.901695+00:00\", \"filas_por_evento\": {\"normal-ccdfd6e836384a6aa8894745ea3d3579\": 1}, \"total_filas\": 1}"
+      },
+      "duracion_http_y_snapshot_ms": 2156,
+      "comprobaciones": {
+        "http": true,
+        "respuesta_objeto": true,
+        "registro_persistido": true,
+        "sin_envio": true,
+        "ok_coherente": true,
+        "error_controlado": true,
+        "sin_retry_automatico": true,
+        "snapshot_200": true,
+        "filas_exactas": true,
+        "append_sin_reintentos_ciegos": true,
+        "lecturas_esperadas": true
+      },
+      "diferencias": [],
+      "correcto": true
+    }
+  },
+  {
+    "caso": "recuperacion_tras_ausencia_comprobada",
+    "ejecucion_id": 92,
+    "version_id": "5c310cdb-abed-41d2-9492-985ea180e799",
+    "terminal": "Resultado 200",
+    "estado_n8n": "success",
+    "nodos_recorridos": [
+      "Recibir WhatsApp simulado",
+      "Normalizar entrada",
+      "Entrada valida",
+      "Destino fijo",
+      "Leer Sheets - segunda fuente",
+      "Preparar contexto",
+      "Evento nuevo",
+      "Asistente de recepcion",
+      "Validar y preparar registro",
+      "Registrar solicitud RAW",
+      "Confirmar registro",
+      "Resultado 200"
+    ],
+    "coincide_http_nodo": true,
+    "resultado_sintetico": {
+      "tipo": "PRUEBA_SINTETICA_NO_NEGOCIO",
+      "caso": "recuperacion_tras_ausencia_comprobada",
+      "fecha_utc": "2026-11-02T15:02:43.910697+00:00",
+      "entrada_ficticia": {
+        "evento_id": "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579",
+        "from": "5491186565960",
+        "text": {
+          "body": "Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde."
+        }
+      },
+      "esperado": {
+        "http": 200,
+        "error": null,
+        "registro_persistido": true,
+        "filas_en_destino": 1,
+        "append_acumulados": 2,
+        "lecturas_acumuladas": 2,
+        "duplicado": false
+      },
+      "http": 200,
+      "respuesta": {
+        "ok": true,
+        "solicitud": {
+          "evento_id": "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579",
+          "fecha_recepcion": "2026-11-02T12:02:45.989-03:00",
+          "canal": "whatsapp_simulado",
+          "telefono": "5491186565960",
+          "mensaje": "Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.",
+          "tipo": "solicitud_primera_consulta",
+          "accion": "gestion_administrativa",
+          "nombre": "Persona Demo Harness",
+          "preferencia_turno": "24/11/2026 por la tarde",
+          "faltantes": [],
+          "alertas": [],
+          "derivar_profesional": false,
+          "temas_administrativos": [
+            "requisitos"
+          ],
+          "estado": "pendiente_revision",
+          "borrador": "El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.",
+          "prioridad": "revision_administrativa",
+          "config_version": "ADMIN_DEMO_R01",
+          "temas_consultados": [
+            "requisitos"
+          ],
+          "ejecucion_id": "92",
+          "version_flujo": "FINAL_R01"
+        },
+        "registro_persistido": true,
+        "rango_registrado": "Solicitudes!A3:T3",
+        "respuesta_enviada_whatsapp": false,
+        "borrador_pendiente_revision": true,
+        "duplicado": false
+      },
+      "respuesta_http_texto": "{\"ok\":true,\"solicitud\":{\"evento_id\":\"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\",\"fecha_recepcion\":\"2026-11-02T12:02:45.989-03:00\",\"canal\":\"whatsapp_simulado\",\"telefono\":\"5491186565960\",\"mensaje\":\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\",\"tipo\":\"solicitud_primera_consulta\",\"accion\":\"gestion_administrativa\",\"nombre\":\"Persona Demo Harness\",\"preferencia_turno\":\"24/11/2026 por la tarde\",\"faltantes\":[],\"alertas\":[],\"derivar_profesional\":false,\"temas_administrativos\":[\"requisitos\"],\"estado\":\"pendiente_revision\",\"borrador\":\"El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.\",\"prioridad\":\"revision_administrativa\",\"config_version\":\"ADMIN_DEMO_R01\",\"temas_consultados\":[\"requisitos\"],\"ejecucion_id\":\"92\",\"version_flujo\":\"FINAL_R01\"},\"registro_persistido\":true,\"rango_registrado\":\"Solicitudes!A3:T3\",\"respuesta_enviada_whatsapp\":false,\"borrador_pendiente_revision\":true,\"duplicado\":false}",
+      "lectura_independiente": {
+        "http": 200,
+        "respuesta": {
+          "tipo": "SERVIDOR_SINTETICO_NO_GOOGLE",
+          "inicio_utc": "2026-11-02T15:01:51.078556+00:00",
+          "filas": [
+            [
+              "normal-ccdfd6e836384a6aa8894745ea3d3579",
+              "[\"5491186565960\",\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\"]",
+              "2026-11-02T12:02:41.633-03:00",
+              "5491186565960",
+              "Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.",
+              "solicitud_primera_consulta",
+              "gestion_administrativa",
+              "Persona Demo Harness",
+              "24/11/2026 por la tarde",
+              "[]",
+              "[]",
+              "false",
+              "El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.",
+              "pendiente_revision",
+              "ADMIN_DEMO_R01",
+              "90",
+              "FINAL_R01",
+              "[\"requisitos\"]",
+              "whatsapp_simulado",
+              "revision_administrativa"
+            ],
+            [
+              "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579",
+              "[\"5491186565960\",\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\"]",
+              "2026-11-02T12:02:45.989-03:00",
+              "5491186565960",
+              "Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.",
+              "solicitud_primera_consulta",
+              "gestion_administrativa",
+              "Persona Demo Harness",
+              "24/11/2026 por la tarde",
+              "[]",
+              "[]",
+              "false",
+              "El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.",
+              "pendiente_revision",
+              "ADMIN_DEMO_R01",
+              "92",
+              "FINAL_R01",
+              "[\"requisitos\"]",
+              "whatsapp_simulado",
+              "revision_administrativa"
+            ]
+          ],
+          "read_por_evento": {
+            "falla-lectura-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "fallo-ia-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "fallo-json-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "normal-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579": 2
+          },
+          "append_por_evento": {
+            "normal-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579": 2
+          },
+          "snapshots": 7,
+          "operaciones": [
+            {
+              "orden": 1,
+              "fecha_utc": "2026-11-02T15:02:32.959806+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 2,
+              "fecha_utc": "2026-11-02T15:02:35.186577+00:00",
+              "operacion": "read",
+              "evento_id": "falla-lectura-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 503,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 3,
+              "fecha_utc": "2026-11-02T15:02:35.221103+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 4,
+              "fecha_utc": "2026-11-02T15:02:37.319371+00:00",
+              "operacion": "read",
+              "evento_id": "fallo-ia-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 5,
+              "fecha_utc": "2026-11-02T15:02:37.373370+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 6,
+              "fecha_utc": "2026-11-02T15:02:39.485967+00:00",
+              "operacion": "read",
+              "evento_id": "fallo-json-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 7,
+              "fecha_utc": "2026-11-02T15:02:39.549498+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 8,
+              "fecha_utc": "2026-11-02T15:02:41.655616+00:00",
+              "operacion": "read",
+              "evento_id": "normal-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 9,
+              "fecha_utc": "2026-11-02T15:02:41.711613+00:00",
+              "operacion": "append",
+              "evento_id": "normal-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": true
+            },
+            {
+              "orden": 10,
+              "fecha_utc": "2026-11-02T15:02:41.739146+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 11,
+              "fecha_utc": "2026-11-02T15:02:43.828571+00:00",
+              "operacion": "read",
+              "evento_id": "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 12,
+              "fecha_utc": "2026-11-02T15:02:43.874524+00:00",
+              "operacion": "append",
+              "evento_id": "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 503,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 13,
+              "fecha_utc": "2026-11-02T15:02:43.901695+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 14,
+              "fecha_utc": "2026-11-02T15:02:46.014295+00:00",
+              "operacion": "read",
+              "evento_id": "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 15,
+              "fecha_utc": "2026-11-02T15:02:46.060830+00:00",
+              "operacion": "append",
+              "evento_id": "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": true
+            },
+            {
+              "orden": 16,
+              "fecha_utc": "2026-11-02T15:02:46.086830+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            }
+          ],
+          "actualizado_utc": "2026-11-02T15:02:46.086830+00:00",
+          "filas_por_evento": {
+            "normal-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579": 1
+          },
+          "total_filas": 2
+        },
+        "texto": "{\"tipo\": \"SERVIDOR_SINTETICO_NO_GOOGLE\", \"inicio_utc\": \"2026-11-02T15:01:51.078556+00:00\", \"filas\": [[\"normal-ccdfd6e836384a6aa8894745ea3d3579\", \"[\\\"5491186565960\\\",\\\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\\\"]\", \"2026-11-02T12:02:41.633-03:00\", \"5491186565960\", \"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\", \"solicitud_primera_consulta\", \"gestion_administrativa\", \"Persona Demo Harness\", \"24/11/2026 por la tarde\", \"[]\", \"[]\", \"false\", \"El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.\", \"pendiente_revision\", \"ADMIN_DEMO_R01\", \"90\", \"FINAL_R01\", \"[\\\"requisitos\\\"]\", \"whatsapp_simulado\", \"revision_administrativa\"], [\"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\", \"[\\\"5491186565960\\\",\\\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\\\"]\", \"2026-11-02T12:02:45.989-03:00\", \"5491186565960\", \"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\", \"solicitud_primera_consulta\", \"gestion_administrativa\", \"Persona Demo Harness\", \"24/11/2026 por la tarde\", \"[]\", \"[]\", \"false\", \"El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.\", \"pendiente_revision\", \"ADMIN_DEMO_R01\", \"92\", \"FINAL_R01\", \"[\\\"requisitos\\\"]\", \"whatsapp_simulado\", \"revision_administrativa\"]], \"read_por_evento\": {\"falla-lectura-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"fallo-ia-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"fallo-json-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"normal-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\": 2}, \"append_por_evento\": {\"normal-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\": 2}, \"snapshots\": 7, \"operaciones\": [{\"orden\": 1, \"fecha_utc\": \"2026-11-02T15:02:32.959806+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 2, \"fecha_utc\": \"2026-11-02T15:02:35.186577+00:00\", \"operacion\": \"read\", \"evento_id\": \"falla-lectura-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 503, \"fila_guardada_en_operacion\": false}, {\"orden\": 3, \"fecha_utc\": \"2026-11-02T15:02:35.221103+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 4, \"fecha_utc\": \"2026-11-02T15:02:37.319371+00:00\", \"operacion\": \"read\", \"evento_id\": \"fallo-ia-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 5, \"fecha_utc\": \"2026-11-02T15:02:37.373370+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 6, \"fecha_utc\": \"2026-11-02T15:02:39.485967+00:00\", \"operacion\": \"read\", \"evento_id\": \"fallo-json-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 7, \"fecha_utc\": \"2026-11-02T15:02:39.549498+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 8, \"fecha_utc\": \"2026-11-02T15:02:41.655616+00:00\", \"operacion\": \"read\", \"evento_id\": \"normal-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 9, \"fecha_utc\": \"2026-11-02T15:02:41.711613+00:00\", \"operacion\": \"append\", \"evento_id\": \"normal-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": true}, {\"orden\": 10, \"fecha_utc\": \"2026-11-02T15:02:41.739146+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 11, \"fecha_utc\": \"2026-11-02T15:02:43.828571+00:00\", \"operacion\": \"read\", \"evento_id\": \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 12, \"fecha_utc\": \"2026-11-02T15:02:43.874524+00:00\", \"operacion\": \"append\", \"evento_id\": \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 503, \"fila_guardada_en_operacion\": false}, {\"orden\": 13, \"fecha_utc\": \"2026-11-02T15:02:43.901695+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 14, \"fecha_utc\": \"2026-11-02T15:02:46.014295+00:00\", \"operacion\": \"read\", \"evento_id\": \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 15, \"fecha_utc\": \"2026-11-02T15:02:46.060830+00:00\", \"operacion\": \"append\", \"evento_id\": \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": true}, {\"orden\": 16, \"fecha_utc\": \"2026-11-02T15:02:46.086830+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}], \"actualizado_utc\": \"2026-11-02T15:02:46.086830+00:00\", \"filas_por_evento\": {\"normal-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\": 1}, \"total_filas\": 2}"
+      },
+      "duracion_http_y_snapshot_ms": 2188,
+      "comprobaciones": {
+        "http": true,
+        "respuesta_objeto": true,
+        "registro_persistido": true,
+        "sin_envio": true,
+        "ok_coherente": true,
+        "duplicado": true,
+        "borrador_pendiente": true,
+        "snapshot_200": true,
+        "filas_exactas": true,
+        "append_sin_reintentos_ciegos": true,
+        "lecturas_esperadas": true,
+        "cotejo_20_campos": true
+      },
+      "diferencias": [],
+      "correcto": true
+    }
+  },
+  {
+    "caso": "fila_guardada_acuse_de_exito_perdido",
+    "ejecucion_id": 93,
+    "version_id": "5c310cdb-abed-41d2-9492-985ea180e799",
+    "terminal": "Error controlado",
+    "estado_n8n": "success",
+    "nodos_recorridos": [
+      "Recibir WhatsApp simulado",
+      "Normalizar entrada",
+      "Entrada valida",
+      "Destino fijo",
+      "Leer Sheets - segunda fuente",
+      "Preparar contexto",
+      "Evento nuevo",
+      "Asistente de recepcion",
+      "Validar y preparar registro",
+      "Registrar solicitud RAW",
+      "Escritura incierta",
+      "Error controlado"
+    ],
+    "coincide_http_nodo": true,
+    "resultado_sintetico": {
+      "tipo": "PRUEBA_SINTETICA_NO_NEGOCIO",
+      "caso": "fila_guardada_acuse_de_exito_perdido",
+      "fecha_utc": "2026-11-02T15:02:46.095833+00:00",
+      "entrada_ficticia": {
+        "evento_id": "acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579",
+        "from": "5491186565960",
+        "text": {
+          "body": "Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde."
+        }
+      },
+      "esperado": {
+        "http": 503,
+        "error": "REGISTRO_INCIERTO",
+        "registro_persistido": null,
+        "filas_en_destino": 1,
+        "append_acumulados": 1,
+        "lecturas_acumuladas": 1,
+        "duplicado": false
+      },
+      "http": 503,
+      "respuesta": {
+        "ok": false,
+        "error": "REGISTRO_INCIERTO",
+        "http": 503,
+        "etapa": "escritura",
+        "registro_persistido": null,
+        "respuesta_enviada_whatsapp": false,
+        "reintento_automatico": false,
+        "recuperacion": "Conservar entrada y ejecución. Consultar evento_id en destino antes de repetir. Si resultado incierto, resolver manualmente.",
+        "evento_id": "acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579",
+        "ejecucion_id": "93"
+      },
+      "respuesta_http_texto": "{\"ok\":false,\"error\":\"REGISTRO_INCIERTO\",\"http\":503,\"etapa\":\"escritura\",\"registro_persistido\":null,\"respuesta_enviada_whatsapp\":false,\"reintento_automatico\":false,\"recuperacion\":\"Conservar entrada y ejecución. Consultar evento_id en destino antes de repetir. Si resultado incierto, resolver manualmente.\",\"evento_id\":\"acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579\",\"ejecucion_id\":\"93\"}",
+      "lectura_independiente": {
+        "http": 200,
+        "respuesta": {
+          "tipo": "SERVIDOR_SINTETICO_NO_GOOGLE",
+          "inicio_utc": "2026-11-02T15:01:51.078556+00:00",
+          "filas": [
+            [
+              "normal-ccdfd6e836384a6aa8894745ea3d3579",
+              "[\"5491186565960\",\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\"]",
+              "2026-11-02T12:02:41.633-03:00",
+              "5491186565960",
+              "Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.",
+              "solicitud_primera_consulta",
+              "gestion_administrativa",
+              "Persona Demo Harness",
+              "24/11/2026 por la tarde",
+              "[]",
+              "[]",
+              "false",
+              "El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.",
+              "pendiente_revision",
+              "ADMIN_DEMO_R01",
+              "90",
+              "FINAL_R01",
+              "[\"requisitos\"]",
+              "whatsapp_simulado",
+              "revision_administrativa"
+            ],
+            [
+              "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579",
+              "[\"5491186565960\",\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\"]",
+              "2026-11-02T12:02:45.989-03:00",
+              "5491186565960",
+              "Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.",
+              "solicitud_primera_consulta",
+              "gestion_administrativa",
+              "Persona Demo Harness",
+              "24/11/2026 por la tarde",
+              "[]",
+              "[]",
+              "false",
+              "El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.",
+              "pendiente_revision",
+              "ADMIN_DEMO_R01",
+              "92",
+              "FINAL_R01",
+              "[\"requisitos\"]",
+              "whatsapp_simulado",
+              "revision_administrativa"
+            ],
+            [
+              "acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579",
+              "[\"5491186565960\",\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\"]",
+              "2026-11-02T12:02:48.194-03:00",
+              "5491186565960",
+              "Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.",
+              "solicitud_primera_consulta",
+              "gestion_administrativa",
+              "Persona Demo Harness",
+              "24/11/2026 por la tarde",
+              "[]",
+              "[]",
+              "false",
+              "El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.",
+              "pendiente_revision",
+              "ADMIN_DEMO_R01",
+              "93",
+              "FINAL_R01",
+              "[\"requisitos\"]",
+              "whatsapp_simulado",
+              "revision_administrativa"
+            ]
+          ],
+          "read_por_evento": {
+            "falla-lectura-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "fallo-ia-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "fallo-json-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "normal-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579": 2,
+            "acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579": 1
+          },
+          "append_por_evento": {
+            "normal-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579": 2,
+            "acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579": 1
+          },
+          "snapshots": 8,
+          "operaciones": [
+            {
+              "orden": 1,
+              "fecha_utc": "2026-11-02T15:02:32.959806+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 2,
+              "fecha_utc": "2026-11-02T15:02:35.186577+00:00",
+              "operacion": "read",
+              "evento_id": "falla-lectura-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 503,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 3,
+              "fecha_utc": "2026-11-02T15:02:35.221103+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 4,
+              "fecha_utc": "2026-11-02T15:02:37.319371+00:00",
+              "operacion": "read",
+              "evento_id": "fallo-ia-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 5,
+              "fecha_utc": "2026-11-02T15:02:37.373370+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 6,
+              "fecha_utc": "2026-11-02T15:02:39.485967+00:00",
+              "operacion": "read",
+              "evento_id": "fallo-json-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 7,
+              "fecha_utc": "2026-11-02T15:02:39.549498+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 8,
+              "fecha_utc": "2026-11-02T15:02:41.655616+00:00",
+              "operacion": "read",
+              "evento_id": "normal-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 9,
+              "fecha_utc": "2026-11-02T15:02:41.711613+00:00",
+              "operacion": "append",
+              "evento_id": "normal-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": true
+            },
+            {
+              "orden": 10,
+              "fecha_utc": "2026-11-02T15:02:41.739146+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 11,
+              "fecha_utc": "2026-11-02T15:02:43.828571+00:00",
+              "operacion": "read",
+              "evento_id": "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 12,
+              "fecha_utc": "2026-11-02T15:02:43.874524+00:00",
+              "operacion": "append",
+              "evento_id": "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 503,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 13,
+              "fecha_utc": "2026-11-02T15:02:43.901695+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 14,
+              "fecha_utc": "2026-11-02T15:02:46.014295+00:00",
+              "operacion": "read",
+              "evento_id": "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 15,
+              "fecha_utc": "2026-11-02T15:02:46.060830+00:00",
+              "operacion": "append",
+              "evento_id": "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": true
+            },
+            {
+              "orden": 16,
+              "fecha_utc": "2026-11-02T15:02:46.086830+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 17,
+              "fecha_utc": "2026-11-02T15:02:48.220869+00:00",
+              "operacion": "read",
+              "evento_id": "acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 18,
+              "fecha_utc": "2026-11-02T15:02:48.287759+00:00",
+              "operacion": "append",
+              "evento_id": "acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 503,
+              "fila_guardada_en_operacion": true
+            },
+            {
+              "orden": 19,
+              "fecha_utc": "2026-11-02T15:02:48.314846+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            }
+          ],
+          "actualizado_utc": "2026-11-02T15:02:48.314846+00:00",
+          "filas_por_evento": {
+            "normal-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579": 1
+          },
+          "total_filas": 3
+        },
+        "texto": "{\"tipo\": \"SERVIDOR_SINTETICO_NO_GOOGLE\", \"inicio_utc\": \"2026-11-02T15:01:51.078556+00:00\", \"filas\": [[\"normal-ccdfd6e836384a6aa8894745ea3d3579\", \"[\\\"5491186565960\\\",\\\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\\\"]\", \"2026-11-02T12:02:41.633-03:00\", \"5491186565960\", \"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\", \"solicitud_primera_consulta\", \"gestion_administrativa\", \"Persona Demo Harness\", \"24/11/2026 por la tarde\", \"[]\", \"[]\", \"false\", \"El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.\", \"pendiente_revision\", \"ADMIN_DEMO_R01\", \"90\", \"FINAL_R01\", \"[\\\"requisitos\\\"]\", \"whatsapp_simulado\", \"revision_administrativa\"], [\"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\", \"[\\\"5491186565960\\\",\\\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\\\"]\", \"2026-11-02T12:02:45.989-03:00\", \"5491186565960\", \"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\", \"solicitud_primera_consulta\", \"gestion_administrativa\", \"Persona Demo Harness\", \"24/11/2026 por la tarde\", \"[]\", \"[]\", \"false\", \"El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.\", \"pendiente_revision\", \"ADMIN_DEMO_R01\", \"92\", \"FINAL_R01\", \"[\\\"requisitos\\\"]\", \"whatsapp_simulado\", \"revision_administrativa\"], [\"acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579\", \"[\\\"5491186565960\\\",\\\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\\\"]\", \"2026-11-02T12:02:48.194-03:00\", \"5491186565960\", \"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\", \"solicitud_primera_consulta\", \"gestion_administrativa\", \"Persona Demo Harness\", \"24/11/2026 por la tarde\", \"[]\", \"[]\", \"false\", \"El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.\", \"pendiente_revision\", \"ADMIN_DEMO_R01\", \"93\", \"FINAL_R01\", \"[\\\"requisitos\\\"]\", \"whatsapp_simulado\", \"revision_administrativa\"]], \"read_por_evento\": {\"falla-lectura-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"fallo-ia-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"fallo-json-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"normal-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\": 2, \"acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579\": 1}, \"append_por_evento\": {\"normal-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\": 2, \"acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579\": 1}, \"snapshots\": 8, \"operaciones\": [{\"orden\": 1, \"fecha_utc\": \"2026-11-02T15:02:32.959806+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 2, \"fecha_utc\": \"2026-11-02T15:02:35.186577+00:00\", \"operacion\": \"read\", \"evento_id\": \"falla-lectura-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 503, \"fila_guardada_en_operacion\": false}, {\"orden\": 3, \"fecha_utc\": \"2026-11-02T15:02:35.221103+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 4, \"fecha_utc\": \"2026-11-02T15:02:37.319371+00:00\", \"operacion\": \"read\", \"evento_id\": \"fallo-ia-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 5, \"fecha_utc\": \"2026-11-02T15:02:37.373370+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 6, \"fecha_utc\": \"2026-11-02T15:02:39.485967+00:00\", \"operacion\": \"read\", \"evento_id\": \"fallo-json-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 7, \"fecha_utc\": \"2026-11-02T15:02:39.549498+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 8, \"fecha_utc\": \"2026-11-02T15:02:41.655616+00:00\", \"operacion\": \"read\", \"evento_id\": \"normal-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 9, \"fecha_utc\": \"2026-11-02T15:02:41.711613+00:00\", \"operacion\": \"append\", \"evento_id\": \"normal-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": true}, {\"orden\": 10, \"fecha_utc\": \"2026-11-02T15:02:41.739146+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 11, \"fecha_utc\": \"2026-11-02T15:02:43.828571+00:00\", \"operacion\": \"read\", \"evento_id\": \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 12, \"fecha_utc\": \"2026-11-02T15:02:43.874524+00:00\", \"operacion\": \"append\", \"evento_id\": \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 503, \"fila_guardada_en_operacion\": false}, {\"orden\": 13, \"fecha_utc\": \"2026-11-02T15:02:43.901695+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 14, \"fecha_utc\": \"2026-11-02T15:02:46.014295+00:00\", \"operacion\": \"read\", \"evento_id\": \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 15, \"fecha_utc\": \"2026-11-02T15:02:46.060830+00:00\", \"operacion\": \"append\", \"evento_id\": \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": true}, {\"orden\": 16, \"fecha_utc\": \"2026-11-02T15:02:46.086830+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 17, \"fecha_utc\": \"2026-11-02T15:02:48.220869+00:00\", \"operacion\": \"read\", \"evento_id\": \"acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 18, \"fecha_utc\": \"2026-11-02T15:02:48.287759+00:00\", \"operacion\": \"append\", \"evento_id\": \"acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 503, \"fila_guardada_en_operacion\": true}, {\"orden\": 19, \"fecha_utc\": \"2026-11-02T15:02:48.314846+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}], \"actualizado_utc\": \"2026-11-02T15:02:48.314846+00:00\", \"filas_por_evento\": {\"normal-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579\": 1}, \"total_filas\": 3}"
+      },
+      "duracion_http_y_snapshot_ms": 2219,
+      "comprobaciones": {
+        "http": true,
+        "respuesta_objeto": true,
+        "registro_persistido": true,
+        "sin_envio": true,
+        "ok_coherente": true,
+        "error_controlado": true,
+        "sin_retry_automatico": true,
+        "snapshot_200": true,
+        "filas_exactas": true,
+        "append_sin_reintentos_ciegos": true,
+        "lecturas_esperadas": true
+      },
+      "diferencias": [],
+      "correcto": true
+    }
+  },
+  {
+    "caso": "recuperacion_tras_existencia_comprobada",
+    "ejecucion_id": 94,
+    "version_id": "5c310cdb-abed-41d2-9492-985ea180e799",
+    "terminal": "Duplicado o conflicto",
+    "estado_n8n": "success",
+    "nodos_recorridos": [
+      "Recibir WhatsApp simulado",
+      "Normalizar entrada",
+      "Entrada valida",
+      "Destino fijo",
+      "Leer Sheets - segunda fuente",
+      "Preparar contexto",
+      "Evento nuevo",
+      "Duplicado o conflicto"
+    ],
+    "coincide_http_nodo": true,
+    "resultado_sintetico": {
+      "tipo": "PRUEBA_SINTETICA_NO_NEGOCIO",
+      "caso": "recuperacion_tras_existencia_comprobada",
+      "fecha_utc": "2026-11-02T15:02:48.324846+00:00",
+      "entrada_ficticia": {
+        "evento_id": "acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579",
+        "from": "5491186565960",
+        "text": {
+          "body": "Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde."
+        }
+      },
+      "esperado": {
+        "http": 200,
+        "error": null,
+        "registro_persistido": true,
+        "filas_en_destino": 1,
+        "append_acumulados": 1,
+        "lecturas_acumuladas": 2,
+        "duplicado": true
+      },
+      "http": 200,
+      "respuesta": {
+        "valido": true,
+        "evento_id": "acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579",
+        "telefono": "5491186565960",
+        "mensaje": "Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.",
+        "entrada_canonica": "[\"5491186565960\",\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\"]",
+        "fecha_recepcion": "2026-11-02T12:02:50.379-03:00",
+        "canal": "whatsapp_simulado",
+        "ejecucion_id": "94",
+        "version_flujo": "FINAL_R01",
+        "entrada_ia": {
+          "mensaje": "Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde."
+        },
+        "continuar": false,
+        "http": 200,
+        "ok": true,
+        "error": null,
+        "duplicado": true,
+        "registro_persistido": true,
+        "respuesta_enviada_whatsapp": false,
+        "detalle": "Evento ya registrado; no se volvió a ejecutar IA ni escritura."
+      },
+      "respuesta_http_texto": "{\"valido\":true,\"evento_id\":\"acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579\",\"telefono\":\"5491186565960\",\"mensaje\":\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\",\"entrada_canonica\":\"[\\\"5491186565960\\\",\\\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\\\"]\",\"fecha_recepcion\":\"2026-11-02T12:02:50.379-03:00\",\"canal\":\"whatsapp_simulado\",\"ejecucion_id\":\"94\",\"version_flujo\":\"FINAL_R01\",\"entrada_ia\":{\"mensaje\":\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\"},\"continuar\":false,\"http\":200,\"ok\":true,\"error\":null,\"duplicado\":true,\"registro_persistido\":true,\"respuesta_enviada_whatsapp\":false,\"detalle\":\"Evento ya registrado; no se volvió a ejecutar IA ni escritura.\"}",
+      "lectura_independiente": {
+        "http": 200,
+        "respuesta": {
+          "tipo": "SERVIDOR_SINTETICO_NO_GOOGLE",
+          "inicio_utc": "2026-11-02T15:01:51.078556+00:00",
+          "filas": [
+            [
+              "normal-ccdfd6e836384a6aa8894745ea3d3579",
+              "[\"5491186565960\",\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\"]",
+              "2026-11-02T12:02:41.633-03:00",
+              "5491186565960",
+              "Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.",
+              "solicitud_primera_consulta",
+              "gestion_administrativa",
+              "Persona Demo Harness",
+              "24/11/2026 por la tarde",
+              "[]",
+              "[]",
+              "false",
+              "El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.",
+              "pendiente_revision",
+              "ADMIN_DEMO_R01",
+              "90",
+              "FINAL_R01",
+              "[\"requisitos\"]",
+              "whatsapp_simulado",
+              "revision_administrativa"
+            ],
+            [
+              "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579",
+              "[\"5491186565960\",\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\"]",
+              "2026-11-02T12:02:45.989-03:00",
+              "5491186565960",
+              "Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.",
+              "solicitud_primera_consulta",
+              "gestion_administrativa",
+              "Persona Demo Harness",
+              "24/11/2026 por la tarde",
+              "[]",
+              "[]",
+              "false",
+              "El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.",
+              "pendiente_revision",
+              "ADMIN_DEMO_R01",
+              "92",
+              "FINAL_R01",
+              "[\"requisitos\"]",
+              "whatsapp_simulado",
+              "revision_administrativa"
+            ],
+            [
+              "acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579",
+              "[\"5491186565960\",\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\"]",
+              "2026-11-02T12:02:48.194-03:00",
+              "5491186565960",
+              "Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.",
+              "solicitud_primera_consulta",
+              "gestion_administrativa",
+              "Persona Demo Harness",
+              "24/11/2026 por la tarde",
+              "[]",
+              "[]",
+              "false",
+              "El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.",
+              "pendiente_revision",
+              "ADMIN_DEMO_R01",
+              "93",
+              "FINAL_R01",
+              "[\"requisitos\"]",
+              "whatsapp_simulado",
+              "revision_administrativa"
+            ]
+          ],
+          "read_por_evento": {
+            "falla-lectura-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "fallo-ia-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "fallo-json-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "normal-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579": 2,
+            "acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579": 2
+          },
+          "append_por_evento": {
+            "normal-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579": 2,
+            "acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579": 1
+          },
+          "snapshots": 9,
+          "operaciones": [
+            {
+              "orden": 1,
+              "fecha_utc": "2026-11-02T15:02:32.959806+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 2,
+              "fecha_utc": "2026-11-02T15:02:35.186577+00:00",
+              "operacion": "read",
+              "evento_id": "falla-lectura-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 503,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 3,
+              "fecha_utc": "2026-11-02T15:02:35.221103+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 4,
+              "fecha_utc": "2026-11-02T15:02:37.319371+00:00",
+              "operacion": "read",
+              "evento_id": "fallo-ia-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 5,
+              "fecha_utc": "2026-11-02T15:02:37.373370+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 6,
+              "fecha_utc": "2026-11-02T15:02:39.485967+00:00",
+              "operacion": "read",
+              "evento_id": "fallo-json-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 7,
+              "fecha_utc": "2026-11-02T15:02:39.549498+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 8,
+              "fecha_utc": "2026-11-02T15:02:41.655616+00:00",
+              "operacion": "read",
+              "evento_id": "normal-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 9,
+              "fecha_utc": "2026-11-02T15:02:41.711613+00:00",
+              "operacion": "append",
+              "evento_id": "normal-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": true
+            },
+            {
+              "orden": 10,
+              "fecha_utc": "2026-11-02T15:02:41.739146+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 11,
+              "fecha_utc": "2026-11-02T15:02:43.828571+00:00",
+              "operacion": "read",
+              "evento_id": "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 12,
+              "fecha_utc": "2026-11-02T15:02:43.874524+00:00",
+              "operacion": "append",
+              "evento_id": "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 503,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 13,
+              "fecha_utc": "2026-11-02T15:02:43.901695+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 14,
+              "fecha_utc": "2026-11-02T15:02:46.014295+00:00",
+              "operacion": "read",
+              "evento_id": "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 15,
+              "fecha_utc": "2026-11-02T15:02:46.060830+00:00",
+              "operacion": "append",
+              "evento_id": "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": true
+            },
+            {
+              "orden": 16,
+              "fecha_utc": "2026-11-02T15:02:46.086830+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 17,
+              "fecha_utc": "2026-11-02T15:02:48.220869+00:00",
+              "operacion": "read",
+              "evento_id": "acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 18,
+              "fecha_utc": "2026-11-02T15:02:48.287759+00:00",
+              "operacion": "append",
+              "evento_id": "acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 503,
+              "fila_guardada_en_operacion": true
+            },
+            {
+              "orden": 19,
+              "fecha_utc": "2026-11-02T15:02:48.314846+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 20,
+              "fecha_utc": "2026-11-02T15:02:50.399809+00:00",
+              "operacion": "read",
+              "evento_id": "acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 21,
+              "fecha_utc": "2026-11-02T15:02:50.428352+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            }
+          ],
+          "actualizado_utc": "2026-11-02T15:02:50.428352+00:00",
+          "filas_por_evento": {
+            "normal-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579": 1
+          },
+          "total_filas": 3
+        },
+        "texto": "{\"tipo\": \"SERVIDOR_SINTETICO_NO_GOOGLE\", \"inicio_utc\": \"2026-11-02T15:01:51.078556+00:00\", \"filas\": [[\"normal-ccdfd6e836384a6aa8894745ea3d3579\", \"[\\\"5491186565960\\\",\\\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\\\"]\", \"2026-11-02T12:02:41.633-03:00\", \"5491186565960\", \"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\", \"solicitud_primera_consulta\", \"gestion_administrativa\", \"Persona Demo Harness\", \"24/11/2026 por la tarde\", \"[]\", \"[]\", \"false\", \"El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.\", \"pendiente_revision\", \"ADMIN_DEMO_R01\", \"90\", \"FINAL_R01\", \"[\\\"requisitos\\\"]\", \"whatsapp_simulado\", \"revision_administrativa\"], [\"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\", \"[\\\"5491186565960\\\",\\\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\\\"]\", \"2026-11-02T12:02:45.989-03:00\", \"5491186565960\", \"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\", \"solicitud_primera_consulta\", \"gestion_administrativa\", \"Persona Demo Harness\", \"24/11/2026 por la tarde\", \"[]\", \"[]\", \"false\", \"El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.\", \"pendiente_revision\", \"ADMIN_DEMO_R01\", \"92\", \"FINAL_R01\", \"[\\\"requisitos\\\"]\", \"whatsapp_simulado\", \"revision_administrativa\"], [\"acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579\", \"[\\\"5491186565960\\\",\\\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\\\"]\", \"2026-11-02T12:02:48.194-03:00\", \"5491186565960\", \"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\", \"solicitud_primera_consulta\", \"gestion_administrativa\", \"Persona Demo Harness\", \"24/11/2026 por la tarde\", \"[]\", \"[]\", \"false\", \"El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.\", \"pendiente_revision\", \"ADMIN_DEMO_R01\", \"93\", \"FINAL_R01\", \"[\\\"requisitos\\\"]\", \"whatsapp_simulado\", \"revision_administrativa\"]], \"read_por_evento\": {\"falla-lectura-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"fallo-ia-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"fallo-json-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"normal-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\": 2, \"acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579\": 2}, \"append_por_evento\": {\"normal-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\": 2, \"acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579\": 1}, \"snapshots\": 9, \"operaciones\": [{\"orden\": 1, \"fecha_utc\": \"2026-11-02T15:02:32.959806+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 2, \"fecha_utc\": \"2026-11-02T15:02:35.186577+00:00\", \"operacion\": \"read\", \"evento_id\": \"falla-lectura-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 503, \"fila_guardada_en_operacion\": false}, {\"orden\": 3, \"fecha_utc\": \"2026-11-02T15:02:35.221103+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 4, \"fecha_utc\": \"2026-11-02T15:02:37.319371+00:00\", \"operacion\": \"read\", \"evento_id\": \"fallo-ia-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 5, \"fecha_utc\": \"2026-11-02T15:02:37.373370+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 6, \"fecha_utc\": \"2026-11-02T15:02:39.485967+00:00\", \"operacion\": \"read\", \"evento_id\": \"fallo-json-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 7, \"fecha_utc\": \"2026-11-02T15:02:39.549498+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 8, \"fecha_utc\": \"2026-11-02T15:02:41.655616+00:00\", \"operacion\": \"read\", \"evento_id\": \"normal-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 9, \"fecha_utc\": \"2026-11-02T15:02:41.711613+00:00\", \"operacion\": \"append\", \"evento_id\": \"normal-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": true}, {\"orden\": 10, \"fecha_utc\": \"2026-11-02T15:02:41.739146+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 11, \"fecha_utc\": \"2026-11-02T15:02:43.828571+00:00\", \"operacion\": \"read\", \"evento_id\": \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 12, \"fecha_utc\": \"2026-11-02T15:02:43.874524+00:00\", \"operacion\": \"append\", \"evento_id\": \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 503, \"fila_guardada_en_operacion\": false}, {\"orden\": 13, \"fecha_utc\": \"2026-11-02T15:02:43.901695+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 14, \"fecha_utc\": \"2026-11-02T15:02:46.014295+00:00\", \"operacion\": \"read\", \"evento_id\": \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 15, \"fecha_utc\": \"2026-11-02T15:02:46.060830+00:00\", \"operacion\": \"append\", \"evento_id\": \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": true}, {\"orden\": 16, \"fecha_utc\": \"2026-11-02T15:02:46.086830+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 17, \"fecha_utc\": \"2026-11-02T15:02:48.220869+00:00\", \"operacion\": \"read\", \"evento_id\": \"acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 18, \"fecha_utc\": \"2026-11-02T15:02:48.287759+00:00\", \"operacion\": \"append\", \"evento_id\": \"acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 503, \"fila_guardada_en_operacion\": true}, {\"orden\": 19, \"fecha_utc\": \"2026-11-02T15:02:48.314846+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 20, \"fecha_utc\": \"2026-11-02T15:02:50.399809+00:00\", \"operacion\": \"read\", \"evento_id\": \"acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 21, \"fecha_utc\": \"2026-11-02T15:02:50.428352+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}], \"actualizado_utc\": \"2026-11-02T15:02:50.428352+00:00\", \"filas_por_evento\": {\"normal-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579\": 1}, \"total_filas\": 3}"
+      },
+      "duracion_http_y_snapshot_ms": 2110,
+      "comprobaciones": {
+        "http": true,
+        "respuesta_objeto": true,
+        "registro_persistido": true,
+        "sin_envio": true,
+        "ok_coherente": true,
+        "duplicado": true,
+        "snapshot_200": true,
+        "filas_exactas": true,
+        "append_sin_reintentos_ciegos": true,
+        "lecturas_esperadas": true
+      },
+      "diferencias": [],
+      "correcto": true
+    }
+  },
+  {
+    "caso": "fila_guardada_acuse_incompleto",
+    "ejecucion_id": 96,
+    "version_id": "5c310cdb-abed-41d2-9492-985ea180e799",
+    "terminal": "Error controlado",
+    "estado_n8n": "success",
+    "nodos_recorridos": [
+      "Recibir WhatsApp simulado",
+      "Normalizar entrada",
+      "Entrada valida",
+      "Destino fijo",
+      "Leer Sheets - segunda fuente",
+      "Preparar contexto",
+      "Evento nuevo",
+      "Asistente de recepcion",
+      "Validar y preparar registro",
+      "Registrar solicitud RAW",
+      "Confirmar registro",
+      "Escritura incierta",
+      "Error controlado"
+    ],
+    "coincide_http_nodo": true,
+    "resultado_sintetico": {
+      "tipo": "PRUEBA_SINTETICA_NO_NEGOCIO",
+      "caso": "fila_guardada_acuse_incompleto",
+      "fecha_utc": "2026-11-02T15:02:50.437354+00:00",
+      "entrada_ficticia": {
+        "evento_id": "acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579",
+        "from": "5491186565960",
+        "text": {
+          "body": "Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde."
+        }
+      },
+      "esperado": {
+        "http": 503,
+        "error": "REGISTRO_INCIERTO",
+        "registro_persistido": null,
+        "filas_en_destino": 1,
+        "append_acumulados": 1,
+        "lecturas_acumuladas": 1,
+        "duplicado": false
+      },
+      "http": 503,
+      "respuesta": {
+        "ok": false,
+        "error": "REGISTRO_INCIERTO",
+        "http": 503,
+        "etapa": "escritura",
+        "registro_persistido": null,
+        "respuesta_enviada_whatsapp": false,
+        "reintento_automatico": false,
+        "recuperacion": "Conservar entrada y ejecución. Consultar evento_id en destino antes de repetir. Si resultado incierto, resolver manualmente.",
+        "evento_id": "acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579",
+        "ejecucion_id": "96"
+      },
+      "respuesta_http_texto": "{\"ok\":false,\"error\":\"REGISTRO_INCIERTO\",\"http\":503,\"etapa\":\"escritura\",\"registro_persistido\":null,\"respuesta_enviada_whatsapp\":false,\"reintento_automatico\":false,\"recuperacion\":\"Conservar entrada y ejecución. Consultar evento_id en destino antes de repetir. Si resultado incierto, resolver manualmente.\",\"evento_id\":\"acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579\",\"ejecucion_id\":\"96\"}",
+      "lectura_independiente": {
+        "http": 200,
+        "respuesta": {
+          "tipo": "SERVIDOR_SINTETICO_NO_GOOGLE",
+          "inicio_utc": "2026-11-02T15:01:51.078556+00:00",
+          "filas": [
+            [
+              "normal-ccdfd6e836384a6aa8894745ea3d3579",
+              "[\"5491186565960\",\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\"]",
+              "2026-11-02T12:02:41.633-03:00",
+              "5491186565960",
+              "Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.",
+              "solicitud_primera_consulta",
+              "gestion_administrativa",
+              "Persona Demo Harness",
+              "24/11/2026 por la tarde",
+              "[]",
+              "[]",
+              "false",
+              "El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.",
+              "pendiente_revision",
+              "ADMIN_DEMO_R01",
+              "90",
+              "FINAL_R01",
+              "[\"requisitos\"]",
+              "whatsapp_simulado",
+              "revision_administrativa"
+            ],
+            [
+              "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579",
+              "[\"5491186565960\",\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\"]",
+              "2026-11-02T12:02:45.989-03:00",
+              "5491186565960",
+              "Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.",
+              "solicitud_primera_consulta",
+              "gestion_administrativa",
+              "Persona Demo Harness",
+              "24/11/2026 por la tarde",
+              "[]",
+              "[]",
+              "false",
+              "El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.",
+              "pendiente_revision",
+              "ADMIN_DEMO_R01",
+              "92",
+              "FINAL_R01",
+              "[\"requisitos\"]",
+              "whatsapp_simulado",
+              "revision_administrativa"
+            ],
+            [
+              "acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579",
+              "[\"5491186565960\",\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\"]",
+              "2026-11-02T12:02:48.194-03:00",
+              "5491186565960",
+              "Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.",
+              "solicitud_primera_consulta",
+              "gestion_administrativa",
+              "Persona Demo Harness",
+              "24/11/2026 por la tarde",
+              "[]",
+              "[]",
+              "false",
+              "El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.",
+              "pendiente_revision",
+              "ADMIN_DEMO_R01",
+              "93",
+              "FINAL_R01",
+              "[\"requisitos\"]",
+              "whatsapp_simulado",
+              "revision_administrativa"
+            ],
+            [
+              "acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579",
+              "[\"5491186565960\",\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\"]",
+              "2026-11-02T12:02:52.485-03:00",
+              "5491186565960",
+              "Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.",
+              "solicitud_primera_consulta",
+              "gestion_administrativa",
+              "Persona Demo Harness",
+              "24/11/2026 por la tarde",
+              "[]",
+              "[]",
+              "false",
+              "El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.",
+              "pendiente_revision",
+              "ADMIN_DEMO_R01",
+              "96",
+              "FINAL_R01",
+              "[\"requisitos\"]",
+              "whatsapp_simulado",
+              "revision_administrativa"
+            ]
+          ],
+          "read_por_evento": {
+            "falla-lectura-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "fallo-ia-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "fallo-json-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "normal-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579": 2,
+            "acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579": 2,
+            "acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579": 1
+          },
+          "append_por_evento": {
+            "normal-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579": 2,
+            "acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579": 1
+          },
+          "snapshots": 10,
+          "operaciones": [
+            {
+              "orden": 1,
+              "fecha_utc": "2026-11-02T15:02:32.959806+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 2,
+              "fecha_utc": "2026-11-02T15:02:35.186577+00:00",
+              "operacion": "read",
+              "evento_id": "falla-lectura-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 503,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 3,
+              "fecha_utc": "2026-11-02T15:02:35.221103+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 4,
+              "fecha_utc": "2026-11-02T15:02:37.319371+00:00",
+              "operacion": "read",
+              "evento_id": "fallo-ia-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 5,
+              "fecha_utc": "2026-11-02T15:02:37.373370+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 6,
+              "fecha_utc": "2026-11-02T15:02:39.485967+00:00",
+              "operacion": "read",
+              "evento_id": "fallo-json-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 7,
+              "fecha_utc": "2026-11-02T15:02:39.549498+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 8,
+              "fecha_utc": "2026-11-02T15:02:41.655616+00:00",
+              "operacion": "read",
+              "evento_id": "normal-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 9,
+              "fecha_utc": "2026-11-02T15:02:41.711613+00:00",
+              "operacion": "append",
+              "evento_id": "normal-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": true
+            },
+            {
+              "orden": 10,
+              "fecha_utc": "2026-11-02T15:02:41.739146+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 11,
+              "fecha_utc": "2026-11-02T15:02:43.828571+00:00",
+              "operacion": "read",
+              "evento_id": "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 12,
+              "fecha_utc": "2026-11-02T15:02:43.874524+00:00",
+              "operacion": "append",
+              "evento_id": "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 503,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 13,
+              "fecha_utc": "2026-11-02T15:02:43.901695+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 14,
+              "fecha_utc": "2026-11-02T15:02:46.014295+00:00",
+              "operacion": "read",
+              "evento_id": "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 15,
+              "fecha_utc": "2026-11-02T15:02:46.060830+00:00",
+              "operacion": "append",
+              "evento_id": "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": true
+            },
+            {
+              "orden": 16,
+              "fecha_utc": "2026-11-02T15:02:46.086830+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 17,
+              "fecha_utc": "2026-11-02T15:02:48.220869+00:00",
+              "operacion": "read",
+              "evento_id": "acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 18,
+              "fecha_utc": "2026-11-02T15:02:48.287759+00:00",
+              "operacion": "append",
+              "evento_id": "acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 503,
+              "fila_guardada_en_operacion": true
+            },
+            {
+              "orden": 19,
+              "fecha_utc": "2026-11-02T15:02:48.314846+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 20,
+              "fecha_utc": "2026-11-02T15:02:50.399809+00:00",
+              "operacion": "read",
+              "evento_id": "acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 21,
+              "fecha_utc": "2026-11-02T15:02:50.428352+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 22,
+              "fecha_utc": "2026-11-02T15:02:52.508742+00:00",
+              "operacion": "read",
+              "evento_id": "acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 23,
+              "fecha_utc": "2026-11-02T15:02:52.558747+00:00",
+              "operacion": "append",
+              "evento_id": "acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": true
+            },
+            {
+              "orden": 24,
+              "fecha_utc": "2026-11-02T15:02:52.598264+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            }
+          ],
+          "actualizado_utc": "2026-11-02T15:02:52.598264+00:00",
+          "filas_por_evento": {
+            "normal-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579": 1
+          },
+          "total_filas": 4
+        },
+        "texto": "{\"tipo\": \"SERVIDOR_SINTETICO_NO_GOOGLE\", \"inicio_utc\": \"2026-11-02T15:01:51.078556+00:00\", \"filas\": [[\"normal-ccdfd6e836384a6aa8894745ea3d3579\", \"[\\\"5491186565960\\\",\\\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\\\"]\", \"2026-11-02T12:02:41.633-03:00\", \"5491186565960\", \"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\", \"solicitud_primera_consulta\", \"gestion_administrativa\", \"Persona Demo Harness\", \"24/11/2026 por la tarde\", \"[]\", \"[]\", \"false\", \"El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.\", \"pendiente_revision\", \"ADMIN_DEMO_R01\", \"90\", \"FINAL_R01\", \"[\\\"requisitos\\\"]\", \"whatsapp_simulado\", \"revision_administrativa\"], [\"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\", \"[\\\"5491186565960\\\",\\\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\\\"]\", \"2026-11-02T12:02:45.989-03:00\", \"5491186565960\", \"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\", \"solicitud_primera_consulta\", \"gestion_administrativa\", \"Persona Demo Harness\", \"24/11/2026 por la tarde\", \"[]\", \"[]\", \"false\", \"El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.\", \"pendiente_revision\", \"ADMIN_DEMO_R01\", \"92\", \"FINAL_R01\", \"[\\\"requisitos\\\"]\", \"whatsapp_simulado\", \"revision_administrativa\"], [\"acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579\", \"[\\\"5491186565960\\\",\\\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\\\"]\", \"2026-11-02T12:02:48.194-03:00\", \"5491186565960\", \"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\", \"solicitud_primera_consulta\", \"gestion_administrativa\", \"Persona Demo Harness\", \"24/11/2026 por la tarde\", \"[]\", \"[]\", \"false\", \"El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.\", \"pendiente_revision\", \"ADMIN_DEMO_R01\", \"93\", \"FINAL_R01\", \"[\\\"requisitos\\\"]\", \"whatsapp_simulado\", \"revision_administrativa\"], [\"acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579\", \"[\\\"5491186565960\\\",\\\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\\\"]\", \"2026-11-02T12:02:52.485-03:00\", \"5491186565960\", \"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\", \"solicitud_primera_consulta\", \"gestion_administrativa\", \"Persona Demo Harness\", \"24/11/2026 por la tarde\", \"[]\", \"[]\", \"false\", \"El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.\", \"pendiente_revision\", \"ADMIN_DEMO_R01\", \"96\", \"FINAL_R01\", \"[\\\"requisitos\\\"]\", \"whatsapp_simulado\", \"revision_administrativa\"]], \"read_por_evento\": {\"falla-lectura-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"fallo-ia-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"fallo-json-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"normal-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\": 2, \"acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579\": 2, \"acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579\": 1}, \"append_por_evento\": {\"normal-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\": 2, \"acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579\": 1}, \"snapshots\": 10, \"operaciones\": [{\"orden\": 1, \"fecha_utc\": \"2026-11-02T15:02:32.959806+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 2, \"fecha_utc\": \"2026-11-02T15:02:35.186577+00:00\", \"operacion\": \"read\", \"evento_id\": \"falla-lectura-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 503, \"fila_guardada_en_operacion\": false}, {\"orden\": 3, \"fecha_utc\": \"2026-11-02T15:02:35.221103+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 4, \"fecha_utc\": \"2026-11-02T15:02:37.319371+00:00\", \"operacion\": \"read\", \"evento_id\": \"fallo-ia-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 5, \"fecha_utc\": \"2026-11-02T15:02:37.373370+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 6, \"fecha_utc\": \"2026-11-02T15:02:39.485967+00:00\", \"operacion\": \"read\", \"evento_id\": \"fallo-json-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 7, \"fecha_utc\": \"2026-11-02T15:02:39.549498+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 8, \"fecha_utc\": \"2026-11-02T15:02:41.655616+00:00\", \"operacion\": \"read\", \"evento_id\": \"normal-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 9, \"fecha_utc\": \"2026-11-02T15:02:41.711613+00:00\", \"operacion\": \"append\", \"evento_id\": \"normal-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": true}, {\"orden\": 10, \"fecha_utc\": \"2026-11-02T15:02:41.739146+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 11, \"fecha_utc\": \"2026-11-02T15:02:43.828571+00:00\", \"operacion\": \"read\", \"evento_id\": \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 12, \"fecha_utc\": \"2026-11-02T15:02:43.874524+00:00\", \"operacion\": \"append\", \"evento_id\": \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 503, \"fila_guardada_en_operacion\": false}, {\"orden\": 13, \"fecha_utc\": \"2026-11-02T15:02:43.901695+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 14, \"fecha_utc\": \"2026-11-02T15:02:46.014295+00:00\", \"operacion\": \"read\", \"evento_id\": \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 15, \"fecha_utc\": \"2026-11-02T15:02:46.060830+00:00\", \"operacion\": \"append\", \"evento_id\": \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": true}, {\"orden\": 16, \"fecha_utc\": \"2026-11-02T15:02:46.086830+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 17, \"fecha_utc\": \"2026-11-02T15:02:48.220869+00:00\", \"operacion\": \"read\", \"evento_id\": \"acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 18, \"fecha_utc\": \"2026-11-02T15:02:48.287759+00:00\", \"operacion\": \"append\", \"evento_id\": \"acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 503, \"fila_guardada_en_operacion\": true}, {\"orden\": 19, \"fecha_utc\": \"2026-11-02T15:02:48.314846+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 20, \"fecha_utc\": \"2026-11-02T15:02:50.399809+00:00\", \"operacion\": \"read\", \"evento_id\": \"acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 21, \"fecha_utc\": \"2026-11-02T15:02:50.428352+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 22, \"fecha_utc\": \"2026-11-02T15:02:52.508742+00:00\", \"operacion\": \"read\", \"evento_id\": \"acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 23, \"fecha_utc\": \"2026-11-02T15:02:52.558747+00:00\", \"operacion\": \"append\", \"evento_id\": \"acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": true}, {\"orden\": 24, \"fecha_utc\": \"2026-11-02T15:02:52.598264+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}], \"actualizado_utc\": \"2026-11-02T15:02:52.598264+00:00\", \"filas_por_evento\": {\"normal-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579\": 1}, \"total_filas\": 4}"
+      },
+      "duracion_http_y_snapshot_ms": 2172,
+      "comprobaciones": {
+        "http": true,
+        "respuesta_objeto": true,
+        "registro_persistido": true,
+        "sin_envio": true,
+        "ok_coherente": true,
+        "error_controlado": true,
+        "sin_retry_automatico": true,
+        "snapshot_200": true,
+        "filas_exactas": true,
+        "append_sin_reintentos_ciegos": true,
+        "lecturas_esperadas": true
+      },
+      "diferencias": [],
+      "correcto": true
+    }
+  },
+  {
+    "caso": "recuperacion_tras_acuse_incompleto",
+    "ejecucion_id": 97,
+    "version_id": "5c310cdb-abed-41d2-9492-985ea180e799",
+    "terminal": "Duplicado o conflicto",
+    "estado_n8n": "success",
+    "nodos_recorridos": [
+      "Recibir WhatsApp simulado",
+      "Normalizar entrada",
+      "Entrada valida",
+      "Destino fijo",
+      "Leer Sheets - segunda fuente",
+      "Preparar contexto",
+      "Evento nuevo",
+      "Duplicado o conflicto"
+    ],
+    "coincide_http_nodo": true,
+    "resultado_sintetico": {
+      "tipo": "PRUEBA_SINTETICA_NO_NEGOCIO",
+      "caso": "recuperacion_tras_acuse_incompleto",
+      "fecha_utc": "2026-11-02T15:02:52.608264+00:00",
+      "entrada_ficticia": {
+        "evento_id": "acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579",
+        "from": "5491186565960",
+        "text": {
+          "body": "Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde."
+        }
+      },
+      "esperado": {
+        "http": 200,
+        "error": null,
+        "registro_persistido": true,
+        "filas_en_destino": 1,
+        "append_acumulados": 1,
+        "lecturas_acumuladas": 2,
+        "duplicado": true
+      },
+      "http": 200,
+      "respuesta": {
+        "valido": true,
+        "evento_id": "acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579",
+        "telefono": "5491186565960",
+        "mensaje": "Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.",
+        "entrada_canonica": "[\"5491186565960\",\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\"]",
+        "fecha_recepcion": "2026-11-02T12:02:54.693-03:00",
+        "canal": "whatsapp_simulado",
+        "ejecucion_id": "97",
+        "version_flujo": "FINAL_R01",
+        "entrada_ia": {
+          "mensaje": "Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde."
+        },
+        "continuar": false,
+        "http": 200,
+        "ok": true,
+        "error": null,
+        "duplicado": true,
+        "registro_persistido": true,
+        "respuesta_enviada_whatsapp": false,
+        "detalle": "Evento ya registrado; no se volvió a ejecutar IA ni escritura."
+      },
+      "respuesta_http_texto": "{\"valido\":true,\"evento_id\":\"acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579\",\"telefono\":\"5491186565960\",\"mensaje\":\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\",\"entrada_canonica\":\"[\\\"5491186565960\\\",\\\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\\\"]\",\"fecha_recepcion\":\"2026-11-02T12:02:54.693-03:00\",\"canal\":\"whatsapp_simulado\",\"ejecucion_id\":\"97\",\"version_flujo\":\"FINAL_R01\",\"entrada_ia\":{\"mensaje\":\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\"},\"continuar\":false,\"http\":200,\"ok\":true,\"error\":null,\"duplicado\":true,\"registro_persistido\":true,\"respuesta_enviada_whatsapp\":false,\"detalle\":\"Evento ya registrado; no se volvió a ejecutar IA ni escritura.\"}",
+      "lectura_independiente": {
+        "http": 200,
+        "respuesta": {
+          "tipo": "SERVIDOR_SINTETICO_NO_GOOGLE",
+          "inicio_utc": "2026-11-02T15:01:51.078556+00:00",
+          "filas": [
+            [
+              "normal-ccdfd6e836384a6aa8894745ea3d3579",
+              "[\"5491186565960\",\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\"]",
+              "2026-11-02T12:02:41.633-03:00",
+              "5491186565960",
+              "Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.",
+              "solicitud_primera_consulta",
+              "gestion_administrativa",
+              "Persona Demo Harness",
+              "24/11/2026 por la tarde",
+              "[]",
+              "[]",
+              "false",
+              "El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.",
+              "pendiente_revision",
+              "ADMIN_DEMO_R01",
+              "90",
+              "FINAL_R01",
+              "[\"requisitos\"]",
+              "whatsapp_simulado",
+              "revision_administrativa"
+            ],
+            [
+              "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579",
+              "[\"5491186565960\",\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\"]",
+              "2026-11-02T12:02:45.989-03:00",
+              "5491186565960",
+              "Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.",
+              "solicitud_primera_consulta",
+              "gestion_administrativa",
+              "Persona Demo Harness",
+              "24/11/2026 por la tarde",
+              "[]",
+              "[]",
+              "false",
+              "El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.",
+              "pendiente_revision",
+              "ADMIN_DEMO_R01",
+              "92",
+              "FINAL_R01",
+              "[\"requisitos\"]",
+              "whatsapp_simulado",
+              "revision_administrativa"
+            ],
+            [
+              "acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579",
+              "[\"5491186565960\",\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\"]",
+              "2026-11-02T12:02:48.194-03:00",
+              "5491186565960",
+              "Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.",
+              "solicitud_primera_consulta",
+              "gestion_administrativa",
+              "Persona Demo Harness",
+              "24/11/2026 por la tarde",
+              "[]",
+              "[]",
+              "false",
+              "El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.",
+              "pendiente_revision",
+              "ADMIN_DEMO_R01",
+              "93",
+              "FINAL_R01",
+              "[\"requisitos\"]",
+              "whatsapp_simulado",
+              "revision_administrativa"
+            ],
+            [
+              "acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579",
+              "[\"5491186565960\",\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\"]",
+              "2026-11-02T12:02:52.485-03:00",
+              "5491186565960",
+              "Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.",
+              "solicitud_primera_consulta",
+              "gestion_administrativa",
+              "Persona Demo Harness",
+              "24/11/2026 por la tarde",
+              "[]",
+              "[]",
+              "false",
+              "El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.",
+              "pendiente_revision",
+              "ADMIN_DEMO_R01",
+              "96",
+              "FINAL_R01",
+              "[\"requisitos\"]",
+              "whatsapp_simulado",
+              "revision_administrativa"
+            ]
+          ],
+          "read_por_evento": {
+            "falla-lectura-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "fallo-ia-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "fallo-json-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "normal-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579": 2,
+            "acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579": 2,
+            "acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579": 2
+          },
+          "append_por_evento": {
+            "normal-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579": 2,
+            "acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579": 1
+          },
+          "snapshots": 11,
+          "operaciones": [
+            {
+              "orden": 1,
+              "fecha_utc": "2026-11-02T15:02:32.959806+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 2,
+              "fecha_utc": "2026-11-02T15:02:35.186577+00:00",
+              "operacion": "read",
+              "evento_id": "falla-lectura-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 503,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 3,
+              "fecha_utc": "2026-11-02T15:02:35.221103+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 4,
+              "fecha_utc": "2026-11-02T15:02:37.319371+00:00",
+              "operacion": "read",
+              "evento_id": "fallo-ia-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 5,
+              "fecha_utc": "2026-11-02T15:02:37.373370+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 6,
+              "fecha_utc": "2026-11-02T15:02:39.485967+00:00",
+              "operacion": "read",
+              "evento_id": "fallo-json-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 7,
+              "fecha_utc": "2026-11-02T15:02:39.549498+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 8,
+              "fecha_utc": "2026-11-02T15:02:41.655616+00:00",
+              "operacion": "read",
+              "evento_id": "normal-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 9,
+              "fecha_utc": "2026-11-02T15:02:41.711613+00:00",
+              "operacion": "append",
+              "evento_id": "normal-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": true
+            },
+            {
+              "orden": 10,
+              "fecha_utc": "2026-11-02T15:02:41.739146+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 11,
+              "fecha_utc": "2026-11-02T15:02:43.828571+00:00",
+              "operacion": "read",
+              "evento_id": "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 12,
+              "fecha_utc": "2026-11-02T15:02:43.874524+00:00",
+              "operacion": "append",
+              "evento_id": "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 503,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 13,
+              "fecha_utc": "2026-11-02T15:02:43.901695+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 14,
+              "fecha_utc": "2026-11-02T15:02:46.014295+00:00",
+              "operacion": "read",
+              "evento_id": "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 15,
+              "fecha_utc": "2026-11-02T15:02:46.060830+00:00",
+              "operacion": "append",
+              "evento_id": "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": true
+            },
+            {
+              "orden": 16,
+              "fecha_utc": "2026-11-02T15:02:46.086830+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 17,
+              "fecha_utc": "2026-11-02T15:02:48.220869+00:00",
+              "operacion": "read",
+              "evento_id": "acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 18,
+              "fecha_utc": "2026-11-02T15:02:48.287759+00:00",
+              "operacion": "append",
+              "evento_id": "acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 503,
+              "fila_guardada_en_operacion": true
+            },
+            {
+              "orden": 19,
+              "fecha_utc": "2026-11-02T15:02:48.314846+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 20,
+              "fecha_utc": "2026-11-02T15:02:50.399809+00:00",
+              "operacion": "read",
+              "evento_id": "acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 21,
+              "fecha_utc": "2026-11-02T15:02:50.428352+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 22,
+              "fecha_utc": "2026-11-02T15:02:52.508742+00:00",
+              "operacion": "read",
+              "evento_id": "acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 23,
+              "fecha_utc": "2026-11-02T15:02:52.558747+00:00",
+              "operacion": "append",
+              "evento_id": "acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": true
+            },
+            {
+              "orden": 24,
+              "fecha_utc": "2026-11-02T15:02:52.598264+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 25,
+              "fecha_utc": "2026-11-02T15:02:54.726566+00:00",
+              "operacion": "read",
+              "evento_id": "acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 26,
+              "fecha_utc": "2026-11-02T15:02:54.761564+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            }
+          ],
+          "actualizado_utc": "2026-11-02T15:02:54.761564+00:00",
+          "filas_por_evento": {
+            "normal-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579": 1
+          },
+          "total_filas": 4
+        },
+        "texto": "{\"tipo\": \"SERVIDOR_SINTETICO_NO_GOOGLE\", \"inicio_utc\": \"2026-11-02T15:01:51.078556+00:00\", \"filas\": [[\"normal-ccdfd6e836384a6aa8894745ea3d3579\", \"[\\\"5491186565960\\\",\\\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\\\"]\", \"2026-11-02T12:02:41.633-03:00\", \"5491186565960\", \"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\", \"solicitud_primera_consulta\", \"gestion_administrativa\", \"Persona Demo Harness\", \"24/11/2026 por la tarde\", \"[]\", \"[]\", \"false\", \"El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.\", \"pendiente_revision\", \"ADMIN_DEMO_R01\", \"90\", \"FINAL_R01\", \"[\\\"requisitos\\\"]\", \"whatsapp_simulado\", \"revision_administrativa\"], [\"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\", \"[\\\"5491186565960\\\",\\\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\\\"]\", \"2026-11-02T12:02:45.989-03:00\", \"5491186565960\", \"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\", \"solicitud_primera_consulta\", \"gestion_administrativa\", \"Persona Demo Harness\", \"24/11/2026 por la tarde\", \"[]\", \"[]\", \"false\", \"El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.\", \"pendiente_revision\", \"ADMIN_DEMO_R01\", \"92\", \"FINAL_R01\", \"[\\\"requisitos\\\"]\", \"whatsapp_simulado\", \"revision_administrativa\"], [\"acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579\", \"[\\\"5491186565960\\\",\\\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\\\"]\", \"2026-11-02T12:02:48.194-03:00\", \"5491186565960\", \"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\", \"solicitud_primera_consulta\", \"gestion_administrativa\", \"Persona Demo Harness\", \"24/11/2026 por la tarde\", \"[]\", \"[]\", \"false\", \"El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.\", \"pendiente_revision\", \"ADMIN_DEMO_R01\", \"93\", \"FINAL_R01\", \"[\\\"requisitos\\\"]\", \"whatsapp_simulado\", \"revision_administrativa\"], [\"acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579\", \"[\\\"5491186565960\\\",\\\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\\\"]\", \"2026-11-02T12:02:52.485-03:00\", \"5491186565960\", \"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\", \"solicitud_primera_consulta\", \"gestion_administrativa\", \"Persona Demo Harness\", \"24/11/2026 por la tarde\", \"[]\", \"[]\", \"false\", \"El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.\", \"pendiente_revision\", \"ADMIN_DEMO_R01\", \"96\", \"FINAL_R01\", \"[\\\"requisitos\\\"]\", \"whatsapp_simulado\", \"revision_administrativa\"]], \"read_por_evento\": {\"falla-lectura-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"fallo-ia-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"fallo-json-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"normal-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\": 2, \"acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579\": 2, \"acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579\": 2}, \"append_por_evento\": {\"normal-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\": 2, \"acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579\": 1}, \"snapshots\": 11, \"operaciones\": [{\"orden\": 1, \"fecha_utc\": \"2026-11-02T15:02:32.959806+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 2, \"fecha_utc\": \"2026-11-02T15:02:35.186577+00:00\", \"operacion\": \"read\", \"evento_id\": \"falla-lectura-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 503, \"fila_guardada_en_operacion\": false}, {\"orden\": 3, \"fecha_utc\": \"2026-11-02T15:02:35.221103+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 4, \"fecha_utc\": \"2026-11-02T15:02:37.319371+00:00\", \"operacion\": \"read\", \"evento_id\": \"fallo-ia-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 5, \"fecha_utc\": \"2026-11-02T15:02:37.373370+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 6, \"fecha_utc\": \"2026-11-02T15:02:39.485967+00:00\", \"operacion\": \"read\", \"evento_id\": \"fallo-json-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 7, \"fecha_utc\": \"2026-11-02T15:02:39.549498+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 8, \"fecha_utc\": \"2026-11-02T15:02:41.655616+00:00\", \"operacion\": \"read\", \"evento_id\": \"normal-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 9, \"fecha_utc\": \"2026-11-02T15:02:41.711613+00:00\", \"operacion\": \"append\", \"evento_id\": \"normal-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": true}, {\"orden\": 10, \"fecha_utc\": \"2026-11-02T15:02:41.739146+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 11, \"fecha_utc\": \"2026-11-02T15:02:43.828571+00:00\", \"operacion\": \"read\", \"evento_id\": \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 12, \"fecha_utc\": \"2026-11-02T15:02:43.874524+00:00\", \"operacion\": \"append\", \"evento_id\": \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 503, \"fila_guardada_en_operacion\": false}, {\"orden\": 13, \"fecha_utc\": \"2026-11-02T15:02:43.901695+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 14, \"fecha_utc\": \"2026-11-02T15:02:46.014295+00:00\", \"operacion\": \"read\", \"evento_id\": \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 15, \"fecha_utc\": \"2026-11-02T15:02:46.060830+00:00\", \"operacion\": \"append\", \"evento_id\": \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": true}, {\"orden\": 16, \"fecha_utc\": \"2026-11-02T15:02:46.086830+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 17, \"fecha_utc\": \"2026-11-02T15:02:48.220869+00:00\", \"operacion\": \"read\", \"evento_id\": \"acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 18, \"fecha_utc\": \"2026-11-02T15:02:48.287759+00:00\", \"operacion\": \"append\", \"evento_id\": \"acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 503, \"fila_guardada_en_operacion\": true}, {\"orden\": 19, \"fecha_utc\": \"2026-11-02T15:02:48.314846+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 20, \"fecha_utc\": \"2026-11-02T15:02:50.399809+00:00\", \"operacion\": \"read\", \"evento_id\": \"acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 21, \"fecha_utc\": \"2026-11-02T15:02:50.428352+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 22, \"fecha_utc\": \"2026-11-02T15:02:52.508742+00:00\", \"operacion\": \"read\", \"evento_id\": \"acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 23, \"fecha_utc\": \"2026-11-02T15:02:52.558747+00:00\", \"operacion\": \"append\", \"evento_id\": \"acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": true}, {\"orden\": 24, \"fecha_utc\": \"2026-11-02T15:02:52.598264+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 25, \"fecha_utc\": \"2026-11-02T15:02:54.726566+00:00\", \"operacion\": \"read\", \"evento_id\": \"acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 26, \"fecha_utc\": \"2026-11-02T15:02:54.761564+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}], \"actualizado_utc\": \"2026-11-02T15:02:54.761564+00:00\", \"filas_por_evento\": {\"normal-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579\": 1}, \"total_filas\": 4}"
+      },
+      "duracion_http_y_snapshot_ms": 2156,
+      "comprobaciones": {
+        "http": true,
+        "respuesta_objeto": true,
+        "registro_persistido": true,
+        "sin_envio": true,
+        "ok_coherente": true,
+        "duplicado": true,
+        "snapshot_200": true,
+        "filas_exactas": true,
+        "append_sin_reintentos_ciegos": true,
+        "lecturas_esperadas": true
+      },
+      "diferencias": [],
+      "correcto": true
+    }
+  },
+  {
+    "caso": "conflicto_tras_registro",
+    "ejecucion_id": 99,
+    "version_id": "5c310cdb-abed-41d2-9492-985ea180e799",
+    "terminal": "Duplicado o conflicto",
+    "estado_n8n": "success",
+    "nodos_recorridos": [
+      "Recibir WhatsApp simulado",
+      "Normalizar entrada",
+      "Entrada valida",
+      "Destino fijo",
+      "Leer Sheets - segunda fuente",
+      "Preparar contexto",
+      "Evento nuevo",
+      "Duplicado o conflicto"
+    ],
+    "coincide_http_nodo": true,
+    "resultado_sintetico": {
+      "tipo": "PRUEBA_SINTETICA_NO_NEGOCIO",
+      "caso": "conflicto_tras_registro",
+      "fecha_utc": "2026-11-02T15:02:54.773575+00:00",
+      "entrada_ficticia": {
+        "evento_id": "normal-ccdfd6e836384a6aa8894745ea3d3579",
+        "from": "5491186565960",
+        "text": {
+          "body": "Este texto es distinto al contenido que ya usó el mismo evento."
+        }
+      },
+      "esperado": {
+        "http": 409,
+        "error": "EVENTO_CONFLICTIVO",
+        "registro_persistido": null,
+        "filas_en_destino": 1,
+        "append_acumulados": 1,
+        "lecturas_acumuladas": 2,
+        "duplicado": false
+      },
+      "http": 409,
+      "respuesta": {
+        "valido": true,
+        "evento_id": "normal-ccdfd6e836384a6aa8894745ea3d3579",
+        "telefono": "5491186565960",
+        "mensaje": "Este texto es distinto al contenido que ya usó el mismo evento.",
+        "entrada_canonica": "[\"5491186565960\",\"Este texto es distinto al contenido que ya usó el mismo evento.\"]",
+        "fecha_recepcion": "2026-11-02T12:02:56.851-03:00",
+        "canal": "whatsapp_simulado",
+        "ejecucion_id": "99",
+        "version_flujo": "FINAL_R01",
+        "entrada_ia": {
+          "mensaje": "Este texto es distinto al contenido que ya usó el mismo evento."
+        },
+        "continuar": false,
+        "http": 409,
+        "ok": false,
+        "error": "EVENTO_CONFLICTIVO",
+        "duplicado": false,
+        "registro_persistido": null,
+        "respuesta_enviada_whatsapp": false,
+        "detalle": "ID repetido con contenido distinto o registros inconsistentes. Revisión manual."
+      },
+      "respuesta_http_texto": "{\"valido\":true,\"evento_id\":\"normal-ccdfd6e836384a6aa8894745ea3d3579\",\"telefono\":\"5491186565960\",\"mensaje\":\"Este texto es distinto al contenido que ya usó el mismo evento.\",\"entrada_canonica\":\"[\\\"5491186565960\\\",\\\"Este texto es distinto al contenido que ya usó el mismo evento.\\\"]\",\"fecha_recepcion\":\"2026-11-02T12:02:56.851-03:00\",\"canal\":\"whatsapp_simulado\",\"ejecucion_id\":\"99\",\"version_flujo\":\"FINAL_R01\",\"entrada_ia\":{\"mensaje\":\"Este texto es distinto al contenido que ya usó el mismo evento.\"},\"continuar\":false,\"http\":409,\"ok\":false,\"error\":\"EVENTO_CONFLICTIVO\",\"duplicado\":false,\"registro_persistido\":null,\"respuesta_enviada_whatsapp\":false,\"detalle\":\"ID repetido con contenido distinto o registros inconsistentes. Revisión manual.\"}",
+      "lectura_independiente": {
+        "http": 200,
+        "respuesta": {
+          "tipo": "SERVIDOR_SINTETICO_NO_GOOGLE",
+          "inicio_utc": "2026-11-02T15:01:51.078556+00:00",
+          "filas": [
+            [
+              "normal-ccdfd6e836384a6aa8894745ea3d3579",
+              "[\"5491186565960\",\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\"]",
+              "2026-11-02T12:02:41.633-03:00",
+              "5491186565960",
+              "Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.",
+              "solicitud_primera_consulta",
+              "gestion_administrativa",
+              "Persona Demo Harness",
+              "24/11/2026 por la tarde",
+              "[]",
+              "[]",
+              "false",
+              "El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.",
+              "pendiente_revision",
+              "ADMIN_DEMO_R01",
+              "90",
+              "FINAL_R01",
+              "[\"requisitos\"]",
+              "whatsapp_simulado",
+              "revision_administrativa"
+            ],
+            [
+              "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579",
+              "[\"5491186565960\",\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\"]",
+              "2026-11-02T12:02:45.989-03:00",
+              "5491186565960",
+              "Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.",
+              "solicitud_primera_consulta",
+              "gestion_administrativa",
+              "Persona Demo Harness",
+              "24/11/2026 por la tarde",
+              "[]",
+              "[]",
+              "false",
+              "El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.",
+              "pendiente_revision",
+              "ADMIN_DEMO_R01",
+              "92",
+              "FINAL_R01",
+              "[\"requisitos\"]",
+              "whatsapp_simulado",
+              "revision_administrativa"
+            ],
+            [
+              "acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579",
+              "[\"5491186565960\",\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\"]",
+              "2026-11-02T12:02:48.194-03:00",
+              "5491186565960",
+              "Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.",
+              "solicitud_primera_consulta",
+              "gestion_administrativa",
+              "Persona Demo Harness",
+              "24/11/2026 por la tarde",
+              "[]",
+              "[]",
+              "false",
+              "El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.",
+              "pendiente_revision",
+              "ADMIN_DEMO_R01",
+              "93",
+              "FINAL_R01",
+              "[\"requisitos\"]",
+              "whatsapp_simulado",
+              "revision_administrativa"
+            ],
+            [
+              "acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579",
+              "[\"5491186565960\",\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\"]",
+              "2026-11-02T12:02:52.485-03:00",
+              "5491186565960",
+              "Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.",
+              "solicitud_primera_consulta",
+              "gestion_administrativa",
+              "Persona Demo Harness",
+              "24/11/2026 por la tarde",
+              "[]",
+              "[]",
+              "false",
+              "El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.",
+              "pendiente_revision",
+              "ADMIN_DEMO_R01",
+              "96",
+              "FINAL_R01",
+              "[\"requisitos\"]",
+              "whatsapp_simulado",
+              "revision_administrativa"
+            ]
+          ],
+          "read_por_evento": {
+            "falla-lectura-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "fallo-ia-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "fallo-json-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "normal-ccdfd6e836384a6aa8894745ea3d3579": 2,
+            "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579": 2,
+            "acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579": 2,
+            "acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579": 2
+          },
+          "append_por_evento": {
+            "normal-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579": 2,
+            "acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579": 1
+          },
+          "snapshots": 12,
+          "operaciones": [
+            {
+              "orden": 1,
+              "fecha_utc": "2026-11-02T15:02:32.959806+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 2,
+              "fecha_utc": "2026-11-02T15:02:35.186577+00:00",
+              "operacion": "read",
+              "evento_id": "falla-lectura-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 503,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 3,
+              "fecha_utc": "2026-11-02T15:02:35.221103+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 4,
+              "fecha_utc": "2026-11-02T15:02:37.319371+00:00",
+              "operacion": "read",
+              "evento_id": "fallo-ia-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 5,
+              "fecha_utc": "2026-11-02T15:02:37.373370+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 6,
+              "fecha_utc": "2026-11-02T15:02:39.485967+00:00",
+              "operacion": "read",
+              "evento_id": "fallo-json-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 7,
+              "fecha_utc": "2026-11-02T15:02:39.549498+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 8,
+              "fecha_utc": "2026-11-02T15:02:41.655616+00:00",
+              "operacion": "read",
+              "evento_id": "normal-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 9,
+              "fecha_utc": "2026-11-02T15:02:41.711613+00:00",
+              "operacion": "append",
+              "evento_id": "normal-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": true
+            },
+            {
+              "orden": 10,
+              "fecha_utc": "2026-11-02T15:02:41.739146+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 11,
+              "fecha_utc": "2026-11-02T15:02:43.828571+00:00",
+              "operacion": "read",
+              "evento_id": "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 12,
+              "fecha_utc": "2026-11-02T15:02:43.874524+00:00",
+              "operacion": "append",
+              "evento_id": "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 503,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 13,
+              "fecha_utc": "2026-11-02T15:02:43.901695+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 14,
+              "fecha_utc": "2026-11-02T15:02:46.014295+00:00",
+              "operacion": "read",
+              "evento_id": "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 15,
+              "fecha_utc": "2026-11-02T15:02:46.060830+00:00",
+              "operacion": "append",
+              "evento_id": "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": true
+            },
+            {
+              "orden": 16,
+              "fecha_utc": "2026-11-02T15:02:46.086830+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 17,
+              "fecha_utc": "2026-11-02T15:02:48.220869+00:00",
+              "operacion": "read",
+              "evento_id": "acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 18,
+              "fecha_utc": "2026-11-02T15:02:48.287759+00:00",
+              "operacion": "append",
+              "evento_id": "acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 503,
+              "fila_guardada_en_operacion": true
+            },
+            {
+              "orden": 19,
+              "fecha_utc": "2026-11-02T15:02:48.314846+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 20,
+              "fecha_utc": "2026-11-02T15:02:50.399809+00:00",
+              "operacion": "read",
+              "evento_id": "acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 21,
+              "fecha_utc": "2026-11-02T15:02:50.428352+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 22,
+              "fecha_utc": "2026-11-02T15:02:52.508742+00:00",
+              "operacion": "read",
+              "evento_id": "acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 23,
+              "fecha_utc": "2026-11-02T15:02:52.558747+00:00",
+              "operacion": "append",
+              "evento_id": "acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": true
+            },
+            {
+              "orden": 24,
+              "fecha_utc": "2026-11-02T15:02:52.598264+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 25,
+              "fecha_utc": "2026-11-02T15:02:54.726566+00:00",
+              "operacion": "read",
+              "evento_id": "acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 26,
+              "fecha_utc": "2026-11-02T15:02:54.761564+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            },
+            {
+              "orden": 27,
+              "fecha_utc": "2026-11-02T15:02:56.871893+00:00",
+              "operacion": "read",
+              "evento_id": "normal-ccdfd6e836384a6aa8894745ea3d3579",
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": false
+            },
+            {
+              "orden": 28,
+              "fecha_utc": "2026-11-02T15:02:56.906159+00:00",
+              "operacion": "snapshot",
+              "evento_id": null,
+              "http_servidor": 200,
+              "fila_guardada_en_operacion": null
+            }
+          ],
+          "actualizado_utc": "2026-11-02T15:02:56.906159+00:00",
+          "filas_por_evento": {
+            "normal-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579": 1,
+            "acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579": 1
+          },
+          "total_filas": 4
+        },
+        "texto": "{\"tipo\": \"SERVIDOR_SINTETICO_NO_GOOGLE\", \"inicio_utc\": \"2026-11-02T15:01:51.078556+00:00\", \"filas\": [[\"normal-ccdfd6e836384a6aa8894745ea3d3579\", \"[\\\"5491186565960\\\",\\\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\\\"]\", \"2026-11-02T12:02:41.633-03:00\", \"5491186565960\", \"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\", \"solicitud_primera_consulta\", \"gestion_administrativa\", \"Persona Demo Harness\", \"24/11/2026 por la tarde\", \"[]\", \"[]\", \"false\", \"El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.\", \"pendiente_revision\", \"ADMIN_DEMO_R01\", \"90\", \"FINAL_R01\", \"[\\\"requisitos\\\"]\", \"whatsapp_simulado\", \"revision_administrativa\"], [\"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\", \"[\\\"5491186565960\\\",\\\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\\\"]\", \"2026-11-02T12:02:45.989-03:00\", \"5491186565960\", \"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\", \"solicitud_primera_consulta\", \"gestion_administrativa\", \"Persona Demo Harness\", \"24/11/2026 por la tarde\", \"[]\", \"[]\", \"false\", \"El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.\", \"pendiente_revision\", \"ADMIN_DEMO_R01\", \"92\", \"FINAL_R01\", \"[\\\"requisitos\\\"]\", \"whatsapp_simulado\", \"revision_administrativa\"], [\"acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579\", \"[\\\"5491186565960\\\",\\\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\\\"]\", \"2026-11-02T12:02:48.194-03:00\", \"5491186565960\", \"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\", \"solicitud_primera_consulta\", \"gestion_administrativa\", \"Persona Demo Harness\", \"24/11/2026 por la tarde\", \"[]\", \"[]\", \"false\", \"El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.\", \"pendiente_revision\", \"ADMIN_DEMO_R01\", \"93\", \"FINAL_R01\", \"[\\\"requisitos\\\"]\", \"whatsapp_simulado\", \"revision_administrativa\"], [\"acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579\", \"[\\\"5491186565960\\\",\\\"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\\\"]\", \"2026-11-02T12:02:52.485-03:00\", \"5491186565960\", \"Soy Persona Demo Harness. Quiero una primera consulta para el 24/11/2026 por la tarde.\", \"solicitud_primera_consulta\", \"gestion_administrativa\", \"Persona Demo Harness\", \"24/11/2026 por la tarde\", \"[]\", \"[]\", \"false\", \"El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.\", \"pendiente_revision\", \"ADMIN_DEMO_R01\", \"96\", \"FINAL_R01\", \"[\\\"requisitos\\\"]\", \"whatsapp_simulado\", \"revision_administrativa\"]], \"read_por_evento\": {\"falla-lectura-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"fallo-ia-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"fallo-json-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"normal-ccdfd6e836384a6aa8894745ea3d3579\": 2, \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\": 2, \"acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579\": 2, \"acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579\": 2}, \"append_por_evento\": {\"normal-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\": 2, \"acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579\": 1}, \"snapshots\": 12, \"operaciones\": [{\"orden\": 1, \"fecha_utc\": \"2026-11-02T15:02:32.959806+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 2, \"fecha_utc\": \"2026-11-02T15:02:35.186577+00:00\", \"operacion\": \"read\", \"evento_id\": \"falla-lectura-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 503, \"fila_guardada_en_operacion\": false}, {\"orden\": 3, \"fecha_utc\": \"2026-11-02T15:02:35.221103+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 4, \"fecha_utc\": \"2026-11-02T15:02:37.319371+00:00\", \"operacion\": \"read\", \"evento_id\": \"fallo-ia-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 5, \"fecha_utc\": \"2026-11-02T15:02:37.373370+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 6, \"fecha_utc\": \"2026-11-02T15:02:39.485967+00:00\", \"operacion\": \"read\", \"evento_id\": \"fallo-json-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 7, \"fecha_utc\": \"2026-11-02T15:02:39.549498+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 8, \"fecha_utc\": \"2026-11-02T15:02:41.655616+00:00\", \"operacion\": \"read\", \"evento_id\": \"normal-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 9, \"fecha_utc\": \"2026-11-02T15:02:41.711613+00:00\", \"operacion\": \"append\", \"evento_id\": \"normal-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": true}, {\"orden\": 10, \"fecha_utc\": \"2026-11-02T15:02:41.739146+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 11, \"fecha_utc\": \"2026-11-02T15:02:43.828571+00:00\", \"operacion\": \"read\", \"evento_id\": \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 12, \"fecha_utc\": \"2026-11-02T15:02:43.874524+00:00\", \"operacion\": \"append\", \"evento_id\": \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 503, \"fila_guardada_en_operacion\": false}, {\"orden\": 13, \"fecha_utc\": \"2026-11-02T15:02:43.901695+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 14, \"fecha_utc\": \"2026-11-02T15:02:46.014295+00:00\", \"operacion\": \"read\", \"evento_id\": \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 15, \"fecha_utc\": \"2026-11-02T15:02:46.060830+00:00\", \"operacion\": \"append\", \"evento_id\": \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": true}, {\"orden\": 16, \"fecha_utc\": \"2026-11-02T15:02:46.086830+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 17, \"fecha_utc\": \"2026-11-02T15:02:48.220869+00:00\", \"operacion\": \"read\", \"evento_id\": \"acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 18, \"fecha_utc\": \"2026-11-02T15:02:48.287759+00:00\", \"operacion\": \"append\", \"evento_id\": \"acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 503, \"fila_guardada_en_operacion\": true}, {\"orden\": 19, \"fecha_utc\": \"2026-11-02T15:02:48.314846+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 20, \"fecha_utc\": \"2026-11-02T15:02:50.399809+00:00\", \"operacion\": \"read\", \"evento_id\": \"acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 21, \"fecha_utc\": \"2026-11-02T15:02:50.428352+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 22, \"fecha_utc\": \"2026-11-02T15:02:52.508742+00:00\", \"operacion\": \"read\", \"evento_id\": \"acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 23, \"fecha_utc\": \"2026-11-02T15:02:52.558747+00:00\", \"operacion\": \"append\", \"evento_id\": \"acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": true}, {\"orden\": 24, \"fecha_utc\": \"2026-11-02T15:02:52.598264+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 25, \"fecha_utc\": \"2026-11-02T15:02:54.726566+00:00\", \"operacion\": \"read\", \"evento_id\": \"acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 26, \"fecha_utc\": \"2026-11-02T15:02:54.761564+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}, {\"orden\": 27, \"fecha_utc\": \"2026-11-02T15:02:56.871893+00:00\", \"operacion\": \"read\", \"evento_id\": \"normal-ccdfd6e836384a6aa8894745ea3d3579\", \"http_servidor\": 200, \"fila_guardada_en_operacion\": false}, {\"orden\": 28, \"fecha_utc\": \"2026-11-02T15:02:56.906159+00:00\", \"operacion\": \"snapshot\", \"evento_id\": null, \"http_servidor\": 200, \"fila_guardada_en_operacion\": null}], \"actualizado_utc\": \"2026-11-02T15:02:56.906159+00:00\", \"filas_por_evento\": {\"normal-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"fallo-escritura-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"acuse-perdido-ccdfd6e836384a6aa8894745ea3d3579\": 1, \"acuse-incompleto-ccdfd6e836384a6aa8894745ea3d3579\": 1}, \"total_filas\": 4}"
+      },
+      "duracion_http_y_snapshot_ms": 2140,
+      "comprobaciones": {
+        "http": true,
+        "respuesta_objeto": true,
+        "registro_persistido": true,
+        "sin_envio": true,
+        "ok_coherente": true,
+        "error_controlado": true,
+        "snapshot_200": true,
+        "filas_exactas": true,
+        "append_sin_reintentos_ciegos": true,
+        "lecturas_esperadas": true,
+        "fila_original_preservada": true
+      },
+      "diferencias": [],
+      "correcto": true
+    }
+  }
+]

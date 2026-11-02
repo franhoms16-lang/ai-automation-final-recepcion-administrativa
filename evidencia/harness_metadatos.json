@@ -1,0 +1,45 @@
+{
+  "tipo": "PRUEBA_SINTETICA_NO_NEGOCIO",
+  "fecha_utc": "2026-11-02T15:01:24.933624+00:00",
+  "parent_id": "finalRecepcionR01",
+  "parent_name": "Final - Recepcion administrativa - WhatsApp SIMULADO y Sheets",
+  "parent_version_id": null,
+  "parent_workflow_sha256": "39fe5053bfd8b0ef932ec53f3d3aea664b18753866a280f256cc54ea43f8a0ce",
+  "harness_id": "finalFaultHarnessR01",
+  "webhook_local": "http://localhost:5678/webhook/final-prueba-fallos",
+  "servidor_local": "http://127.0.0.1:5682",
+  "codigo_compartido": {
+    "Normalizar entrada": {
+      "sha256_parent": "002888998b6c2b6d7549dc8f410c26ced9f6c556a0f329a932a3386cc375b166",
+      "sha256_harness": "002888998b6c2b6d7549dc8f410c26ced9f6c556a0f329a932a3386cc375b166",
+      "identico": true
+    },
+    "Preparar contexto": {
+      "sha256_parent": "7355180d52be43fc5bcf829f492d2d92ba57782ac6707238527ecccea4e25358",
+      "sha256_harness": "7355180d52be43fc5bcf829f492d2d92ba57782ac6707238527ecccea4e25358",
+      "identico": true
+    },
+    "Validar y preparar registro": {
+      "sha256_parent": "7098b0bcc23db35ce5295ef577dd576c3ac8a2cfba419507f64a7f3b6c08855e",
+      "sha256_harness": "7098b0bcc23db35ce5295ef577dd576c3ac8a2cfba419507f64a7f3b6c08855e",
+      "identico": true
+    },
+    "Confirmar registro": {
+      "sha256_parent": "c05736ff5eb7f68b3e2da260a9281bb725db6de4e17c0713d55dc49f4fe2055f",
+      "sha256_harness": "c05736ff5eb7f68b3e2da260a9281bb725db6de4e17c0713d55dc49f4fe2055f",
+      "identico": true
+    }
+  },
+  "sustituciones": [
+    "HTTP Sheets por servidor local",
+    "AI Agent por Code fixture",
+    "Destino por ID ficticio",
+    "Subnodos IA/memoria/tool eliminados"
+  ],
+  "limite": "Los intermediateSteps son fixtures. Esta copia no prueba Gemini, Google Sheets, memoria real ni clasificación semántica.",
+  "harness_workflow_sha256": "92b18e7addd37ebfd730b6f46df51adacbea947857492e1771aec687527662c2",
+  "comparacion_final": {
+    "version_nativa_principal": "b9da5f49-26be-4015-bbfb-7c0a8c8cdba7",
+    "nota": "El prompt final evolucionó después de construir el harness; los cuatro Code compartidos conservan los mismos hashes. El agente, modelo y memoria se sustituyen por fixtures y no se acreditan con el harness."
+  }
+}

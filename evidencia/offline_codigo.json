@@ -1,0 +1,436 @@
+{
+  "tipo": "PRUEBAS_SINTETICAS_OFFLINE_CODE",
+  "fecha_utc": "2026-11-02T15:11:33.007Z",
+  "runtime": "v24.19.0",
+  "llamadas_externas": 0,
+  "limites": [
+    "Mocks de API n8n, no ejecución real del workflow.",
+    "No demuestra comportamiento del modelo, memoria nativa, HTTP ni RAW en Google Sheets.",
+    "Acuse sintético no sustituye lectura independiente del destino.",
+    "Hashes identifican las fuentes leídas una vez al inicio; cambios posteriores requieren nueva corrida."
+  ],
+  "fuentes": {
+    "normalizar.js": {
+      "sha256": "002888998b6c2b6d7549dc8f410c26ced9f6c556a0f329a932a3386cc375b166"
+    },
+    "preparar_contexto.js": {
+      "sha256": "7355180d52be43fc5bcf829f492d2d92ba57782ac6707238527ecccea4e25358"
+    },
+    "herramienta_admin.js": {
+      "sha256": "d725e3b8d0c84021a7d395bdc3f0f6ba4e446866cb2944f8492e359ddec49585"
+    },
+    "validar_y_preparar.js": {
+      "sha256": "7098b0bcc23db35ce5295ef577dd576c3ac8a2cfba419507f64a7f3b6c08855e"
+    },
+    "confirmar_registro.js": {
+      "sha256": "c05736ff5eb7f68b3e2da260a9281bb725db6de4e17c0713d55dc49f4fe2055f"
+    }
+  },
+  "total": 67,
+  "conformes": 67,
+  "no_conformes": 0,
+  "resultados": [
+    {
+      "id": "N01",
+      "contrato": "Normaliza teléfono y espacios sin aceptar sessionId externo",
+      "conforme": true,
+      "duracion_ms": 1
+    },
+    {
+      "id": "N02",
+      "contrato": "Rechaza entrada inválida/no textual antes de IA y escritura",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "N03",
+      "contrato": "Rechaza entrada inválida/no textual antes de IA y escritura",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "N04",
+      "contrato": "Rechaza entrada inválida/no textual antes de IA y escritura",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "N05",
+      "contrato": "Rechaza entrada inválida/no textual antes de IA y escritura",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "N06",
+      "contrato": "Rechaza entrada inválida/no textual antes de IA y escritura",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "N07",
+      "contrato": "Rechaza entrada inválida/no textual antes de IA y escritura",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "N08",
+      "contrato": "Rechaza entrada inválida/no textual antes de IA y escritura",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "N09",
+      "contrato": "Rechaza entrada inválida/no textual antes de IA y escritura",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "N10",
+      "contrato": "Rechaza entrada inválida/no textual antes de IA y escritura",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "N11",
+      "contrato": "Rechaza entrada inválida/no textual antes de IA y escritura",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "N12",
+      "contrato": "Rechaza entrada inválida/no textual antes de IA y escritura",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "N13",
+      "contrato": "Rechaza entrada inválida/no textual antes de IA y escritura",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "N14",
+      "contrato": "Rechaza entrada inválida/no textual antes de IA y escritura",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "N15",
+      "contrato": "Rechaza entrada inválida/no textual antes de IA y escritura",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "N16",
+      "contrato": "Rechaza entrada inválida/no textual antes de IA y escritura",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "N17",
+      "contrato": "Rechaza entrada inválida/no textual antes de IA y escritura",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "N18",
+      "contrato": "Rechaza entrada inválida/no textual antes de IA y escritura",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "N19",
+      "contrato": "Rechaza entrada inválida/no textual antes de IA y escritura",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "N20",
+      "contrato": "Acepta texto en el límite de 2000 caracteres y tipo text",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "C01",
+      "contrato": "Config completa: cuatro temas, desconocidos null y requisitos controlados",
+      "conforme": true,
+      "duracion_ms": 1
+    },
+    {
+      "id": "C02",
+      "contrato": "Rechaza configuración ausente, duplicada, incompatible o alterada",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "C03",
+      "contrato": "Rechaza configuración ausente, duplicada, incompatible o alterada",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "C04",
+      "contrato": "Rechaza configuración ausente, duplicada, incompatible o alterada",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "C05",
+      "contrato": "Rechaza configuración ausente, duplicada, incompatible o alterada",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "C06",
+      "contrato": "Rechaza configuración ausente, duplicada, incompatible o alterada",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "C07",
+      "contrato": "Rechaza configuración ausente, duplicada, incompatible o alterada",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "C08",
+      "contrato": "Rechaza configuración ausente, duplicada, incompatible o alterada",
+      "conforme": true,
+      "duracion_ms": 1
+    },
+    {
+      "id": "C09",
+      "contrato": "Rechaza configuración ausente, duplicada, incompatible o alterada",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "C10",
+      "contrato": "Detiene antes del append al llegar a 1000 registros del prototipo",
+      "conforme": true,
+      "duracion_ms": 7
+    },
+    {
+      "id": "C11",
+      "contrato": "999 registros aún permiten procesar una solicitud",
+      "conforme": true,
+      "duracion_ms": 6
+    },
+    {
+      "id": "D01",
+      "contrato": "Repetición exacta de evento registrado no ejecuta otra IA/escritura",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "D02",
+      "contrato": "Evento con contenido incompatible, múltiples filas o estado inválido es conflicto",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "D03",
+      "contrato": "Evento con contenido incompatible, múltiples filas o estado inválido es conflicto",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "D04",
+      "contrato": "Evento con contenido incompatible, múltiples filas o estado inválido es conflicto",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "D05",
+      "contrato": "No llama completo a un registro previo truncado de 14 columnas",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "T01",
+      "contrato": "Herramienta devuelve datos de la configuración leída y desconocidos explícitos",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "T02",
+      "contrato": "Herramienta rechaza temas fuera de alcance",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "A01",
+      "contrato": "Caso completo conserva identidad técnica y genera fila de 20 campos pendiente",
+      "conforme": true,
+      "duracion_ms": 1
+    },
+    {
+      "id": "A02",
+      "contrato": "Faltantes derivados de datos no dependen de lista inventada por IA",
+      "conforme": true,
+      "duracion_ms": 1
+    },
+    {
+      "id": "A03",
+      "contrato": "Salida IA estructural/política incoherente se bloquea antes de persistir",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "A04",
+      "contrato": "Salida IA estructural/política incoherente se bloquea antes de persistir",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "A05",
+      "contrato": "Salida IA estructural/política incoherente se bloquea antes de persistir",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "A06",
+      "contrato": "Salida IA estructural/política incoherente se bloquea antes de persistir",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "A07",
+      "contrato": "Salida IA estructural/política incoherente se bloquea antes de persistir",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "A08",
+      "contrato": "Salida IA estructural/política incoherente se bloquea antes de persistir",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "A09",
+      "contrato": "Salida IA estructural/política incoherente se bloquea antes de persistir",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "A10",
+      "contrato": "Salida IA estructural/política incoherente se bloquea antes de persistir",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "A11",
+      "contrato": "Salida IA estructural/política incoherente se bloquea antes de persistir",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "A12",
+      "contrato": "Salida IA estructural/política incoherente se bloquea antes de persistir",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "A13",
+      "contrato": "Salida IA estructural/política incoherente se bloquea antes de persistir",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "A14",
+      "contrato": "Exige consulta real de requisitos para primera consulta",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "A15",
+      "contrato": "Modalidad y honorarios requieren cada tema, sin usar historia como política",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "A16",
+      "contrato": "Consulta profesional prioritaria usa borrador controlado sin consejo",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "A17",
+      "contrato": "Fecha relativa se refuerza técnicamente y exige acción pedir datos",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "A18",
+      "contrato": "Datos contradictorios no deben persistir como nombre/preferencia resueltos",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "A19",
+      "contrato": "Texto adversarial no inserta respuesta libre ni modifica estado/destino",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "A20",
+      "contrato": "Máximo de faltantes/alertas sigue dando borrador de hasta 60 palabras",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "A21",
+      "contrato": "Texto que parece fórmula queda en fila como dato, sin evaluación offline",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "R01",
+      "contrato": "Solo acuse completo permite afirmar registro persistido",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "R02",
+      "contrato": "Acuse ausente/incompleto/incoherente se considera incierto, nunca éxito",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "R03",
+      "contrato": "Acuse ausente/incompleto/incoherente se considera incierto, nunca éxito",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "R04",
+      "contrato": "Acuse ausente/incompleto/incoherente se considera incierto, nunca éxito",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "R05",
+      "contrato": "Acuse ausente/incompleto/incoherente se considera incierto, nunca éxito",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "R06",
+      "contrato": "Acuse ausente/incompleto/incoherente se considera incierto, nunca éxito",
+      "conforme": true,
+      "duracion_ms": 1
+    },
+    {
+      "id": "R07",
+      "contrato": "Acuse ausente/incompleto/incoherente se considera incierto, nunca éxito",
+      "conforme": true,
+      "duracion_ms": 0
+    },
+    {
+      "id": "R08",
+      "contrato": "Acuse ausente/incompleto/incoherente se considera incierto, nunca éxito",
+      "conforme": true,
+      "duracion_ms": 0
+    }
+  ]
+}

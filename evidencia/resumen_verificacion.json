@@ -1,0 +1,107 @@
+{
+  "fecha": "2026-11-02",
+  "version_id": "b9da5f49-26be-4015-bbfb-7c0a8c8cdba7",
+  "workflow_id": "finalRecepcionR01",
+  "modelo": "models/gemini-3.5-flash-lite",
+  "temperatura": 1,
+  "version_logica": "FINAL_R01",
+  "integracion": {
+    "total": 28,
+    "conformes": 28,
+    "tipo": "Dos corridas consolidadas, misma versión nativa",
+    "con_registro_nuevo": 15,
+    "rechazos400": 9,
+    "rechazo_seguro502": 1,
+    "duplicados200": 1,
+    "conflictos409": 2,
+    "ejecuciones": [
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      145,
+      146,
+      147,
+      148,
+      149,
+      150,
+      152,
+      153,
+      154,
+      155,
+      156,
+      157
+    ]
+  },
+  "lectura_independiente": {
+    "ejecucion_id": 158,
+    "inicio": "2026-11-02 15:26:39.986",
+    "filas_totales_destino": 37,
+    "filas_bateria_cotejadas": 15,
+    "columnas_cotejadas_por_fila": 20
+  },
+  "memoria_nativa_cotejada": true,
+  "raw": {
+    "ejecucion_id": 153,
+    "fila": 37,
+    "celda_mensaje": {
+      "userEnteredValue": {
+        "stringValue": "=1+1 Soy Persona Demo Formula. Quiero una primera consulta para el 22/11/2026 por la tarde."
+      },
+      "effectiveValue": {
+        "stringValue": "=1+1 Soy Persona Demo Formula. Quiero una primera consulta para el 22/11/2026 por la tarde."
+      }
+    },
+    "es_texto_sin_formula": true
+  },
+  "offline": {
+    "conformes": 67,
+    "total": 67
+  },
+  "harness": {
+    "conformes": 11,
+    "total": 11,
+    "tipo": "SINTETICO",
+    "ejecuciones": [
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      96,
+      97,
+      99
+    ]
+  },
+  "sha256_codigo": {
+    "normalizar.js": "002888998b6c2b6d7549dc8f410c26ced9f6c556a0f329a932a3386cc375b166",
+    "preparar_contexto.js": "7355180d52be43fc5bcf829f492d2d92ba57782ac6707238527ecccea4e25358",
+    "herramienta_admin.js": "d725e3b8d0c84021a7d395bdc3f0f6ba4e446866cb2944f8492e359ddec49585",
+    "validar_y_preparar.js": "7098b0bcc23db35ce5295ef577dd576c3ac8a2cfba419507f64a7f3b6c08855e",
+    "confirmar_registro.js": "c05736ff5eb7f68b3e2da260a9281bb725db6de4e17c0713d55dc49f4fe2055f"
+  },
+  "sha256_prompt": "10a3bee3ed38fed09c9ed1971d8ebfce38b688008afc3ed9f9d17f6fc6937a3c",
+  "limites": [
+    "Pruebas secuenciales, sin garantía de concurrencia o exactly-once.",
+    "Clasificación/extracción probabilísticas y revisión humana.",
+    "Memoria RAM; teléfono enviado no autentica identidad.",
+    "Disponibilidad y cuota cambian.",
+    "Los fallos del harness no son fallos reales de Google ni Gemini.",
+    "No hay WhatsApp real, hosting, publicación ni presentación."
+  ]
+}
