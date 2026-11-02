@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+.env
+.env.*
+*.sqlite*
+.n8n/
+evidencia-local/
