@@ -1,0 +1,5 @@
+tema,estado,valor,version
+requisitos,verificado_para_recepcion,"[""nombre"",""preferencia_turno""]",ADMIN_DEMO_R01
+modalidad,no_verificado,null,ADMIN_DEMO_R01
+honorarios,no_verificado,null,ADMIN_DEMO_R01
+horarios,no_verificado,null,ADMIN_DEMO_R01
