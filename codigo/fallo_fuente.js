@@ -1,0 +1,2 @@
+const o=$("Normalizar entrada").item.json;
+return {json:{"ok": false, "error": "FUENTE_NO_DISPONIBLE", "http": 503, "etapa": "lectura_configuracion", "registro_persistido": null, "respuesta_enviada_whatsapp": false, "reintento_automatico": false, "recuperacion": "Conservar entrada y ejecución. Consultar evento_id en destino antes de repetir. Si resultado incierto, resolver manualmente.",evento_id:o.evento_id,ejecucion_id:o.ejecucion_id}};
