@@ -1,0 +1,98 @@
+{
+  "name": "Final - Crear hoja dedicada UNA VEZ",
+  "nodes": [
+    {
+      "id": "038b89a4-66f7-44bd-a868-f1df5baa8ad4",
+      "name": "Inicio manual",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "parameters": {},
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "b91b5321-b59b-4e67-a24c-8a677b283dbc",
+      "name": "Crear hoja dedicada",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "parameters": {
+        "method": "POST",
+        "url": "https://sheets.googleapis.com/v4/spreadsheets",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleSheetsOAuth2Api",
+        "options": {
+          "timeout": 20000
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"properties\": {\"title\": \"Curso AI Automation - Final - Recepcion DEMO\", \"locale\": \"es_AR\", \"timeZone\": \"America/Buenos_Aires\"}, \"sheets\": [{\"properties\": {\"sheetId\": 0, \"title\": \"Administracion\"}}, {\"properties\": {\"sheetId\": 1, \"title\": \"Solicitudes\"}}]}"
+      },
+      "position": [
+        260,
+        0
+      ],
+      "disabled": true,
+      "notes": "Preparación realizada en ejecución 71. No repetir."
+    },
+    {
+      "id": "a55fa0cf-563d-4b93-a32e-2fba9c504964",
+      "name": "Inicializar datos DEMO",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "parameters": {
+        "method": "POST",
+        "url": "={{ 'https://sheets.googleapis.com/v4/spreadsheets/' + $json.spreadsheetId + ':batchUpdate' }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleSheetsOAuth2Api",
+        "options": {
+          "timeout": 20000
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"requests\": [{\"updateCells\": {\"start\": {\"sheetId\": 0, \"rowIndex\": 0, \"columnIndex\": 0}, \"rows\": [{\"values\": [{\"userEnteredValue\": {\"stringValue\": \"tema\"}}, {\"userEnteredValue\": {\"stringValue\": \"estado\"}}, {\"userEnteredValue\": {\"stringValue\": \"valor\"}}, {\"userEnteredValue\": {\"stringValue\": \"version\"}}]}, {\"values\": [{\"userEnteredValue\": {\"stringValue\": \"requisitos\"}}, {\"userEnteredValue\": {\"stringValue\": \"verificado_para_recepcion\"}}, {\"userEnteredValue\": {\"stringValue\": \"[\\\"nombre\\\",\\\"preferencia_turno\\\"]\"}}, {\"userEnteredValue\": {\"stringValue\": \"ADMIN_DEMO_R01\"}}]}, {\"values\": [{\"userEnteredValue\": {\"stringValue\": \"modalidad\"}}, {\"userEnteredValue\": {\"stringValue\": \"no_verificado\"}}, {\"userEnteredValue\": {\"stringValue\": \"null\"}}, {\"userEnteredValue\": {\"stringValue\": \"ADMIN_DEMO_R01\"}}]}, {\"values\": [{\"userEnteredValue\": {\"stringValue\": \"honorarios\"}}, {\"userEnteredValue\": {\"stringValue\": \"no_verificado\"}}, {\"userEnteredValue\": {\"stringValue\": \"null\"}}, {\"userEnteredValue\": {\"stringValue\": \"ADMIN_DEMO_R01\"}}]}, {\"values\": [{\"userEnteredValue\": {\"stringValue\": \"horarios\"}}, {\"userEnteredValue\": {\"stringValue\": \"no_verificado\"}}, {\"userEnteredValue\": {\"stringValue\": \"null\"}}, {\"userEnteredValue\": {\"stringValue\": \"ADMIN_DEMO_R01\"}}]}], \"fields\": \"userEnteredValue\"}}, {\"updateSheetProperties\": {\"properties\": {\"sheetId\": 0, \"gridProperties\": {\"frozenRowCount\": 1}}, \"fields\": \"gridProperties.frozenRowCount\"}}, {\"repeatCell\": {\"range\": {\"sheetId\": 0}, \"cell\": {\"userEnteredFormat\": {\"wrapStrategy\": \"WRAP\", \"verticalAlignment\": \"TOP\"}}, \"fields\": \"userEnteredFormat\"}}, {\"repeatCell\": {\"range\": {\"sheetId\": 0, \"startRowIndex\": 0, \"endRowIndex\": 1}, \"cell\": {\"userEnteredFormat\": {\"backgroundColor\": {\"red\": 0.88, \"green\": 0.93, \"blue\": 0.96}, \"textFormat\": {\"bold\": true}}}, \"fields\": \"userEnteredFormat\"}}, {\"updateDimensionProperties\": {\"range\": {\"sheetId\": 0, \"dimension\": \"COLUMNS\", \"startIndex\": 0, \"endIndex\": 4}, \"properties\": {\"pixelSize\": 180}, \"fields\": \"pixelSize\"}}, {\"updateCells\": {\"start\": {\"sheetId\": 1, \"rowIndex\": 0, \"columnIndex\": 0}, \"rows\": [{\"values\": [{\"userEnteredValue\": {\"stringValue\": \"evento_id\"}}, {\"userEnteredValue\": {\"stringValue\": \"entrada_canonica\"}}, {\"userEnteredValue\": {\"stringValue\": \"fecha_recepcion\"}}, {\"userEnteredValue\": {\"stringValue\": \"telefono\"}}, {\"userEnteredValue\": {\"stringValue\": \"mensaje\"}}, {\"userEnteredValue\": {\"stringValue\": \"tipo\"}}, {\"userEnteredValue\": {\"stringValue\": \"accion\"}}, {\"userEnteredValue\": {\"stringValue\": \"nombre\"}}, {\"userEnteredValue\": {\"stringValue\": \"preferencia_turno\"}}, {\"userEnteredValue\": {\"stringValue\": \"faltantes\"}}, {\"userEnteredValue\": {\"stringValue\": \"alertas\"}}, {\"userEnteredValue\": {\"stringValue\": \"derivar_profesional\"}}, {\"userEnteredValue\": {\"stringValue\": \"borrador\"}}, {\"userEnteredValue\": {\"stringValue\": \"estado\"}}, {\"userEnteredValue\": {\"stringValue\": \"config_version\"}}, {\"userEnteredValue\": {\"stringValue\": \"ejecucion_id\"}}, {\"userEnteredValue\": {\"stringValue\": \"version_flujo\"}}, {\"userEnteredValue\": {\"stringValue\": \"temas_consultados\"}}, {\"userEnteredValue\": {\"stringValue\": \"origen\"}}, {\"userEnteredValue\": {\"stringValue\": \"prioridad\"}}]}], \"fields\": \"userEnteredValue\"}}, {\"updateSheetProperties\": {\"properties\": {\"sheetId\": 1, \"gridProperties\": {\"frozenRowCount\": 1}}, \"fields\": \"gridProperties.frozenRowCount\"}}, {\"repeatCell\": {\"range\": {\"sheetId\": 1}, \"cell\": {\"userEnteredFormat\": {\"wrapStrategy\": \"WRAP\", \"verticalAlignment\": \"TOP\"}}, \"fields\": \"userEnteredFormat\"}}, {\"repeatCell\": {\"range\": {\"sheetId\": 1, \"startRowIndex\": 0, \"endRowIndex\": 1}, \"cell\": {\"userEnteredFormat\": {\"backgroundColor\": {\"red\": 0.88, \"green\": 0.93, \"blue\": 0.96}, \"textFormat\": {\"bold\": true}}}, \"fields\": \"userEnteredFormat\"}}, {\"updateDimensionProperties\": {\"range\": {\"sheetId\": 1, \"dimension\": \"COLUMNS\", \"startIndex\": 0, \"endIndex\": 20}, \"properties\": {\"pixelSize\": 180}, \"fields\": \"pixelSize\"}}, {\"updateDimensionProperties\": {\"range\": {\"sheetId\": 1, \"dimension\": \"COLUMNS\", \"startIndex\": 12, \"endIndex\": 13}, \"properties\": {\"pixelSize\": 400}, \"fields\": \"pixelSize\"}}]}"
+      },
+      "position": [
+        520,
+        0
+      ],
+      "disabled": true,
+      "notes": "Preparación realizada en ejecución 71. No repetir."
+    }
+  ],
+  "connections": {
+    "Inicio manual": {
+      "main": [
+        [
+          {
+            "node": "Crear hoja dedicada",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Crear hoja dedicada": {
+      "main": [
+        [
+          {
+            "node": "Inicializar datos DEMO",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "America/Buenos_Aires",
+    "executionTimeout": 180,
+    "saveDataSuccessExecution": "all",
+    "saveDataErrorExecution": "all"
+  },
+  "active": false,
+  "pinData": {},
+  "tags": []
+}
