@@ -1,0 +1,623 @@
+{
+  "name": "Final - SOLO PRUEBA SINTETICA - Fallos y recuperacion",
+  "nodes": [
+    {
+      "id": "7c412e5c-4ba0-4cd2-8b64-505db3e2e2ee",
+      "name": "Recibir WhatsApp simulado",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "parameters": {
+        "multipleMethods": false,
+        "httpMethod": "POST",
+        "path": "final-prueba-fallos",
+        "authentication": "none",
+        "responseMode": "responseNode",
+        "webhookNotice": "",
+        "options": {}
+      },
+      "position": [
+        0,
+        0
+      ],
+      "webhookId": "f3f51552-1b7d-4057-ad59-e1193e3994da"
+    },
+    {
+      "id": "91292b1d-26df-470e-bbb3-7b350377d690",
+      "name": "Normalizar entrada",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const cuerpo = $json.body;\nconst obj = v => v && typeof v === 'object' && !Array.isArray(v);\nconst texto = v => typeof v === 'string' ? v.trim() : '';\nconst errores = [];\nif (!obj(cuerpo)) errores.push('cuerpo_invalido');\nconst evento_id = texto(cuerpo?.evento_id);\nconst original = texto(cuerpo?.from);\nconst telefono = original.replace(/[\\s()+-]/g, '');\nconst bruto = cuerpo?.text?.body;\nconst mensaje = texto(bruto).replace(/\\s+/g, ' ');\nif (!/^[A-Za-z0-9_-]{1,120}$/.test(evento_id)) errores.push('evento_id_invalido');\nif (!/^[1-9]\\d{7,14}$/.test(telefono)) errores.push('telefono_invalido');\nif (!obj(cuerpo?.text) || typeof bruto !== 'string' || !mensaje || bruto.length > 2000)\n  errores.push('mensaje_invalido');\nif (typeof bruto === 'string' && /[\\u0000-\\u0008\\u000B\\u000C\\u000E-\\u001F\\u007F\\uFFFD\\u202A-\\u202E\\u2066-\\u2069]/u.test(bruto))\n  errores.push('texto_corrupto');\nif (cuerpo?.attachments !== undefined || (obj(cuerpo) && Object.hasOwn(cuerpo,'type') && cuerpo.type !== 'text'))\n  errores.push('contenido_no_textual');\nif (errores.length) return {json:{ok:false,valido:false,error:'ENTRADA_INVALIDA',errores,\n  registro_persistido:false,respuesta_enviada_whatsapp:false}};\nreturn {json:{valido:true,evento_id,telefono,mensaje,\n  entrada_canonica:JSON.stringify([telefono,mensaje]),fecha_recepcion:$now.toISO(),\n  canal:'whatsapp_simulado',ejecucion_id:String($execution.id),\n  version_flujo:'FINAL_R01',entrada_ia:{mensaje}}};\n"
+      },
+      "position": [
+        220,
+        0
+      ]
+    },
+    {
+      "id": "2659248f-b7fc-41a3-9f16-ae111ae542e6",
+      "name": "Entrada valida",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "6e9e499c-f395-43f3-9ed8-d166e14492d6",
+              "leftValue": "={{ $json.valido }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": false,
+        "options": {}
+      },
+      "position": [
+        440,
+        0
+      ]
+    },
+    {
+      "id": "df8ceffd-b79e-4421-99e2-643537447f9b",
+      "name": "Destino fijo",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "return {json:{...$json,spreadsheet_id:'HARNESS_SINTETICO_NO_GOOGLE'}};"
+      },
+      "position": [
+        660,
+        0
+      ]
+    },
+    {
+      "id": "48e458ca-3197-43c0-a0f5-a7daa84a15fa",
+      "name": "Leer Sheets - segunda fuente",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "parameters": {
+        "method": "GET",
+        "url": "={{ 'http://127.0.0.1:5682/read?evento_id=' + encodeURIComponent($('Normalizar entrada').item.json.evento_id) }}",
+        "authentication": "none",
+        "options": {
+          "timeout": 5000
+        }
+      },
+      "position": [
+        880,
+        0
+      ],
+      "onError": "continueErrorOutput",
+      "retryOnFail": false
+    },
+    {
+      "id": "0e95796c-7d6a-4228-8a19-bff9b20e54a8",
+      "name": "Preparar contexto",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const exigir=(c,m)=>{if(!c) throw new Error(m);};\nconst origen=$('Normalizar entrada').item.json;\nconst rangos=$json.valueRanges;\nexigir(Array.isArray(rangos)&&rangos.length===2,'Lectura incompleta');\nconst admin=rangos[0].values, filas=rangos[1].values;\nconst cabecera=['evento_id','entrada_canonica','fecha_recepcion','telefono','mensaje','tipo','accion','nombre','preferencia_turno','faltantes','alertas','derivar_profesional','borrador','estado','config_version','ejecucion_id','version_flujo','temas_consultados','origen','prioridad'];\nexigir(Array.isArray(admin)&&JSON.stringify(admin[0])===JSON.stringify(['tema','estado','valor','version']),'Cabecera administrativa inválida');\nexigir(Array.isArray(filas)&&JSON.stringify(filas[0])===JSON.stringify(cabecera),'Cabecera de solicitudes inválida');\nconst config={};\nfor(const r of admin.slice(1)) {\n  if(!r.some(Boolean)) continue;\n  exigir(r.length===4&&['modalidad','honorarios','horarios','requisitos'].includes(r[0])&&!config[r[0]],'Tema ausente/duplicado');\n  exigir(r[3]==='ADMIN_DEMO_R01','Versión administrativa no admitida');\n  if(r[0]==='requisitos') {\n    exigir(r[1]==='verificado_para_recepcion'&&r[2]==='[\"nombre\",\"preferencia_turno\"]','Requisitos no admitidos');\n    config[r[0]]={estado:r[1],valor:JSON.parse(r[2]),version:r[3]};\n  } else {\n    exigir(r[1]==='no_verificado'&&r[2]==='null','Dato administrativo no aprobado');\n    config[r[0]]={estado:r[1],valor:null,version:r[3]};\n  }\n}\nexigir(Object.keys(config).length===4,'Configuración incompleta');\nconst registros=filas.slice(1).filter(r=>r.some(Boolean));\nconst encontrados=registros.filter(r=>r[0]===origen.evento_id);\nif(encontrados.length) {\n  const r=encontrados[0];\n  const igual=Boolean(encontrados.length===1&&r.length===20&&r[1]===origen.entrada_canonica&&r[13]==='pendiente_revision'&&r[14]==='ADMIN_DEMO_R01'&&r[16]==='FINAL_R01'&&r[18]==='whatsapp_simulado'&&typeof r[12]==='string'&&r[12].trim()&&typeof r[15]==='string'&&r[15].trim());\n  return {json:{...origen,continuar:false,http:igual?200:409,ok:igual,\n    error:igual?null:'EVENTO_CONFLICTIVO',duplicado:igual,registro_persistido:igual?true:null,\n    respuesta_enviada_whatsapp:false,detalle:igual?'Evento ya registrado; no se volvió a ejecutar IA ni escritura.':'ID repetido con contenido distinto o registros inconsistentes. Revisión manual.'}};\n}\nexigir(registros.length<1000,'Capacidad de prototipo alcanzada; archivar con revisión antes de continuar');\nreturn {json:{...origen,continuar:true,config,config_version:'ADMIN_DEMO_R01',cabecera}};\n"
+      },
+      "position": [
+        1100,
+        0
+      ],
+      "onError": "continueErrorOutput",
+      "retryOnFail": false
+    },
+    {
+      "id": "fc5f5e84-03de-4eb5-9814-4e1d8477fb6e",
+      "name": "Evento nuevo",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "6e9e499c-f395-43f3-9ed8-d166e14492d6",
+              "leftValue": "={{ $json.continuar }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": false,
+        "options": {}
+      },
+      "position": [
+        1320,
+        0
+      ]
+    },
+    {
+      "id": "119a4843-a938-413c-9c5f-0bec667006c8",
+      "name": "Asistente de recepcion",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "// SOLO PRUEBA SINTÉTICA: reemplazo del AI Agent, sin modelo ni memoria.\n// intermediateSteps es una fixture, NO evidencia de llamadas reales a tools.\nconst o=$('Preparar contexto').item.json;\nif(o.evento_id.startsWith('fallo-ia')) throw new Error('FALLO_IA_INYECTADO_SINTETICO');\nif(o.evento_id.startsWith('fallo-json')) return {json:{output:'{json-invalido-inyectado'}};\nconst salida={tipo:'solicitud_primera_consulta',accion:'gestion_administrativa',\n  nombre:'Persona Demo Harness',preferencia_turno:'24/11/2026 por la tarde',\n  faltantes:[],alertas:[],derivar_profesional:false,\n  temas_administrativos:['requisitos'],estado:'pendiente_revision'};\nreturn {json:{output:JSON.stringify(salida),intermediateSteps:[{\n  action:{tool:'Consultar_datos_administrativos',toolInput:{tema:'requisitos'}},\n  observation:JSON.stringify({tema:'requisitos',...o.config.requisitos,\n    origen:'FIXTURE SINTETICA: NO ES GOOGLE NI LLAMADA REAL DE AGENTE'})\n}]}};\n"
+      },
+      "position": [
+        1540,
+        0
+      ],
+      "onError": "continueErrorOutput",
+      "retryOnFail": false,
+      "notes": "Fixture determinista: no se ejecutan IA, memoria ni herramientas. No acredita éxito de negocio real."
+    },
+    {
+      "id": "3055b6f4-fabc-4c9b-9821-6565acf39089",
+      "name": "Validar y preparar registro",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const origen=$('Preparar contexto').item.json;\nconst exigir=(c,m)=>{if(!c) throw new Error(m);};\nlet s=$json.output;\nif(typeof s==='string') s=JSON.parse(s.trim());\nconst claves=['tipo','accion','nombre','preferencia_turno','faltantes','alertas','derivar_profesional','temas_administrativos','estado'];\nexigir(s&&typeof s==='object'&&!Array.isArray(s)&&Object.keys(s).length===claves.length&&claves.every(k=>Object.hasOwn(s,k)),'Claves de IA inválidas');\nexigir(['solicitud_primera_consulta','informacion_administrativa','reprogramacion_turno','consulta_profesional','otro'].includes(s.tipo),'Tipo inválido');\nexigir(['gestion_administrativa','pedir_datos','derivar_profesional'].includes(s.accion),'Acción inválida');\nfor(const k of ['nombre','preferencia_turno']) exigir(s[k]===null||(typeof s[k]==='string'&&s[k].trim()&&s[k].length<=(k==='nombre'?100:200)&&!/[\\u0000-\\u001F\\uFFFD]/u.test(s[k])),'Dato inválido: '+k);\nconst listas={faltantes:['nombre','preferencia_turno','aclaracion_fecha','aclaracion_datos','separar_solicitudes','aclaracion_pedido'],alertas:['fecha_ambigua','datos_contradictorios','multiples_solicitudes','instruccion_incrustada'],temas_administrativos:['requisitos','modalidad','honorarios','horarios']};\nfor(const [k,valores] of Object.entries(listas)) exigir(Array.isArray(s[k])&&s[k].every(v=>valores.includes(v))&&new Set(s[k]).size===s[k].length,'Lista inválida: '+k);\nexigir(s.estado==='pendiente_revision'&&typeof s.derivar_profesional==='boolean'&&s.derivar_profesional===(s.tipo==='consulta_profesional'),'Estado/derivación incoherentes');\n// Refuerzo técnico de señales visibles; no es un detector semántico universal.\nconst m=origen.mensaje;\nif(/\\b(mañana|pasado mañana|esta semana|pr[oó]xim[oa]|lunes|martes|mi[eé]rcoles|jueves|viernes|s[aá]bado|domingo)\\b/iu.test(m)&&!s.alertas.includes('fecha_ambigua')) s.alertas.push('fecha_ambigua');\nif(/\\b(ignor[aá]|system prompt|instrucciones anteriores|otros remitentes)\\b/iu.test(m)&&!s.alertas.includes('instruccion_incrustada')) s.alertas.push('instruccion_incrustada');\nif(s.alertas.some(a=>['datos_contradictorios','multiples_solicitudes'].includes(a))) {\n  s.nombre=null; s.preferencia_turno=null;\n}\nconst faltantes=[];\nif(s.tipo==='solicitud_primera_consulta') for(const k of origen.config.requisitos.valor) if(s[k]===null) faltantes.push(k);\nif(s.alertas.includes('fecha_ambigua')) faltantes.push('aclaracion_fecha');\nif(s.alertas.includes('datos_contradictorios')) faltantes.push('aclaracion_datos');\nif(s.alertas.includes('multiples_solicitudes')) faltantes.push('separar_solicitudes');\nif(s.tipo==='otro') faltantes.push('aclaracion_pedido');\ns.faltantes=[...new Set(faltantes)];\nconst accion=s.derivar_profesional?'derivar_profesional':s.faltantes.length?'pedir_datos':'gestion_administrativa';\nexigir(s.accion===accion,'Acción del agente incompatible con datos/alertas');\nconst pasos=$json.intermediateSteps||[];\nconst temas=[...new Set(pasos.filter(p=>p.action?.tool==='Consultar_datos_administrativos').map(p=>p.action.toolInput?.tema))].filter(t=>listas.temas_administrativos.includes(t));\nconst requeridos=new Set(s.temas_administrativos);\nif(s.tipo==='solicitud_primera_consulta') requeridos.add('requisitos');\nif(/modalidad|presencial|virtual|videollamada/iu.test(m)) requeridos.add('modalidad');\nif(/honorarios|arancel/iu.test(m)) requeridos.add('honorarios');\nif(/horarios?/iu.test(m)&&s.tipo==='informacion_administrativa') requeridos.add('horarios');\nexigir([...requeridos].every(t=>temas.includes(t)),'Falta consulta real de herramienta');\n// La respuesta final usa texto controlado: el modelo decide la acción y extrae\n// datos, pero no puede insertar asesoramiento libre en el borrador persistido.\nlet borrador;\nif(accion==='derivar_profesional') borrador='Tu consulta requiere la revisión de Francisco. Este asistente solo organiza la recepción administrativa. No envíes documentos ni datos sensibles por este prototipo.';\nelse if(accion==='pedir_datos') {\n  const pedidos=[];\n  if(s.faltantes.includes('nombre')) pedidos.push('tu nombre');\n  if(s.faltantes.includes('preferencia_turno')) pedidos.push('tu preferencia de fecha y horario');\n  if(s.faltantes.includes('aclaracion_fecha')) pedidos.push('una fecha concreta');\n  if(s.faltantes.includes('aclaracion_datos')) pedidos.push('cuál de los datos contradictorios es correcto');\n  if(s.faltantes.includes('separar_solicitudes')) pedidos.push('cada solicitud por separado');\n  if(s.faltantes.includes('aclaracion_pedido')) pedidos.push('qué gestión administrativa necesitás');\n  borrador='Para continuar, indicá '+pedidos.join(' y ')+'. Francisco revisará el pedido; esto no confirma un turno.';\n} else if(s.tipo==='informacion_administrativa') {\n  const desconocidos=[...requeridos].filter(t=>t!=='requisitos'&&origen.config[t].valor===null);\n  borrador=desconocidos.length?'Francisco debe confirmar los datos administrativos consultados. Este borrador no informa disponibilidad, precios ni confirma turnos.':'Para solicitar una primera consulta, indicá tu nombre y preferencia de fecha y horario. Francisco revisará el pedido antes de coordinar.';\n} else if(s.tipo==='reprogramacion_turno') borrador='Francisco revisará tu pedido de coordinación. Este asistente no verifica turnos existentes ni confirma cambios.';\nelse borrador='El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.';\nexigir(borrador.split(/\\s+/).length<=60,'Borrador extenso');\nconst prioridad=accion==='derivar_profesional'?'revision_profesional':accion==='pedir_datos'?'completar_datos':'revision_administrativa';\nconst solicitud={evento_id:origen.evento_id,fecha_recepcion:origen.fecha_recepcion,canal:origen.canal,telefono:origen.telefono,mensaje:origen.mensaje,...s,borrador,prioridad,config_version:origen.config_version,temas_consultados:temas,ejecucion_id:origen.ejecucion_id,version_flujo:origen.version_flujo};\nconst fila=[origen.evento_id,origen.entrada_canonica,origen.fecha_recepcion,origen.telefono,origen.mensaje,s.tipo,s.accion,s.nombre??'',s.preferencia_turno??'',JSON.stringify(s.faltantes),JSON.stringify(s.alertas),String(s.derivar_profesional),borrador,'pendiente_revision',origen.config_version,origen.ejecucion_id,origen.version_flujo,JSON.stringify(temas),'whatsapp_simulado',prioridad];\nreturn {json:{solicitud,fila,ok:true,registro_persistido:false,respuesta_enviada_whatsapp:false}};\n"
+      },
+      "position": [
+        1920,
+        0
+      ],
+      "onError": "continueErrorOutput",
+      "retryOnFail": false
+    },
+    {
+      "id": "e858b5bd-331b-4be3-950d-93ef7e2ce88e",
+      "name": "Registrar solicitud RAW",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "parameters": {
+        "method": "POST",
+        "url": "http://127.0.0.1:5682/append",
+        "authentication": "none",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ {majorDimension:\"ROWS\",values:[$json.fila]} }}",
+        "options": {
+          "timeout": 5000
+        }
+      },
+      "position": [
+        2160,
+        0
+      ],
+      "onError": "continueErrorOutput",
+      "retryOnFail": false
+    },
+    {
+      "id": "11a650a4-e6ab-4ceb-a58e-5cbfd32e1696",
+      "name": "Confirmar registro",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const esperado=$('Validar y preparar registro').item.json;\nconst u=$json.updates;\nconst rango=/^Solicitudes!A([1-9]\\d*):T([1-9]\\d*)$/.exec(u?.updatedRange||'');\nif(!u||u.updatedRows!==1||u.updatedCells!==20||!rango||rango[1]!==rango[2]||Number(rango[1])<2||JSON.stringify(u.updatedData?.values)!==JSON.stringify([esperado.fila]))\n  throw new Error('Acuse de escritura no comprobable; resultado incierto');\nreturn {json:{ok:true,solicitud:esperado.solicitud,registro_persistido:true,rango_registrado:u.updatedRange,\n  respuesta_enviada_whatsapp:false,borrador_pendiente_revision:true,duplicado:false}};\n"
+      },
+      "position": [
+        2400,
+        0
+      ],
+      "onError": "continueErrorOutput",
+      "retryOnFail": false
+    },
+    {
+      "id": "ff2c5596-f41a-4808-b9cf-d40406898cdd",
+      "name": "Fallo fuente",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const o=$(\"Normalizar entrada\").item.json;\nreturn {json:{\"ok\": false, \"error\": \"FUENTE_NO_DISPONIBLE\", \"http\": 503, \"etapa\": \"lectura_configuracion\", \"registro_persistido\": null, \"respuesta_enviada_whatsapp\": false, \"reintento_automatico\": false, \"recuperacion\": \"Conservar entrada y ejecución. Consultar evento_id en destino antes de repetir. Si resultado incierto, resolver manualmente.\",evento_id:o.evento_id,ejecucion_id:o.ejecucion_id}};"
+      },
+      "position": [
+        1100,
+        550
+      ]
+    },
+    {
+      "id": "bebc1f83-16da-4752-ae25-ba132ea09701",
+      "name": "Fallo IA",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const o=$(\"Normalizar entrada\").item.json;\nreturn {json:{\"ok\": false, \"error\": \"IA_NO_VALIDADA\", \"http\": 502, \"etapa\": \"ia_validacion\", \"registro_persistido\": false, \"respuesta_enviada_whatsapp\": false, \"reintento_automatico\": false, \"recuperacion\": \"Conservar entrada y ejecución. Consultar evento_id en destino antes de repetir. Si resultado incierto, resolver manualmente.\",evento_id:o.evento_id,ejecucion_id:o.ejecucion_id}};"
+      },
+      "position": [
+        1740,
+        550
+      ]
+    },
+    {
+      "id": "14a8081a-5a76-4086-901c-c9d4fd3ce919",
+      "name": "Escritura incierta",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const o=$(\"Normalizar entrada\").item.json;\nreturn {json:{\"ok\": false, \"error\": \"REGISTRO_INCIERTO\", \"http\": 503, \"etapa\": \"escritura\", \"registro_persistido\": null, \"respuesta_enviada_whatsapp\": false, \"reintento_automatico\": false, \"recuperacion\": \"Conservar entrada y ejecución. Consultar evento_id en destino antes de repetir. Si resultado incierto, resolver manualmente.\",evento_id:o.evento_id,ejecucion_id:o.ejecucion_id}};"
+      },
+      "position": [
+        2360,
+        550
+      ]
+    },
+    {
+      "id": "95cdd121-6c07-4e23-836f-90b6603b8e93",
+      "name": "Resultado 200",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "position": [
+        2620,
+        0
+      ]
+    },
+    {
+      "id": "344ace4e-de30-41d5-8e31-78c94edcc317",
+      "name": "Entrada 400",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {
+          "responseCode": 400
+        }
+      },
+      "position": [
+        440,
+        550
+      ]
+    },
+    {
+      "id": "acf656ed-c9ca-4011-a853-e384d9ddbb48",
+      "name": "Duplicado o conflicto",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {
+          "responseCode": "={{ $json.http }}"
+        }
+      },
+      "position": [
+        1320,
+        800
+      ]
+    },
+    {
+      "id": "910f1478-1688-4936-8ab9-a4f7b2e0384b",
+      "name": "Error controlado",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}",
+        "options": {
+          "responseCode": "={{ $json.http }}"
+        }
+      },
+      "position": [
+        1960,
+        800
+      ]
+    },
+    {
+      "id": "4f3d4975-d564-45e7-9ad8-31d4d680c5d3",
+      "name": "Alcance",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "parameters": {
+        "content": "## SOLO PRUEBA SINTÉTICA\nCopia de controles FINAL_R01. HTTP localhost:5682 simula Sheets; Code fixture sustituye IA y tools. Sin Google/Gemini, sin memoria real. No es evidencia del flujo de negocio.",
+        "width": 640,
+        "height": 210
+      },
+      "position": [
+        0,
+        -300
+      ]
+    },
+    {
+      "id": "dbe7b8ca-1c48-49b2-b811-81aae4c162b0",
+      "name": "Fuentes",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "parameters": {
+        "content": "## SOLO PRUEBA SINTÉTICA\nCopia de controles FINAL_R01. HTTP localhost:5682 simula Sheets; Code fixture sustituye IA y tools. Sin Google/Gemini, sin memoria real. No es evidencia del flujo de negocio.",
+        "width": 650,
+        "height": 210
+      },
+      "position": [
+        750,
+        -300
+      ]
+    },
+    {
+      "id": "3c9ee24c-b24a-4d85-8c3c-0a2c1d2ae489",
+      "name": "Decisión",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "parameters": {
+        "content": "## SOLO PRUEBA SINTÉTICA\nCopia de controles FINAL_R01. HTTP localhost:5682 simula Sheets; Code fixture sustituye IA y tools. Sin Google/Gemini, sin memoria real. No es evidencia del flujo de negocio.",
+        "width": 700,
+        "height": 210
+      },
+      "position": [
+        1500,
+        -300
+      ]
+    },
+    {
+      "id": "d5b39cd5-f6cb-42d3-b494-fc171be6802d",
+      "name": "Salida",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "parameters": {
+        "content": "## SOLO PRUEBA SINTÉTICA\nCopia de controles FINAL_R01. HTTP localhost:5682 simula Sheets; Code fixture sustituye IA y tools. Sin Google/Gemini, sin memoria real. No es evidencia del flujo de negocio.",
+        "width": 650,
+        "height": 210
+      },
+      "position": [
+        2300,
+        -300
+      ]
+    }
+  ],
+  "connections": {
+    "Recibir WhatsApp simulado": {
+      "main": [
+        [
+          {
+            "node": "Normalizar entrada",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalizar entrada": {
+      "main": [
+        [
+          {
+            "node": "Entrada valida",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Entrada valida": {
+      "main": [
+        [
+          {
+            "node": "Destino fijo",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Entrada 400",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Destino fijo": {
+      "main": [
+        [
+          {
+            "node": "Leer Sheets - segunda fuente",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Leer Sheets - segunda fuente": {
+      "main": [
+        [
+          {
+            "node": "Preparar contexto",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Fallo fuente",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Preparar contexto": {
+      "main": [
+        [
+          {
+            "node": "Evento nuevo",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Fallo fuente",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Evento nuevo": {
+      "main": [
+        [
+          {
+            "node": "Asistente de recepcion",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Duplicado o conflicto",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Asistente de recepcion": {
+      "main": [
+        [
+          {
+            "node": "Validar y preparar registro",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Fallo IA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validar y preparar registro": {
+      "main": [
+        [
+          {
+            "node": "Registrar solicitud RAW",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Fallo IA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Registrar solicitud RAW": {
+      "main": [
+        [
+          {
+            "node": "Confirmar registro",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Escritura incierta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Confirmar registro": {
+      "main": [
+        [
+          {
+            "node": "Resultado 200",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Escritura incierta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fallo fuente": {
+      "main": [
+        [
+          {
+            "node": "Error controlado",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fallo IA": {
+      "main": [
+        [
+          {
+            "node": "Error controlado",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Escritura incierta": {
+      "main": [
+        [
+          {
+            "node": "Error controlado",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "America/Buenos_Aires",
+    "executionTimeout": 180,
+    "saveDataSuccessExecution": "all",
+    "saveDataErrorExecution": "all"
+  },
+  "active": false,
+  "pinData": {},
+  "tags": []
+}
