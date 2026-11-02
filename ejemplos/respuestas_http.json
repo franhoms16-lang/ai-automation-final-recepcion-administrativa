@@ -1,0 +1,827 @@
+[
+  {
+    "caso": "cuerpo_array",
+    "http": 400,
+    "respuesta": {
+      "ok": false,
+      "valido": false,
+      "error": "ENTRADA_INVALIDA",
+      "errores": [
+        "cuerpo_invalido",
+        "evento_id_invalido",
+        "telefono_invalido",
+        "mensaje_invalido"
+      ],
+      "registro_persistido": false,
+      "respuesta_enviada_whatsapp": false
+    }
+  },
+  {
+    "caso": "mensaje_vacio",
+    "http": 400,
+    "respuesta": {
+      "ok": false,
+      "valido": false,
+      "error": "ENTRADA_INVALIDA",
+      "errores": [
+        "mensaje_invalido"
+      ],
+      "registro_persistido": false,
+      "respuesta_enviada_whatsapp": false
+    }
+  },
+  {
+    "caso": "telefono_invalido",
+    "http": 400,
+    "respuesta": {
+      "ok": false,
+      "valido": false,
+      "error": "ENTRADA_INVALIDA",
+      "errores": [
+        "telefono_invalido"
+      ],
+      "registro_persistido": false,
+      "respuesta_enviada_whatsapp": false
+    }
+  },
+  {
+    "caso": "telefono_numero_json",
+    "http": 400,
+    "respuesta": {
+      "ok": false,
+      "valido": false,
+      "error": "ENTRADA_INVALIDA",
+      "errores": [
+        "telefono_invalido"
+      ],
+      "registro_persistido": false,
+      "respuesta_enviada_whatsapp": false
+    }
+  },
+  {
+    "caso": "texto_objeto",
+    "http": 400,
+    "respuesta": {
+      "ok": false,
+      "valido": false,
+      "error": "ENTRADA_INVALIDA",
+      "errores": [
+        "mensaje_invalido"
+      ],
+      "registro_persistido": false,
+      "respuesta_enviada_whatsapp": false
+    }
+  },
+  {
+    "caso": "texto_excesivo",
+    "http": 400,
+    "respuesta": {
+      "ok": false,
+      "valido": false,
+      "error": "ENTRADA_INVALIDA",
+      "errores": [
+        "mensaje_invalido"
+      ],
+      "registro_persistido": false,
+      "respuesta_enviada_whatsapp": false
+    }
+  },
+  {
+    "caso": "adjunto_no_textual",
+    "http": 400,
+    "respuesta": {
+      "ok": false,
+      "valido": false,
+      "error": "ENTRADA_INVALIDA",
+      "errores": [
+        "contenido_no_textual"
+      ],
+      "registro_persistido": false,
+      "respuesta_enviada_whatsapp": false
+    }
+  },
+  {
+    "caso": "texto_corrupto",
+    "http": 400,
+    "respuesta": {
+      "ok": false,
+      "valido": false,
+      "error": "ENTRADA_INVALIDA",
+      "errores": [
+        "texto_corrupto"
+      ],
+      "registro_persistido": false,
+      "respuesta_enviada_whatsapp": false
+    }
+  },
+  {
+    "caso": "evento_id_tipo_invalido",
+    "http": 400,
+    "respuesta": {
+      "ok": false,
+      "valido": false,
+      "error": "ENTRADA_INVALIDA",
+      "errores": [
+        "evento_id_invalido"
+      ],
+      "registro_persistido": false,
+      "respuesta_enviada_whatsapp": false
+    }
+  },
+  {
+    "caso": "a_indica_nombre",
+    "http": 200,
+    "respuesta": {
+      "ok": true,
+      "solicitud": {
+        "evento_id": "51883257-7f21-4c73-9143-effd35c13ee2",
+        "fecha_recepcion": "2026-11-02T12:14:42.526-03:00",
+        "canal": "whatsapp_simulado",
+        "telefono": "5491133397190",
+        "mensaje": "Soy Persona Demo A. Quiero una primera consulta.",
+        "tipo": "solicitud_primera_consulta",
+        "accion": "pedir_datos",
+        "nombre": "Persona Demo A",
+        "preferencia_turno": null,
+        "faltantes": [
+          "preferencia_turno"
+        ],
+        "alertas": [],
+        "derivar_profesional": false,
+        "temas_administrativos": [
+          "requisitos"
+        ],
+        "estado": "pendiente_revision",
+        "borrador": "Para continuar, indicá tu preferencia de fecha y horario. Francisco revisará el pedido; esto no confirma un turno.",
+        "prioridad": "completar_datos",
+        "config_version": "ADMIN_DEMO_R01",
+        "temas_consultados": [
+          "requisitos"
+        ],
+        "ejecucion_id": "138",
+        "version_flujo": "FINAL_R01"
+      },
+      "registro_persistido": true,
+      "rango_registrado": "Solicitudes!A24:T24",
+      "respuesta_enviada_whatsapp": false,
+      "borrador_pendiente_revision": true,
+      "duplicado": false
+    }
+  },
+  {
+    "caso": "b_sin_datos",
+    "http": 200,
+    "respuesta": {
+      "ok": true,
+      "solicitud": {
+        "evento_id": "8f563d34-8c37-4075-a324-3cac6476427b",
+        "fecha_recepcion": "2026-11-02T12:15:12.947-03:00",
+        "canal": "whatsapp_simulado",
+        "telefono": "5491133397200",
+        "mensaje": "Quiero una primera consulta. Todavía no te indiqué mi nombre ni una preferencia de fecha.",
+        "tipo": "solicitud_primera_consulta",
+        "accion": "pedir_datos",
+        "nombre": null,
+        "preferencia_turno": null,
+        "faltantes": [
+          "nombre",
+          "preferencia_turno"
+        ],
+        "alertas": [],
+        "derivar_profesional": false,
+        "temas_administrativos": [
+          "requisitos"
+        ],
+        "estado": "pendiente_revision",
+        "borrador": "Para continuar, indicá tu nombre y tu preferencia de fecha y horario. Francisco revisará el pedido; esto no confirma un turno.",
+        "prioridad": "completar_datos",
+        "config_version": "ADMIN_DEMO_R01",
+        "temas_consultados": [
+          "requisitos"
+        ],
+        "ejecucion_id": "139",
+        "version_flujo": "FINAL_R01"
+      },
+      "registro_persistido": true,
+      "rango_registrado": "Solicitudes!A25:T25",
+      "respuesta_enviada_whatsapp": false,
+      "borrador_pendiente_revision": true,
+      "duplicado": false
+    }
+  },
+  {
+    "caso": "a_mismo_telefono_otro_formato",
+    "http": 200,
+    "respuesta": {
+      "ok": true,
+      "solicitud": {
+        "evento_id": "5643c3a3-a477-4e04-993e-332d428024eb",
+        "fecha_recepcion": "2026-11-02T12:15:37.977-03:00",
+        "canal": "whatsapp_simulado",
+        "telefono": "5491133397190",
+        "mensaje": "Para mi primera consulta prefiero el 20/11/2026 por la tarde.",
+        "tipo": "solicitud_primera_consulta",
+        "accion": "gestion_administrativa",
+        "nombre": "Persona Demo A",
+        "preferencia_turno": "20/11/2026 por la tarde",
+        "faltantes": [],
+        "alertas": [],
+        "derivar_profesional": false,
+        "temas_administrativos": [
+          "requisitos"
+        ],
+        "estado": "pendiente_revision",
+        "borrador": "El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.",
+        "prioridad": "revision_administrativa",
+        "config_version": "ADMIN_DEMO_R01",
+        "temas_consultados": [
+          "requisitos"
+        ],
+        "ejecucion_id": "140",
+        "version_flujo": "FINAL_R01"
+      },
+      "registro_persistido": true,
+      "rango_registrado": "Solicitudes!A26:T26",
+      "respuesta_enviada_whatsapp": false,
+      "borrador_pendiente_revision": true,
+      "duplicado": false
+    }
+  },
+  {
+    "caso": "b_session_ajena_ignorada",
+    "http": 200,
+    "respuesta": {
+      "ok": true,
+      "solicitud": {
+        "evento_id": "ac4e6cab-5aa0-4f5a-bf73-b348346cd481",
+        "fecha_recepcion": "2026-11-02T12:16:05.184-03:00",
+        "canal": "whatsapp_simulado",
+        "telefono": "5491133397200",
+        "mensaje": "Quiero una primera consulta. Aún no te dije mi nombre ni mi preferencia de fecha.",
+        "tipo": "solicitud_primera_consulta",
+        "accion": "pedir_datos",
+        "nombre": null,
+        "preferencia_turno": null,
+        "faltantes": [
+          "nombre",
+          "preferencia_turno"
+        ],
+        "alertas": [],
+        "derivar_profesional": false,
+        "temas_administrativos": [
+          "requisitos"
+        ],
+        "estado": "pendiente_revision",
+        "borrador": "Para continuar, indicá tu nombre y tu preferencia de fecha y horario. Francisco revisará el pedido; esto no confirma un turno.",
+        "prioridad": "completar_datos",
+        "config_version": "ADMIN_DEMO_R01",
+        "temas_consultados": [
+          "requisitos"
+        ],
+        "ejecucion_id": "141",
+        "version_flujo": "FINAL_R01"
+      },
+      "registro_persistido": true,
+      "rango_registrado": "Solicitudes!A27:T27",
+      "respuesta_enviada_whatsapp": false,
+      "borrador_pendiente_revision": true,
+      "duplicado": false
+    }
+  },
+  {
+    "caso": "a_recuerda_datos",
+    "http": 200,
+    "respuesta": {
+      "ok": true,
+      "solicitud": {
+        "evento_id": "99af4789-5165-41b9-94df-09b9fdc75423",
+        "fecha_recepcion": "2026-11-02T12:16:30.523-03:00",
+        "canal": "whatsapp_simulado",
+        "telefono": "5491133397190",
+        "mensaje": "Quiero continuar mi solicitud de primera consulta con el nombre y la preferencia que ya te indiqué.",
+        "tipo": "solicitud_primera_consulta",
+        "accion": "gestion_administrativa",
+        "nombre": "Persona Demo A",
+        "preferencia_turno": "20/11/2026 por la tarde",
+        "faltantes": [],
+        "alertas": [],
+        "derivar_profesional": false,
+        "temas_administrativos": [
+          "requisitos"
+        ],
+        "estado": "pendiente_revision",
+        "borrador": "El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.",
+        "prioridad": "revision_administrativa",
+        "config_version": "ADMIN_DEMO_R01",
+        "temas_consultados": [
+          "requisitos"
+        ],
+        "ejecucion_id": "142",
+        "version_flujo": "FINAL_R01"
+      },
+      "registro_persistido": true,
+      "rango_registrado": "Solicitudes!A28:T28",
+      "respuesta_enviada_whatsapp": false,
+      "borrador_pendiente_revision": true,
+      "duplicado": false
+    }
+  },
+  {
+    "caso": "primera_consulta_completa",
+    "http": 200,
+    "respuesta": {
+      "ok": true,
+      "solicitud": {
+        "evento_id": "30b6ed6d-2103-4c2f-a4a2-4a4d4bd29d63",
+        "fecha_recepcion": "2026-11-02T12:17:00.724-03:00",
+        "canal": "whatsapp_simulado",
+        "telefono": "5491133397220",
+        "mensaje": "Soy Persona Demo Completa. Quiero una primera consulta para el 21/11/2026 por la tarde.",
+        "tipo": "solicitud_primera_consulta",
+        "accion": "gestion_administrativa",
+        "nombre": "Persona Demo Completa",
+        "preferencia_turno": "21/11/2026 por la tarde",
+        "faltantes": [],
+        "alertas": [],
+        "derivar_profesional": false,
+        "temas_administrativos": [
+          "requisitos"
+        ],
+        "estado": "pendiente_revision",
+        "borrador": "El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.",
+        "prioridad": "revision_administrativa",
+        "config_version": "ADMIN_DEMO_R01",
+        "temas_consultados": [
+          "requisitos"
+        ],
+        "ejecucion_id": "143",
+        "version_flujo": "FINAL_R01"
+      },
+      "registro_persistido": true,
+      "rango_registrado": "Solicitudes!A29:T29",
+      "respuesta_enviada_whatsapp": false,
+      "borrador_pendiente_revision": true,
+      "duplicado": false
+    }
+  },
+  {
+    "caso": "primera_consulta_incompleta",
+    "http": 200,
+    "respuesta": {
+      "ok": true,
+      "solicitud": {
+        "evento_id": "b0e75827-fcc3-4f86-a47d-a1171dc81cc2",
+        "fecha_recepcion": "2026-11-02T12:17:25.983-03:00",
+        "canal": "whatsapp_simulado",
+        "telefono": "5491133397230",
+        "mensaje": "Quiero una primera consulta.",
+        "tipo": "solicitud_primera_consulta",
+        "accion": "pedir_datos",
+        "nombre": null,
+        "preferencia_turno": null,
+        "faltantes": [
+          "nombre",
+          "preferencia_turno"
+        ],
+        "alertas": [],
+        "derivar_profesional": false,
+        "temas_administrativos": [
+          "requisitos"
+        ],
+        "estado": "pendiente_revision",
+        "borrador": "Para continuar, indicá tu nombre y tu preferencia de fecha y horario. Francisco revisará el pedido; esto no confirma un turno.",
+        "prioridad": "completar_datos",
+        "config_version": "ADMIN_DEMO_R01",
+        "temas_consultados": [
+          "requisitos"
+        ],
+        "ejecucion_id": "144",
+        "version_flujo": "FINAL_R01"
+      },
+      "registro_persistido": true,
+      "rango_registrado": "Solicitudes!A30:T30",
+      "respuesta_enviada_whatsapp": false,
+      "borrador_pendiente_revision": true,
+      "duplicado": false
+    }
+  },
+  {
+    "caso": "modalidad_honorarios_desconocidos",
+    "http": 200,
+    "respuesta": {
+      "ok": true,
+      "solicitud": {
+        "evento_id": "88ce053c-4641-464e-a9fe-caf4a1aa2991",
+        "fecha_recepcion": "2026-11-02T12:17:51.228-03:00",
+        "canal": "whatsapp_simulado",
+        "telefono": "5491133397240",
+        "mensaje": "¿Cuál es la modalidad de la primera consulta y cuáles son los honorarios?",
+        "tipo": "informacion_administrativa",
+        "accion": "gestion_administrativa",
+        "nombre": null,
+        "preferencia_turno": null,
+        "faltantes": [],
+        "alertas": [],
+        "derivar_profesional": false,
+        "temas_administrativos": [
+          "modalidad",
+          "honorarios"
+        ],
+        "estado": "pendiente_revision",
+        "borrador": "Francisco debe confirmar los datos administrativos consultados. Este borrador no informa disponibilidad, precios ni confirma turnos.",
+        "prioridad": "revision_administrativa",
+        "config_version": "ADMIN_DEMO_R01",
+        "temas_consultados": [
+          "modalidad",
+          "honorarios"
+        ],
+        "ejecucion_id": "145",
+        "version_flujo": "FINAL_R01"
+      },
+      "registro_persistido": true,
+      "rango_registrado": "Solicitudes!A31:T31",
+      "respuesta_enviada_whatsapp": false,
+      "borrador_pendiente_revision": true,
+      "duplicado": false
+    }
+  },
+  {
+    "caso": "requisitos_controlados",
+    "http": 200,
+    "respuesta": {
+      "ok": true,
+      "solicitud": {
+        "evento_id": "14102eab-732b-476d-8ec6-57b1b8af2e30",
+        "fecha_recepcion": "2026-11-02T12:18:16.215-03:00",
+        "canal": "whatsapp_simulado",
+        "telefono": "5491133397250",
+        "mensaje": "¿Qué requisitos administrativos necesito para solicitar una primera consulta?",
+        "tipo": "informacion_administrativa",
+        "accion": "gestion_administrativa",
+        "nombre": null,
+        "preferencia_turno": null,
+        "faltantes": [],
+        "alertas": [],
+        "derivar_profesional": false,
+        "temas_administrativos": [
+          "requisitos"
+        ],
+        "estado": "pendiente_revision",
+        "borrador": "Para solicitar una primera consulta, indicá tu nombre y preferencia de fecha y horario. Francisco revisará el pedido antes de coordinar.",
+        "prioridad": "revision_administrativa",
+        "config_version": "ADMIN_DEMO_R01",
+        "temas_consultados": [
+          "requisitos"
+        ],
+        "ejecucion_id": "146",
+        "version_flujo": "FINAL_R01"
+      },
+      "registro_persistido": true,
+      "rango_registrado": "Solicitudes!A32:T32",
+      "respuesta_enviada_whatsapp": false,
+      "borrador_pendiente_revision": true,
+      "duplicado": false
+    }
+  },
+  {
+    "caso": "consulta_profesional_y_turno",
+    "http": 200,
+    "respuesta": {
+      "ok": true,
+      "solicitud": {
+        "evento_id": "102c1783-7441-4d85-8c6e-7438a04ab3f7",
+        "fecha_recepcion": "2026-11-02T12:18:42.020-03:00",
+        "canal": "whatsapp_simulado",
+        "telefono": "5491133397260",
+        "mensaje": "¿Qué plazo tengo para demandar y cuánto puedo reclamar en mi juicio? También quiero un turno.",
+        "tipo": "consulta_profesional",
+        "accion": "derivar_profesional",
+        "nombre": null,
+        "preferencia_turno": null,
+        "faltantes": [],
+        "alertas": [],
+        "derivar_profesional": true,
+        "temas_administrativos": [],
+        "estado": "pendiente_revision",
+        "borrador": "Tu consulta requiere la revisión de Francisco. Este asistente solo organiza la recepción administrativa. No envíes documentos ni datos sensibles por este prototipo.",
+        "prioridad": "revision_profesional",
+        "config_version": "ADMIN_DEMO_R01",
+        "temas_consultados": [
+          "modalidad"
+        ],
+        "ejecucion_id": "147",
+        "version_flujo": "FINAL_R01"
+      },
+      "registro_persistido": true,
+      "rango_registrado": "Solicitudes!A33:T33",
+      "respuesta_enviada_whatsapp": false,
+      "borrador_pendiente_revision": true,
+      "duplicado": false
+    }
+  },
+  {
+    "caso": "fecha_ambigua",
+    "http": 200,
+    "respuesta": {
+      "ok": true,
+      "solicitud": {
+        "evento_id": "2a2d46d2-7299-4d2c-b92c-ce3fd0c8773b",
+        "fecha_recepcion": "2026-11-02T12:19:08.146-03:00",
+        "canal": "whatsapp_simulado",
+        "telefono": "5491133397270",
+        "mensaje": "Quiero una primera consulta esta semana.",
+        "tipo": "solicitud_primera_consulta",
+        "accion": "pedir_datos",
+        "nombre": null,
+        "preferencia_turno": "esta semana",
+        "faltantes": [
+          "nombre",
+          "aclaracion_fecha"
+        ],
+        "alertas": [
+          "fecha_ambigua"
+        ],
+        "derivar_profesional": false,
+        "temas_administrativos": [
+          "requisitos"
+        ],
+        "estado": "pendiente_revision",
+        "borrador": "Para continuar, indicá tu nombre y una fecha concreta. Francisco revisará el pedido; esto no confirma un turno.",
+        "prioridad": "completar_datos",
+        "config_version": "ADMIN_DEMO_R01",
+        "temas_consultados": [
+          "requisitos"
+        ],
+        "ejecucion_id": "148",
+        "version_flujo": "FINAL_R01"
+      },
+      "registro_persistido": true,
+      "rango_registrado": "Solicitudes!A34:T34",
+      "respuesta_enviada_whatsapp": false,
+      "borrador_pendiente_revision": true,
+      "duplicado": false
+    }
+  },
+  {
+    "caso": "datos_contradictorios",
+    "http": 200,
+    "respuesta": {
+      "ok": true,
+      "solicitud": {
+        "evento_id": "01dd2c07-10ee-405b-af15-41709ebbd957",
+        "fecha_recepcion": "2026-11-02T12:19:33.971-03:00",
+        "canal": "whatsapp_simulado",
+        "telefono": "5491133397280",
+        "mensaje": "Quiero una primera consulta. Mi nombre para esta solicitud es Persona Demo Uno y también Persona Demo Dos. No es una corrección: no sé cuál de los dos corresponde usar.",
+        "tipo": "solicitud_primera_consulta",
+        "accion": "pedir_datos",
+        "nombre": null,
+        "preferencia_turno": null,
+        "faltantes": [
+          "nombre",
+          "preferencia_turno",
+          "aclaracion_datos"
+        ],
+        "alertas": [
+          "datos_contradictorios"
+        ],
+        "derivar_profesional": false,
+        "temas_administrativos": [
+          "requisitos"
+        ],
+        "estado": "pendiente_revision",
+        "borrador": "Para continuar, indicá tu nombre y tu preferencia de fecha y horario y cuál de los datos contradictorios es correcto. Francisco revisará el pedido; esto no confirma un turno.",
+        "prioridad": "completar_datos",
+        "config_version": "ADMIN_DEMO_R01",
+        "temas_consultados": [
+          "requisitos"
+        ],
+        "ejecucion_id": "149",
+        "version_flujo": "FINAL_R01"
+      },
+      "registro_persistido": true,
+      "rango_registrado": "Solicitudes!A35:T35",
+      "respuesta_enviada_whatsapp": false,
+      "borrador_pendiente_revision": true,
+      "duplicado": false
+    }
+  },
+  {
+    "caso": "solicitudes_cruzadas",
+    "http": 200,
+    "respuesta": {
+      "ok": true,
+      "solicitud": {
+        "evento_id": "dac2929b-78af-4494-a61d-ed4572cd3ef6",
+        "fecha_recepcion": "2026-11-02T12:19:58.847-03:00",
+        "canal": "whatsapp_simulado",
+        "telefono": "5491133397290",
+        "mensaje": "Quiero pedir dos primeras consultas en este mismo mensaje: una para Persona Demo Norte el 20/11/2026 por la tarde y otra para Persona Demo Sur el 21/11/2026 por la mañana. Son personas y solicitudes distintas.",
+        "tipo": "solicitud_primera_consulta",
+        "accion": "pedir_datos",
+        "nombre": null,
+        "preferencia_turno": null,
+        "faltantes": [
+          "nombre",
+          "preferencia_turno",
+          "aclaracion_fecha",
+          "separar_solicitudes"
+        ],
+        "alertas": [
+          "multiples_solicitudes",
+          "fecha_ambigua"
+        ],
+        "derivar_profesional": false,
+        "temas_administrativos": [
+          "requisitos"
+        ],
+        "estado": "pendiente_revision",
+        "borrador": "Para continuar, indicá tu nombre y tu preferencia de fecha y horario y una fecha concreta y cada solicitud por separado. Francisco revisará el pedido; esto no confirma un turno.",
+        "prioridad": "completar_datos",
+        "config_version": "ADMIN_DEMO_R01",
+        "temas_consultados": [
+          "requisitos"
+        ],
+        "ejecucion_id": "150",
+        "version_flujo": "FINAL_R01"
+      },
+      "registro_persistido": true,
+      "rango_registrado": "Solicitudes!A36:T36",
+      "respuesta_enviada_whatsapp": false,
+      "borrador_pendiente_revision": true,
+      "duplicado": false
+    }
+  },
+  {
+    "caso": "instruccion_adversarial",
+    "http": 502,
+    "respuesta": {
+      "ok": false,
+      "error": "IA_NO_VALIDADA",
+      "http": 502,
+      "etapa": "ia_validacion",
+      "registro_persistido": false,
+      "respuesta_enviada_whatsapp": false,
+      "reintento_automatico": false,
+      "recuperacion": "Conservar entrada y ejecución. Consultar evento_id en destino antes de repetir. Si resultado incierto, resolver manualmente.",
+      "evento_id": "d1ca2c6f-2cdc-4c73-b783-fe702ac4e486",
+      "ejecucion_id": "152"
+    }
+  },
+  {
+    "caso": "formula_como_texto_RAW",
+    "http": 200,
+    "respuesta": {
+      "ok": true,
+      "solicitud": {
+        "evento_id": "6d2b5c91-e690-400d-b0f8-af391124faac",
+        "fecha_recepcion": "2026-11-02T12:24:11.572-03:00",
+        "canal": "whatsapp_simulado",
+        "telefono": "5491108442410",
+        "mensaje": "=1+1 Soy Persona Demo Formula. Quiero una primera consulta para el 22/11/2026 por la tarde.",
+        "tipo": "solicitud_primera_consulta",
+        "accion": "gestion_administrativa",
+        "nombre": "Persona Demo Formula",
+        "preferencia_turno": "22/11/2026 por la tarde",
+        "faltantes": [],
+        "alertas": [
+          "instruccion_incrustada"
+        ],
+        "derivar_profesional": false,
+        "temas_administrativos": [
+          "requisitos"
+        ],
+        "estado": "pendiente_revision",
+        "borrador": "El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.",
+        "prioridad": "revision_administrativa",
+        "config_version": "ADMIN_DEMO_R01",
+        "temas_consultados": [
+          "requisitos"
+        ],
+        "ejecucion_id": "153",
+        "version_flujo": "FINAL_R01"
+      },
+      "registro_persistido": true,
+      "rango_registrado": "Solicitudes!A37:T37",
+      "respuesta_enviada_whatsapp": false,
+      "borrador_pendiente_revision": true,
+      "duplicado": false
+    }
+  },
+  {
+    "caso": "duplicado_base",
+    "http": 200,
+    "respuesta": {
+      "ok": true,
+      "solicitud": {
+        "evento_id": "a26ef05c-7242-401e-aac5-b6acb6dbeec4",
+        "fecha_recepcion": "2026-11-02T12:24:36.323-03:00",
+        "canal": "whatsapp_simulado",
+        "telefono": "5491108442420",
+        "mensaje": "Soy Persona Demo Repetida. Quiero una primera consulta para el 23/11/2026 por la tarde.",
+        "tipo": "solicitud_primera_consulta",
+        "accion": "gestion_administrativa",
+        "nombre": "Persona Demo Repetida",
+        "preferencia_turno": "el 23/11/2026 por la tarde",
+        "faltantes": [],
+        "alertas": [],
+        "derivar_profesional": false,
+        "temas_administrativos": [
+          "requisitos"
+        ],
+        "estado": "pendiente_revision",
+        "borrador": "El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.",
+        "prioridad": "revision_administrativa",
+        "config_version": "ADMIN_DEMO_R01",
+        "temas_consultados": [
+          "requisitos"
+        ],
+        "ejecucion_id": "154",
+        "version_flujo": "FINAL_R01"
+      },
+      "registro_persistido": true,
+      "rango_registrado": "Solicitudes!A38:T38",
+      "respuesta_enviada_whatsapp": false,
+      "borrador_pendiente_revision": true,
+      "duplicado": false
+    }
+  },
+  {
+    "caso": "duplicado_exacto",
+    "http": 200,
+    "respuesta": {
+      "valido": true,
+      "evento_id": "a26ef05c-7242-401e-aac5-b6acb6dbeec4",
+      "telefono": "5491108442420",
+      "mensaje": "Soy Persona Demo Repetida. Quiero una primera consulta para el 23/11/2026 por la tarde.",
+      "entrada_canonica": "[\"5491108442420\",\"Soy Persona Demo Repetida. Quiero una primera consulta para el 23/11/2026 por la tarde.\"]",
+      "fecha_recepcion": "2026-11-02T12:25:01.222-03:00",
+      "canal": "whatsapp_simulado",
+      "ejecucion_id": "155",
+      "version_flujo": "FINAL_R01",
+      "entrada_ia": {
+        "mensaje": "Soy Persona Demo Repetida. Quiero una primera consulta para el 23/11/2026 por la tarde."
+      },
+      "continuar": false,
+      "http": 200,
+      "ok": true,
+      "error": null,
+      "duplicado": true,
+      "registro_persistido": true,
+      "respuesta_enviada_whatsapp": false,
+      "detalle": "Evento ya registrado; no se volvió a ejecutar IA ni escritura."
+    }
+  },
+  {
+    "caso": "conflicto_mismo_id_otro_texto",
+    "http": 409,
+    "respuesta": {
+      "valido": true,
+      "evento_id": "a26ef05c-7242-401e-aac5-b6acb6dbeec4",
+      "telefono": "5491108442420",
+      "mensaje": "Este contenido es distinto al que se registró con el mismo ID.",
+      "entrada_canonica": "[\"5491108442420\",\"Este contenido es distinto al que se registró con el mismo ID.\"]",
+      "fecha_recepcion": "2026-11-02T12:25:23.668-03:00",
+      "canal": "whatsapp_simulado",
+      "ejecucion_id": "156",
+      "version_flujo": "FINAL_R01",
+      "entrada_ia": {
+        "mensaje": "Este contenido es distinto al que se registró con el mismo ID."
+      },
+      "continuar": false,
+      "http": 409,
+      "ok": false,
+      "error": "EVENTO_CONFLICTIVO",
+      "duplicado": false,
+      "registro_persistido": null,
+      "respuesta_enviada_whatsapp": false,
+      "detalle": "ID repetido con contenido distinto o registros inconsistentes. Revisión manual."
+    }
+  },
+  {
+    "caso": "conflicto_mismo_id_otro_telefono",
+    "http": 409,
+    "respuesta": {
+      "valido": true,
+      "evento_id": "a26ef05c-7242-401e-aac5-b6acb6dbeec4",
+      "telefono": "5491108442430",
+      "mensaje": "Soy Persona Demo Repetida. Quiero una primera consulta para el 23/11/2026 por la tarde.",
+      "entrada_canonica": "[\"5491108442430\",\"Soy Persona Demo Repetida. Quiero una primera consulta para el 23/11/2026 por la tarde.\"]",
+      "fecha_recepcion": "2026-11-02T12:25:26.161-03:00",
+      "canal": "whatsapp_simulado",
+      "ejecucion_id": "157",
+      "version_flujo": "FINAL_R01",
+      "entrada_ia": {
+        "mensaje": "Soy Persona Demo Repetida. Quiero una primera consulta para el 23/11/2026 por la tarde."
+      },
+      "continuar": false,
+      "http": 409,
+      "ok": false,
+      "error": "EVENTO_CONFLICTIVO",
+      "duplicado": false,
+      "registro_persistido": null,
+      "respuesta_enviada_whatsapp": false,
+      "detalle": "ID repetido con contenido distinto o registros inconsistentes. Revisión manual."
+    }
+  }
+]

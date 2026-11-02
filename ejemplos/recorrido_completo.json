@@ -1,0 +1,160 @@
+{
+  "caso": "primera_consulta_completa",
+  "grupo": "negocio",
+  "ejecucion_id": 143,
+  "version_id": "b9da5f49-26be-4015-bbfb-7c0a8c8cdba7",
+  "estado_n8n": "success",
+  "entrada": {
+    "evento_id": "30b6ed6d-2103-4c2f-a4a2-4a4d4bd29d63",
+    "from": "5491133397220",
+    "text": {
+      "body": "Soy Persona Demo Completa. Quiero una primera consulta para el 21/11/2026 por la tarde."
+    }
+  },
+  "http": 200,
+  "respuesta_http": {
+    "ok": true,
+    "solicitud": {
+      "evento_id": "30b6ed6d-2103-4c2f-a4a2-4a4d4bd29d63",
+      "fecha_recepcion": "2026-11-02T12:17:00.724-03:00",
+      "canal": "whatsapp_simulado",
+      "telefono": "5491133397220",
+      "mensaje": "Soy Persona Demo Completa. Quiero una primera consulta para el 21/11/2026 por la tarde.",
+      "tipo": "solicitud_primera_consulta",
+      "accion": "gestion_administrativa",
+      "nombre": "Persona Demo Completa",
+      "preferencia_turno": "21/11/2026 por la tarde",
+      "faltantes": [],
+      "alertas": [],
+      "derivar_profesional": false,
+      "temas_administrativos": [
+        "requisitos"
+      ],
+      "estado": "pendiente_revision",
+      "borrador": "El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.",
+      "prioridad": "revision_administrativa",
+      "config_version": "ADMIN_DEMO_R01",
+      "temas_consultados": [
+        "requisitos"
+      ],
+      "ejecucion_id": "143",
+      "version_flujo": "FINAL_R01"
+    },
+    "registro_persistido": true,
+    "rango_registrado": "Solicitudes!A29:T29",
+    "respuesta_enviada_whatsapp": false,
+    "borrador_pendiente_revision": true,
+    "duplicado": false
+  },
+  "terminal": "Resultado 200",
+  "coincide_http_nodo": true,
+  "nodos_recorridos": [
+    "Recibir WhatsApp simulado",
+    "Normalizar entrada",
+    "Entrada valida",
+    "Destino fijo",
+    "Leer Sheets - segunda fuente",
+    "Preparar contexto",
+    "Evento nuevo",
+    "Memoria por telefono",
+    "Google Gemini Chat Model",
+    "Consultar_datos_administrativos",
+    "Asistente de recepcion",
+    "Validar y preparar registro",
+    "Registrar solicitud RAW",
+    "Confirmar registro",
+    "Resultado 200"
+  ],
+  "duracion_http_ms": 5235,
+  "historia_nativa_cargada": [],
+  "salida_ia_cruda": "{\n  \"tipo\": \"solicitud_primera_consulta\",\n  \"accion\": \"gestion_administrativa\",\n  \"nombre\": \"Persona Demo Completa\",\n  \"preferencia_turno\": \"21/11/2026 por la tarde\",\n  \"faltantes\": [],\n  \"alertas\": [],\n  \"derivar_profesional\": false,\n  \"temas_administrativos\": [\n    \"requisitos\"\n  ],\n  \"estado\": \"pendiente_revision\"\n}",
+  "salida_validada": {
+    "solicitud": {
+      "evento_id": "30b6ed6d-2103-4c2f-a4a2-4a4d4bd29d63",
+      "fecha_recepcion": "2026-11-02T12:17:00.724-03:00",
+      "canal": "whatsapp_simulado",
+      "telefono": "5491133397220",
+      "mensaje": "Soy Persona Demo Completa. Quiero una primera consulta para el 21/11/2026 por la tarde.",
+      "tipo": "solicitud_primera_consulta",
+      "accion": "gestion_administrativa",
+      "nombre": "Persona Demo Completa",
+      "preferencia_turno": "21/11/2026 por la tarde",
+      "faltantes": [],
+      "alertas": [],
+      "derivar_profesional": false,
+      "temas_administrativos": [
+        "requisitos"
+      ],
+      "estado": "pendiente_revision",
+      "borrador": "El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.",
+      "prioridad": "revision_administrativa",
+      "config_version": "ADMIN_DEMO_R01",
+      "temas_consultados": [
+        "requisitos"
+      ],
+      "ejecucion_id": "143",
+      "version_flujo": "FINAL_R01"
+    },
+    "fila": [
+      "30b6ed6d-2103-4c2f-a4a2-4a4d4bd29d63",
+      "[\"5491133397220\",\"Soy Persona Demo Completa. Quiero una primera consulta para el 21/11/2026 por la tarde.\"]",
+      "2026-11-02T12:17:00.724-03:00",
+      "5491133397220",
+      "Soy Persona Demo Completa. Quiero una primera consulta para el 21/11/2026 por la tarde.",
+      "solicitud_primera_consulta",
+      "gestion_administrativa",
+      "Persona Demo Completa",
+      "21/11/2026 por la tarde",
+      "[]",
+      "[]",
+      "false",
+      "El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.",
+      "pendiente_revision",
+      "ADMIN_DEMO_R01",
+      "143",
+      "FINAL_R01",
+      "[\"requisitos\"]",
+      "whatsapp_simulado",
+      "revision_administrativa"
+    ],
+    "ok": true,
+    "registro_persistido": false,
+    "respuesta_enviada_whatsapp": false
+  },
+  "herramientas": [
+    {
+      "herramienta": "Consultar_datos_administrativos",
+      "entrada": {
+        "tema": "requisitos"
+      },
+      "observacion": "[{\"response\":\"{\\\"tema\\\":\\\"requisitos\\\",\\\"estado\\\":\\\"verificado_para_recepcion\\\",\\\"valor\\\":[\\\"nombre\\\",\\\"preferencia_turno\\\"],\\\"version\\\":\\\"ADMIN_DEMO_R01\\\",\\\"origen\\\":\\\"Google Sheets / Administracion\\\",\\\"alcance\\\":\\\"Prototipo ficticio. No acredita disponibilidad ni autoriza reservas.\\\"}\"}]"
+    }
+  ],
+  "llamadas_nodo_modelo": 2,
+  "fila_leida": {
+    "numero": 29,
+    "valores": [
+      "30b6ed6d-2103-4c2f-a4a2-4a4d4bd29d63",
+      "[\"5491133397220\",\"Soy Persona Demo Completa. Quiero una primera consulta para el 21/11/2026 por la tarde.\"]",
+      "2026-11-02T12:17:00.724-03:00",
+      "5491133397220",
+      "Soy Persona Demo Completa. Quiero una primera consulta para el 21/11/2026 por la tarde.",
+      "solicitud_primera_consulta",
+      "gestion_administrativa",
+      "Persona Demo Completa",
+      "21/11/2026 por la tarde",
+      "[]",
+      "[]",
+      "false",
+      "El pedido queda preparado para revisión de Francisco. La preferencia indicada no supone disponibilidad ni confirma un turno.",
+      "pendiente_revision",
+      "ADMIN_DEMO_R01",
+      "143",
+      "FINAL_R01",
+      "[\"requisitos\"]",
+      "whatsapp_simulado",
+      "revision_administrativa"
+    ]
+  },
+  "coincide_fila_20_campos": true
+}
